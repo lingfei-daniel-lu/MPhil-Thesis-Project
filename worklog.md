@@ -950,42 +950,78 @@ Finally, we would like to further discuss the time trend of China's import excha
 
 ## 2022/05/25
 
-Following the modified specifications with lagged markup and TFP controls and cross terms:
+Following the modified specifications with lagged markup and TFP controls and cross terms for import ERPT:
 $$
-\Delta \ln p_{IM;fpct}=[\alpha+\beta \cdot FinVuln_{f}+\gamma \cdot Markup_{ft-1}]*\Delta \ln RER_{ct} \\
-+b \cdot \Delta \ln RGDP_{ct}+ c_1 \cdot Markup_{ft-1}+c_2 \cdot TFP_{ft-1}+\xi_{fpc}+\tau_{t} +\varepsilon_{fpct}
-$$
-
-$$
-\Delta \ln p_{IM;fpct}=[\alpha+\beta \cdot FinVuln_{f}+\gamma \cdot TFP_{ft-1}]*\Delta \ln RER_{ct} \\
-+b \cdot \Delta \ln RGDP_{ct}+ c_1 \cdot Markup_{ft-1}+c_2 \cdot TFP_{ft-1}+\xi_{fpc}+\tau_{t} +\varepsilon_{fpct}
+\Delta \ln p_{IM;fpct}=[\alpha+\beta \cdot FinVuln_{f}+\gamma \cdot Markup_{ft-1}]*\Delta \ln RER_{ct}
++b \cdot \Delta \ln RGDP_{ct} \\ +c_1 \cdot MarketShare_{ft}+ c_2 \cdot Markup_{ft-1}+c_3 \cdot TFP_{ft-1}+\xi_{fpc}+\tau_{t} +\varepsilon_{fpct}
 $$
 
+$$
+\Delta \ln p_{IM;fpct}=[\alpha+\beta \cdot FinVuln_{f}+\gamma \cdot TFP_{ft-1}]*\Delta \ln RER_{ct}
++b \cdot \Delta \ln RGDP_{ct} \\+c_1 \cdot MarketShare_{ft}+ c_2 \cdot Markup_{ft-1}+c_3 \cdot TFP_{ft-1}+\xi_{fpc}+\tau_{t} +\varepsilon_{fpct}
+$$
 
-
-We have results as below
+We have results as below:
 
 |                         | (1)         | (2)         | (3)         | (4)         | (5)         | (6)         |
 | ----------------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 |                         | dlnprice_tr | dlnprice_tr | dlnprice_tr | dlnprice_tr | dlnprice_tr | dlnprice_tr |
-| dlnRER                  | 0.195***    | 0.135**     | 0.404***    | 0.418***    | 0.378***    | 0.600***    |
-|                         | (0.064)     | (0.065)     | (0.073)     | (0.017)     | (0.018)     | (0.039)     |
-| dlnrgdp                 | 0.380***    | 0.392***    | 0.380***    | 0.404***    | 0.411***    | 0.404***    |
-|                         | (0.099)     | (0.099)     | (0.099)     | (0.099)     | (0.099)     | (0.099)     |
-| x_Markup_lag            | 0.145***    | 0.157***    | 0.150***    |             |             |             |
-|                         | (0.048)     | (0.048)     | (0.048)     |             |             |             |
-| x_tfp_lag               |             |             |             | 0.829***    | 0.757***    | 0.808***    |
-|                         |             |             |             | (0.063)     | (0.064)     | (0.063)     |
-| x_ExtFin_US             |             | 0.350***    |             |             | 0.284***    |             |
-|                         |             | (0.036)     |             |             | (0.037)     |             |
-| x_Tang_US               |             |             | -0.869***   |             |             | -0.739***   |
-|                         |             |             | (0.144)     |             |             | (0.144)     |
-| MS                      | -0.051***   | -0.051***   | -0.051***   | -0.051***   | -0.051***   | -0.051***   |
-|                         | (0.009)     | (0.009)     | (0.009)     | (0.009)     | (0.009)     | (0.009)     |
-| Markup_lag              | 0.273***    | 0.269***    | 0.271***    | 0.270***    | 0.267***    | 0.268***    |
-|                         | (0.013)     | (0.013)     | (0.013)     | (0.013)     | (0.013)     | (0.013)     |
-| tfp_lag                 | -0.437***   | -0.431***   | -0.433***   | -0.430***   | -0.425***   | -0.426***   |
-|                         | (0.018)     | (0.018)     | (0.018)     | (0.018)     | (0.018)     | (0.018)     |
+| dlnRER                  | 0.142**     | 0.090       | 0.332***    | 0.376***    | 0.342***    | 0.542***    |
+|                         | (0.057)     | (0.057)     | (0.064)     | (0.015)     | (0.016)     | (0.035)     |
+| dlnrgdp                 | 0.369***    | 0.381***    | 0.370***    | 0.389***    | 0.396***    | 0.389***    |
+|                         | (0.086)     | (0.086)     | (0.086)     | (0.086)     | (0.086)     | (0.086)     |
+| x_Markup_lag            | 0.157***    | 0.167***    | 0.161***    |             |             |             |
+|                         | (0.042)     | (0.042)     | (0.042)     |             |             |             |
+| x_tfp_lag               |             |             |             | 0.719***    | 0.656***    | 0.700***    |
+|                         |             |             |             | (0.056)     | (0.056)     | (0.056)     |
+| x_ExtFin_US             |             | 0.304***    |             |             | 0.246***    |             |
+|                         |             | (0.032)     |             |             | (0.032)     |             |
+| x_Tang_US               |             |             | -0.787***   |             |             | -0.674***   |
+|                         |             |             | (0.126)     |             |             | (0.127)     |
+| MS                      | -0.071***   | -0.071***   | -0.071***   | -0.070***   | -0.070***   | -0.070***   |
+|                         | (0.008)     | (0.008)     | (0.008)     | (0.008)     | (0.008)     | (0.008)     |
+| Markup_lag              | 0.216***    | 0.213***    | 0.214***    | 0.213***    | 0.211***    | 0.211***    |
+|                         | (0.012)     | (0.012)     | (0.012)     | (0.012)     | (0.012)     | (0.012)     |
+| tfp_lag                 | -0.346***   | -0.341***   | -0.342***   | -0.340***   | -0.336***   | -0.337***   |
+|                         | (0.016)     | (0.016)     | (0.016)     | (0.016)     | (0.016)     | (0.016)     |
 | Year FE                 | Yes         | Yes         | Yes         | Yes         | Yes         | Yes         |
 | Firm-product-country FE | Yes         | Yes         | Yes         | Yes         | Yes         | Yes         |
-| N                       | 1351989     | 1351989     | 1351989     | 1351989     | 1351989     | 1351989     |
+| N                       | 1297276     | 1297276     | 1297276     | 1297276     | 1297276     | 1297276     |
+
+## 2022/05/31
+
+For export ERPT, we also add lagged markup and TFP controls and cross terms:
+$$
+\Delta \ln p_{EX;fpct}=[\alpha+\beta \cdot FinVuln_{f}+\gamma \cdot Markup_{ft-1}]*\Delta \ln RER_{ct}
++b \cdot \Delta \ln RGDP_{ct} \\ +c_1 \cdot MarketShare_{ft}+ c_2 \cdot Markup_{ft-1}+c_3 \cdot TFP_{ft-1}+\xi_{fpc}+\tau_{t} +\varepsilon_{fpct}
+$$
+
+$$
+\Delta \ln p_{EX;fpct}=[\alpha+\beta \cdot FinVuln_{f}+\gamma \cdot TFP_{ft-1}]*\Delta \ln RER_{ct}
++b \cdot \Delta \ln RGDP_{ct} \\+c_1 \cdot MarketShare_{ft}+ c_2 \cdot Markup_{ft-1}+c_3 \cdot TFP_{ft-1}+\xi_{fpc}+\tau_{t} +\varepsilon_{fpct}
+$$
+
+|                         | (1)         | (2)         | (3)         | (4)         | (5)         | (6)         |
+| ----------------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+|                         | dlnprice_tr | dlnprice_tr | dlnprice_tr | dlnprice_tr | dlnprice_tr | dlnprice_tr |
+| dlnRER                  | 0.003       | 0.005       | -0.023      | 0.029***    | 0.032***    | 0.002       |
+|                         | (0.025)     | (0.025)     | (0.028)     | (0.005)     | (0.005)     | (0.014)     |
+| dlnrgdp                 | -0.045      | -0.045      | -0.046      | -0.045      | -0.045      | -0.045      |
+|                         | (0.032)     | (0.032)     | (0.032)     | (0.032)     | (0.032)     | (0.032)     |
+| x_Markup_lag            | 0.017       | 0.018       | 0.017       |             |             |             |
+|                         | (0.019)     | (0.019)     | (0.019)     |             |             |             |
+| x_tfp_lag               |             |             |             | 0.042*      | 0.051**     | 0.043*      |
+|                         |             |             |             | (0.023)     | (0.024)     | (0.023)     |
+| x_ExtFin_US             |             | -0.032**    |             |             | -0.036***   |             |
+|                         |             | (0.013)     |             |             | (0.013)     |             |
+| x_Tang_US               |             |             | 0.100**     |             |             | 0.104**     |
+|                         |             |             | (0.050)     |             |             | (0.050)     |
+| MS                      | 0.014***    | 0.014***    | 0.014***    | 0.014***    | 0.014***    | 0.014***    |
+|                         | (0.002)     | (0.002)     | (0.002)     | (0.002)     | (0.002)     | (0.002)     |
+| Markup_lag              | -0.003      | -0.003      | -0.003      | -0.002      | -0.002      | -0.002      |
+|                         | (0.006)     | (0.006)     | (0.006)     | (0.006)     | (0.006)     | (0.006)     |
+| tfp_lag                 | -0.026***   | -0.026***   | -0.026***   | -0.028***   | -0.029***   | -0.028***   |
+|                         | (0.007)     | (0.007)     | (0.007)     | (0.008)     | (0.008)     | (0.008)     |
+| Year FE                 | Yes         | Yes         | Yes         | Yes         | Yes         | Yes         |
+| Firm-product-country FE | Yes         | Yes         | Yes         | Yes         | Yes         | Yes         |
+| N                       | 1320527     | 1320527     | 1320527     | 1320527     | 1320527     | 1320527     |
