@@ -261,8 +261,7 @@ The short-run and long-run elasticities are given by lagged terms as below:
 $$
 \Delta p_{t}^{j}= \alpha+\sum_{i=0}^{4} a_{i}^{j} \Delta e_{t-i}^{j}+\sum_{i=0}^{4} b_{i}^{j} \Delta w_{t-i}^{j}+c^{j} \Delta g d p_{t}^{j}+\vartheta_{t}^{j}
 $$
-LCP (Local Currency Pricing) implies zero pass-through while PCP (Producer Currency Pricing) implies zero
-pass-through in the import ERPT case while the opposite for export ERPT. Over the long run, PCP is more prevalent for imported goods for OECD countries.
+LCP (Local Currency Pricing) implies zero pass-through while PCP (Producer Currency Pricing) implies zero pass-through in the import ERPT case while the opposite for export ERPT. Over the long run, PCP is more prevalent for imported goods for OECD countries.
 
 Country-specific exchange rate pass-through into import prices are significantly and positively correlated with inflation, money growth, and nominal exchange rate volatility.
 
@@ -331,7 +330,7 @@ Although we do not find a declining passthrough in aggregate level, there may st
 
 ## 2022/01/18
 
-More literature review about credit constraint and export:
+**More literature review about credit constraint and export:**
 
 - Manova, K. (2013). Credit constraints, heterogeneous firms, and international trade. Review of Economic Studies, 80(2), 711–744.
 
@@ -773,7 +772,7 @@ Explanations of the effects of credit constraints on ERPT:
 
 **Strasser (2013):** His result suggests that unconstrained firms intentionally absorb more import price shocks to maintain their optimal domestic pricing policy. That is these firms price to market to their domestic market. By contrast, financially constrained firms have fewer margins to adopt pricing-to-market strategies and absorb exchange rate swings into the markups, so they have to keep PTM to a minimum.
 
-**Dai, Nucci, Pozzolo, and Xu (2021)**: Following Strasser (2013), borrowing constraints force firms to keep pricing-to-market decisions to a minimum as they do have not enough margin to absorb an exchange rate shock on their markup. 
+**Dai, Nucci, Pozzolo, and Xu (2021)**: Following Strasser (2013), borrowing constraints force firms to keep pricing-to-market decisions to a minimum as they do not have enough margin to absorb an exchange rate shock on their markup. 
 
 Since a higher external finance premium causes the marginal costs to be higher, firms with more severe financial constraints tend to set higher prices and therefore, with a linear demand function, face a higher price elasticity of demand. Thus, with markup values endogenously determined in the model, an exchange rate depreciation allows firms to increase their markups but the credit-constrained firms do so only to a limited extent because they have fewer margins to adjust their profit margins.
 
@@ -1025,3 +1024,11 @@ $$
 | Year FE                 | Yes         | Yes         | Yes         | Yes         | Yes         | Yes         |
 | Firm-product-country FE | Yes         | Yes         | Yes         | Yes         | Yes         | Yes         |
 | N                       | 1320527     | 1320527     | 1320527     | 1320527     | 1320527     | 1320527     |
+
+## 2022/06/01
+
+Three key findings of our project:
+
+1. Import exchange rate pass-through is less complete than export exchange rate pass-through
+2. Financial constraints will increase both import and export exchange rate pass-through to be more complete
+3. The effect of financial constraints on exchange rate pass-through is robust and significant for both exporters and importers, which means the financial constraint factors work other than through the markup channel.

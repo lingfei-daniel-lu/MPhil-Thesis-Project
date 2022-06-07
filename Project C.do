@@ -304,15 +304,15 @@ save FLL_Appendix_A1,replace
 * focus on manufacturing firms
 cd "D:\Project A\CIE"
 use cie1998.dta,clear
-keep(FRDM EN year INDTYPE REGTYPE GIOV_CR PERSENG TOIPT SI TWC NAR STOCK FA TA CL TL)
+keep(FRDM EN year INDTYPE REGTYPE GIOV_CR PERSENG TOIPT SI TWC NAR STOCK FA TA CL TL CWP)
 forv i = 1999/2004{
-append using cie`i',keep(FRDM EN year INDTYPE REGTYPE GIOV_CR PERSENG TOIPT SI TWC NAR STOCK FA TA CL TL)
+append using cie`i',keep(FRDM EN year INDTYPE REGTYPE GIOV_CR PERSENG TOIPT SI TWC NAR STOCK FA TA CL TL CWP)
 }
 forv i = 2005/2006{
-append using cie`i',keep(FRDM EN year INDTYPE REGTYPE GIOV_CR PERSENG TOIPT SI TWC NAR STOCK FA TA CL TL F334)
+append using cie`i',keep(FRDM EN year INDTYPE REGTYPE GIOV_CR PERSENG TOIPT SI TWC NAR STOCK FA TA CL TL F334 CWP)
 }
 rename F334 RND
-append using cie2007,keep(FRDM EN year INDTYPE REGTYPE GIOV_CR PERSENG TOIPT SI TWC NAR STOCK FA TA CL TL RND)
+append using cie2007,keep(FRDM EN year INDTYPE REGTYPE GIOV_CR PERSENG TOIPT SI TWC NAR STOCK FA TA CL TL RND CWP)
 bys FRDM: egen EN_adj=mode(EN),maxmode
 bys FRDM: egen REGTYPE_adj=mode(REGTYPE),maxmode
 drop EN REGTYPE
@@ -330,7 +330,6 @@ gen ownership="SOE" if (REGTYPE=="110" | REGTYPE=="141" | REGTYPE=="143" | REGTY
 replace ownership="DPE" if (REGTYPE=="120" | REGTYPE=="130" | REGTYPE=="142" | REGTYPE=="149" | REGTYPE=="159" | REGTYPE=="160" | REGTYPE=="170" | REGTYPE=="171" | REGTYPE=="172" | REGTYPE=="173" | REGTYPE=="174" | REGTYPE=="190")
 replace ownership="JV" if ( REGTYPE=="210" | REGTYPE=="220" | REGTYPE=="310" | REGTYPE=="320" )
 replace ownership="MNE" if ( REGTYPE=="230" | REGTYPE=="240" | REGTYPE=="330" | REGTYPE=="340" )
-count if ownership==""
 replace ownership="SOE" if ownership==""
 sort FRDM year
 format EN %30s
@@ -492,18 +491,29 @@ by FRDM: egen tfp_avg=mean(tfp_tld)
 save cie_99_07_markup_merged,replace
 
 *-------------------------------------------------------------------------------
-* Add financial vulnerability measures to firm data
+* Add markup and financial vulnerability measures to firm data
 cd "D:\Project C\sample_matched\CIE"
 use cie_98_07,clear
 keep if year>=1999
 gen IND2=substr(INDTYPE,1,2)
 * Add markup and tfp info
-merge 1:1 FRDM year using "D:\Project C\markup\cie_99_07_markup_merged", nogen keepus(Markup_* tfp_*) keep(matched master)
+merge 1:1 FRDM year using "D:\Project C\markup\cie_99_07_markup_merged", nogen keepus(Markup_DLWTLD Markup_lag tfp_tld tfp_lag) keep(matched master)
 sum Markup_*,detail
-winsor2 Markup_*, trim replace by (year IND2)
+winsor2 Markup_*, replace by(year IND2)
 sum tfp_*,detail
-winsor2 Markup_*, trim replace by (year IND2)
-* Calculate CIE info
+winsor2 tfp_*, replace by(year IND2)
+* Calculate firm-level markup from CIE
+sort FRDM year
+gen rSI=SI/OutputDefl*100
+gen rTOIPT=TOIPT/InputDefl*100
+gen rCWP=CWP/InputDefl*100
+gen rkap=FA/inv_deflator*100
+gen tc=rTOIPT+rCWP+0.15*rkap
+gen scratio=rSI/tc
+by FRDM: gen scratio_lag=scratio[_n-1] if year==year[_n-1]+1
+sum scratio*,detail
+winsor2 scratio*, replace cuts(0 99) by(year IND2)
+* Calculate firm-level financial constraints from CIE
 gen Tang=FA/TA
 gen Invent=STOCK/SI
 gen RDint=RND/SI
@@ -603,7 +613,7 @@ drop if year_count<=1
 drop if HS2=="93"|HS2=="97"|HS2=="98"|HS2=="99"
 egen group_id=group(FRDM HS2 coun_aim)
 winsor2 dlnprice, cuts(3 97) trim by(HS2 year)
-local varlist "FPC_US ExtFin_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 Tang Invent RDint Cash Liquid Levg MS MS_sqr ups_HS6 ups_firm Markup_DLWTLD tfp_tld Markup_lag tfp_lag Markup_avg tfp_avg"
+local varlist "FPC_US ExtFin_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 Tang Invent RDint Cash Liquid Levg MS MS_sqr ups_HS6 ups_firm Markup_DLWTLD tfp_tld Markup_lag tfp_lag scratio scratio_lag"
 foreach var of local varlist {
 	gen x_`var' = `var'*dlnRER
 }
@@ -708,7 +718,6 @@ cd "D:\Project C\sample_matched"
 use sample_matched_exp,clear
 
 eststo exp_markup: areg dlnprice_tr dlnRER x_Markup_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
-
 eststo exp_ExtFin_US_markup: areg dlnprice_tr dlnRER x_ExtFin_US x_Markup_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
 eststo exp_Tang_US_markup: areg dlnprice_tr dlnRER x_Tang_US x_Markup_lag MS Markup_lag tfp_lag dlnrgdp i.year, a(group_id)
 
@@ -716,8 +725,25 @@ eststo exp_tfp: areg dlnprice_tr dlnRER x_tfp_lag dlnrgdp MS Markup_lag tfp_lag 
 eststo exp_ExtFin_US_tfp: areg dlnprice_tr dlnRER x_ExtFin_US x_tfp_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
 eststo exp_Tang_US_tfp: areg dlnprice_tr dlnRER x_Tang_US x_tfp_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
 
-estfe exp_markup exp_ExtFin_US_markup exp_Tang_US_markup exp_tfp exp_ExtFin_US_tfp exp_Tang_US_tfp, labels(group_id "Firm-product-country FE")
-esttab exp_markup exp_ExtFin_US_markup exp_Tang_US_markup exp_tfp exp_ExtFin_US_tfp exp_Tang_US_tfp using "D:\Project C\tables\matched\table_exp_markup_tfp.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_US)
+eststo exp_scratio: areg dlnprice_tr dlnRER x_scratio_lag dlnrgdp MS scratio_lag i.year, a(group_id)
+eststo exp_ExtFin_US_scratio: areg dlnprice_tr dlnRER x_ExtFin_US x_scratio_lag dlnrgdp MS scratio_lag i.year, a(group_id)
+eststo exp_Tang_US_scratio: areg dlnprice_tr dlnRER x_Tang_US x_scratio_lag dlnrgdp MS scratio_lag i.year, a(group_id)
+
+estfe exp_markup exp_ExtFin_US_markup exp_Tang_US_markup exp_tfp exp_ExtFin_US_tfp exp_Tang_US_tfp exp_scratio exp_ExtFin_US_scratio exp_Tang_US_scratio, labels(group_id "Firm-product-country FE")
+esttab exp_markup exp_ExtFin_US_markup exp_Tang_US_markup exp_tfp exp_ExtFin_US_tfp exp_Tang_US_tfp exp_scratio exp_ExtFin_US_scratio exp_Tang_US_scratio using "D:\Project C\tables\matched\table_exp_markup_tfp_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_US)
+
+* Alternative CN measures for financial constraints
+eststo exp_ExtFin_cic2_markup: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_Markup_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
+eststo exp_Tang_cic2_markup: areg dlnprice_tr dlnRER x_Tang_cic2 x_Markup_lag MS Markup_lag tfp_lag dlnrgdp i.year, a(group_id)
+
+eststo exp_ExtFin_cic2_tfp: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_tfp_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
+eststo exp_Tang_cic2_tfp: areg dlnprice_tr dlnRER x_Tang_cic2 x_tfp_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
+
+eststo exp_ExtFin_cic2_scratio: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_scratio_lag dlnrgdp MS scratio_lag i.year, a(group_id)
+eststo exp_Tang_cic2_scratio: areg dlnprice_tr dlnRER x_Tang_cic2 x_scratio_lag dlnrgdp MS scratio_lag i.year, a(group_id)
+
+estfe exp_markup exp_ExtFin_cic2_markup exp_Tang_cic2_markup exp_tfp exp_ExtFin_cic2_tfp exp_Tang_cic2_tfp exp_scratio exp_ExtFin_cic2_scratio exp_Tang_cic2_scratio, labels(group_id "Firm-product-country FE")
+esttab exp_markup exp_ExtFin_cic2_markup exp_Tang_cic2_markup exp_tfp exp_ExtFin_cic2_tfp exp_Tang_cic2_tfp exp_scratio exp_ExtFin_cic2_scratio exp_Tang_cic2_scratio using "D:\Project C\tables\matched\table_exp_markup_tfp_CN.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_cic2)
 
 *-------------------------------------------------------------------------------
 * Use the same method to construct import sample
@@ -744,7 +770,7 @@ drop if year_count<=1
 drop if HS2=="93"|HS2=="97"|HS2=="98"|HS2=="99"
 egen group_id=group(FRDM HS2 coun_aim)
 winsor2 dlnprice, trim cuts(3 97) by(HS2 year)
-local varlist "FPC_US ExtFin_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 Tang Invent RDint Cash Liquid Levg MS MS_sqr ups_HS6 ups_firm Markup_DLWTLD tfp_tld Markup_lag tfp_lag Markup_avg tfp_avg"
+local varlist "FPC_US ExtFin_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 Tang Invent RDint Cash Liquid Levg MS MS_sqr ups_HS6 ups_firm Markup_DLWTLD tfp_tld Markup_lag tfp_lag scratio scratio_lag"
 foreach var of local varlist {
 	gen x_`var' = `var'*dlnRER
 }
@@ -847,7 +873,6 @@ cd "D:\Project C\sample_matched"
 use sample_matched_imp,clear
 
 eststo imp_markup: areg dlnprice_tr dlnRER x_Markup_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
-
 eststo imp_ExtFin_US_markup: areg dlnprice_tr dlnRER x_ExtFin_US x_Markup_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
 eststo imp_Tang_US_markup: areg dlnprice_tr dlnRER x_Tang_US x_Markup_lag MS Markup_lag tfp_lag dlnrgdp i.year, a(group_id)
 
@@ -855,5 +880,22 @@ eststo imp_tfp: areg dlnprice_tr dlnRER x_tfp_lag dlnrgdp MS Markup_lag tfp_lag 
 eststo imp_ExtFin_US_tfp: areg dlnprice_tr dlnRER x_ExtFin_US x_tfp_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
 eststo imp_Tang_US_tfp: areg dlnprice_tr dlnRER x_Tang_US x_tfp_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
 
-estfe imp_markup imp_ExtFin_US_markup imp_Tang_US_markup imp_tfp imp_ExtFin_US_tfp imp_Tang_US_tfp, labels(group_id "Firm-product-country FE")
-esttab imp_markup imp_ExtFin_US_markup imp_Tang_US_markup imp_tfp imp_ExtFin_US_tfp imp_Tang_US_tfp using "D:\Project C\tables\matched\table_imp_markup_tfp.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_US)
+eststo imp_scratio: areg dlnprice_tr dlnRER x_scratio_lag dlnrgdp MS scratio_lag i.year, a(group_id)
+eststo imp_ExtFin_US_scratio: areg dlnprice_tr dlnRER x_ExtFin_US x_scratio_lag dlnrgdp MS scratio_lag i.year, a(group_id)
+eststo imp_Tang_US_scratio: areg dlnprice_tr dlnRER x_Tang_US x_scratio_lag dlnrgdp MS scratio_lag i.year, a(group_id)
+
+estfe imp_markup imp_ExtFin_US_markup imp_Tang_US_markup imp_tfp imp_ExtFin_US_tfp imp_Tang_US_tfp imp_scratio imp_ExtFin_US_scratio imp_Tang_US_scratio, labels(group_id "Firm-product-country FE")
+esttab imp_markup imp_ExtFin_US_markup imp_Tang_US_markup imp_tfp imp_ExtFin_US_tfp imp_Tang_US_tfp imp_scratio imp_ExtFin_US_scratio imp_Tang_US_scratio using "D:\Project C\tables\matched\table_imp_markup_tfp_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_US)
+
+* Alternative CN measures for financial constraints
+eststo imp_ExtFin_cic2_markup: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_Markup_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
+eststo imp_Tang_cic2_markup: areg dlnprice_tr dlnRER x_Tang_cic2 x_Markup_lag MS Markup_lag tfp_lag dlnrgdp i.year, a(group_id)
+
+eststo imp_ExtFin_cic2_tfp: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_tfp_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
+eststo imp_Tang_cic2_tfp: areg dlnprice_tr dlnRER x_Tang_cic2 x_tfp_lag dlnrgdp MS Markup_lag tfp_lag i.year, a(group_id)
+
+eststo imp_ExtFin_cic2_scratio: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_scratio_lag dlnrgdp MS scratio_lag i.year, a(group_id)
+eststo imp_Tang_cic2_scratio: areg dlnprice_tr dlnRER x_Tang_cic2 x_scratio_lag dlnrgdp MS scratio_lag i.year, a(group_id)
+
+estfe imp_markup imp_ExtFin_cic2_markup imp_Tang_cic2_markup imp_tfp imp_ExtFin_cic2_tfp imp_Tang_cic2_tfp imp_scratio imp_ExtFin_cic2_scratio imp_Tang_cic2_scratio, labels(group_id "Firm-product-country FE")
+esttab imp_markup imp_ExtFin_cic2_markup imp_Tang_cic2_markup imp_tfp imp_ExtFin_cic2_tfp imp_Tang_cic2_tfp imp_scratio imp_ExtFin_cic2_scratio imp_Tang_cic2_scratio using "D:\Project C\tables\matched\table_imp_markup_tfp_CN.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_cic2)
