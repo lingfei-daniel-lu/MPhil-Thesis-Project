@@ -770,7 +770,9 @@ Compare the different effects of GVC upstreamness on the relationship between cr
 
 Explanations of the effects of credit constraints on ERPT:
 
-**Strasser (2013):** His result suggests that unconstrained firms intentionally absorb more import price shocks to maintain their optimal domestic pricing policy. That is these firms price to market to their domestic market. By contrast, financially constrained firms have fewer margins to adopt pricing-to-market strategies and absorb exchange rate swings into the markups, so they have to keep PTM to a minimum.
+**Strasser (2013):** The author does not have data on foreign prices so he examines instead for the same set of firms ERPT in the reverse direction: How does an exchange rate move affect domestic prices? 
+
+His result suggests that unconstrained firms intentionally absorb more import price shocks to maintain their optimal domestic pricing policy. That is these firms price to market - in this to their domestic market. By contrast, financially constrained firms have fewer margins to adopt pricing-to-market strategies and absorb exchange rate swings into the markups, so they have to keep PTM to a minimum.
 
 **Dai, Nucci, Pozzolo, and Xu (2021)**: Following Strasser (2013), borrowing constraints force firms to keep pricing-to-market decisions to a minimum as they do not have enough margin to absorb an exchange rate shock on their markup. 
 
@@ -778,7 +780,7 @@ Since a higher external finance premium causes the marginal costs to be higher, 
 
 **Xu, Guo (2021)**: Why does financial constraint matter? First, firms need to incur fixed costs, often paid in the currency of the destination country, to enter the foreign market (Chaney, 2016). Second, many firms hold both domestic and foreign assets; thus, the exchange rate fluctuations will change their capacity of pledging collateral (Kohn et al., 2020). Finally, with capital account liberalization, firms may also finance their fixed and/or variable production costs through the international market. Therefore, an appreciation will increase a firm's asset value in home currency, and decrease its export cost and debt value in foreign currency, thus, alleviating its financial burden, which may promote exports.
 
-However, in response to the markup channel as in BMM (2012),  they found that the effect of financial constraints remains robust and significant besides the markup adjustment. The estimated pricing-to-market coefficients are moderate for Chinese firms. This suggests the possibility of other factors at work as well, and the financial constraints factor is the one we reveal in this paper.
+However, in response to the markup channel as in BMM (2012), they found that the effect of financial constraints remains robust and significant besides the markup adjustment. The estimated pricing-to-market coefficients are moderate for Chinese firms. This suggests the possibility of other factors at work as well, and the financial constraints factor is the one we reveal in this paper.
 
 ## 2022/04/14
 
@@ -1029,6 +1031,6 @@ $$
 
 Three key findings of our project:
 
-1. Import exchange rate pass-through is less complete than export exchange rate pass-through
-2. Financial constraints will increase both import and export exchange rate pass-through to be more complete
+1. Import exchange rate pass-through is less complete than export exchange rate pass-through.
+2. Financial constraints will increase both import and export exchange rate pass-through to be more complete.
 3. The effect of financial constraints on exchange rate pass-through is robust and significant for both exporters and importers, which means the financial constraint factors work other than through the markup channel.

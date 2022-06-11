@@ -756,14 +756,7 @@ eststo exp_oneway_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp MS i.year i
 estfe exp_twoway exp_twoway_ExtFin_US exp_twoway_Tang_US exp_oneway exp_oneway_ExtFin_US exp_oneway_Tang_US, labels(group_id "Firm-product-country FE")
 esttab exp_twoway exp_twoway_ExtFin_US exp_twoway_Tang_US exp_oneway exp_oneway_ExtFin_US exp_oneway_Tang_US using "D:\Project C\tables\matched\table_exp_twoway_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("Twoway" "Twoway" "Twoway" "Oneway" "Oneway" "Oneway") order(dlnRER dlnrgdp x_*_US)
 
-eststo exp_twoway_ExtFin_cic2: areg dlnprice_tr dlnRER x_ExtFin_cic2 dlnrgdp MS i.year if twoway_trade==1, a(group_id)
-eststo exp_twoway_Tang_cic2: areg dlnprice_tr dlnRER x_Tang_cic2 dlnrgdp MS i.year if twoway_trade==1, a(group_id)
-
-eststo exp_oneway_ExtFin_cic2: areg dlnprice_tr dlnRER x_ExtFin_cic2 dlnrgdp MS i.year if twoway_trade==0, a(group_id)
-eststo exp_oneway_Tang_cic2: areg dlnprice_tr dlnRER x_Tang_cic2 dlnrgdp MS i.year if twoway_trade==0, a(group_id)
-
-estfe exp_twoway exp_twoway_ExtFin_cic2 exp_twoway_Tang_cic2 exp_oneway exp_oneway_ExtFin_cic2 exp_oneway_Tang_cic2, labels(group_id "Firm-product-country FE")
-esttab exp_twoway exp_twoway_ExtFin_cic2 exp_twoway_Tang_cic2 exp_oneway exp_oneway_ExtFin_cic2 exp_oneway_Tang_cic2 using "D:\Project C\tables\matched\table_exp_twoway_CN.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("Twoway" "Twoway" "Twoway" "Oneway" "Oneway" "Oneway") order(dlnRER dlnrgdp x_*_cic2)
+areg dlnprice_tr dlnRER x_twoway_trade dlnrgdp MS i.year, a(group_id)
 
 *-------------------------------------------------------------------------------
 * Use the same method to construct import sample
@@ -876,11 +869,4 @@ eststo imp_oneway_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp MS i.year i
 estfe imp_twoway imp_twoway_ExtFin_US imp_twoway_Tang_US imp_oneway imp_oneway_ExtFin_US imp_oneway_Tang_US, labels(group_id "Firm-product-country FE")
 esttab imp_twoway imp_twoway_ExtFin_US imp_twoway_Tang_US imp_oneway imp_oneway_ExtFin_US imp_oneway_Tang_US using "D:\Project C\tables\matched\table_imp_twoway_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("Twoway" "Twoway" "Twoway" "Oneway" "Oneway" "Oneway") order(dlnRER dlnrgdp x_*_US)
 
-eststo imp_twoway_ExtFin_cic2: areg dlnprice_tr dlnRER x_ExtFin_cic2 dlnrgdp MS i.year if twoway_trade==1, a(group_id)
-eststo imp_twoway_Tang_cic2: areg dlnprice_tr dlnRER x_Tang_cic2 dlnrgdp MS i.year if twoway_trade==1, a(group_id)
-
-eststo imp_oneway_ExtFin_cic2: areg dlnprice_tr dlnRER x_ExtFin_cic2 dlnrgdp MS i.year if twoway_trade==0, a(group_id)
-eststo imp_oneway_Tang_cic2: areg dlnprice_tr dlnRER x_Tang_cic2 dlnrgdp MS i.year if twoway_trade==0, a(group_id)
-
-estfe imp_twoway imp_twoway_ExtFin_cic2 imp_twoway_Tang_cic2 imp_oneway imp_oneway_ExtFin_cic2 imp_oneway_Tang_cic2, labels(group_id "Firm-product-country FE")
-esttab imp_twoway imp_twoway_ExtFin_cic2 imp_twoway_Tang_cic2 imp_oneway imp_oneway_ExtFin_cic2 imp_oneway_Tang_cic2 using "D:\Project C\tables\matched\table_imp_twoway_CN.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("Twoway" "Twoway" "Twoway" "Oneway" "Oneway" "Oneway") order(dlnRER dlnrgdp x_*_cic2)
+areg dlnprice_tr dlnRER x_twoway_trade dlnrgdp MS i.year, a(group_id)
