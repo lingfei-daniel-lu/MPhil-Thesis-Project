@@ -1034,3 +1034,14 @@ Three key findings of our project:
 1. Import exchange rate pass-through is less complete than export exchange rate pass-through.
 2. Financial constraints will increase both import and export exchange rate pass-through to be more complete.
 3. The effect of financial constraints on exchange rate pass-through is robust and significant for both exporters and importers, which means the financial constraint factors work other than through the markup channel.
+
+## 2022/06/13
+
+In the previous regressions including estimated markup and TFP, we find that high markup importers tend to have a more complete pass-through, which is opposite to the export side. We think an importer's sourcing diversity could increase its bargaining power in import prices in addition to its production side characteristics. 
+
+This week we empirically test how importers' sourcing diversity affects exchange rate pass-through. We measure the firm-product-level sourcing diversity as the number of source countries from which an importer imports a certain HS6 product type.
+
+Importers who import from more countries or import more products in total will have a slightly more complete pass-through, but those who import a certain product from more sources will have a less complete pass-through. However, exporters who export more products in total will have a less complete pass-through; but those who export to more destinations (both for a certain product or in total) will have a more complete pass-through
+
+
+

@@ -150,7 +150,6 @@ save customs_all,replace
 
 *-------------------------------------------------------------------------------
 * Construct top trade partners
-
 cd "D:\Project C\sample_all"
 use customs_all,clear
 collapse (sum) value, by (coun_aim exp_imp)
@@ -631,6 +630,35 @@ label var rs2 "fraction of inputs not sold on exchange"
 save CIC_contract,replace
 
 *-------------------------------------------------------------------------------
+* Trading Partner Base
+cd "D:\Project C\sample_matched"
+
+use customs_matched,clear
+keep FRDM year exp_imp HS6
+duplicates drop
+bys FRDM year exp_imp: egen prod_n=count(HS6)
+drop HS6
+duplicates drop
+save customs_matched_product,replace
+
+use customs_matched,clear
+keep FRDM year exp_imp coun_aim
+duplicates drop
+bys FRDM year exp_imp: egen coun_n=count(coun_aim)
+drop coun_aim
+duplicates drop
+save customs_matched_country,replace
+
+use customs_matched,clear
+keep FRDM year exp_imp HS6 coun_aim
+bys FRDM year exp_imp HS6: egen prod_coun_n=count(coun_aim)
+merge n:1 FRDM year exp_imp using customs_matched_product,nogen
+merge n:1 FRDM year exp_imp using customs_matched_country,nogen
+drop coun_aim
+duplicates drop
+save customs_matched_product_country,replace
+
+*-------------------------------------------------------------------------------
 * Check Two-way traders
 cd "D:\Project C\sample_matched"
 use customs_matched,clear
@@ -649,6 +677,8 @@ save customs_twoway_list,replace
 * Merge customs data with CIE data to construct export sample
 cd "D:\Project C\sample_matched"
 use customs_matched,clear
+merge n:1 FRDM year exp_imp HS6 using customs_matched_product_country,nogen
+rename prod_coun_n market
 keep if exp_imp =="exp"
 drop exp_imp
 merge n:1 FRDM year using ".\customs_twoway_list",nogen keep(matched) keepus(twoway_trade)
@@ -666,7 +696,7 @@ drop if year_count<=1
 drop if HS2=="93"|HS2=="97"|HS2=="98"|HS2=="99"
 egen group_id=group(FRDM HS2 coun_aim)
 winsor2 dlnprice, trim by(HS2 year)
-local varlist "FPC_US ExtFin_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 Tang Invent RDint Cash Liquid Levg MS MS_sqr Markup_DLWTLD tfp_tld Markup_lag tfp_lag scratio scratio_lag twoway_trade"
+local varlist "FPC_US ExtFin_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 Tang Invent RDint Cash Liquid Levg MS MS_sqr Markup_DLWTLD tfp_tld Markup_lag tfp_lag scratio scratio_lag twoway_trade coun_n prod_n market"
 foreach var of local varlist {
 	gen x_`var' = `var'*dlnRER
 }
@@ -748,7 +778,6 @@ use sample_matched_exp,clear
 eststo exp_twoway: areg dlnprice_tr dlnRER dlnrgdp MS i.year if twoway_trade==1, a(group_id)
 eststo exp_twoway_ExtFin_US: areg dlnprice_tr dlnRER x_ExtFin_US dlnrgdp MS i.year if twoway_trade==1, a(group_id)
 eststo exp_twoway_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp MS i.year if twoway_trade==1, a(group_id)
-
 eststo exp_oneway: areg dlnprice_tr dlnRER dlnrgdp MS i.year if twoway_trade==0, a(group_id)
 eststo exp_oneway_ExtFin_US: areg dlnprice_tr dlnRER x_ExtFin_US dlnrgdp MS i.year if twoway_trade==0, a(group_id)
 eststo exp_oneway_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp MS i.year if twoway_trade==0, a(group_id)
@@ -756,12 +785,32 @@ eststo exp_oneway_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp MS i.year i
 estfe exp_twoway exp_twoway_ExtFin_US exp_twoway_Tang_US exp_oneway exp_oneway_ExtFin_US exp_oneway_Tang_US, labels(group_id "Firm-product-country FE")
 esttab exp_twoway exp_twoway_ExtFin_US exp_twoway_Tang_US exp_oneway exp_oneway_ExtFin_US exp_oneway_Tang_US using "D:\Project C\tables\matched\table_exp_twoway_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("Twoway" "Twoway" "Twoway" "Oneway" "Oneway" "Oneway") order(dlnRER dlnrgdp x_*_US)
 
+gen x_ExtFin_US_twoway=x_ExtFin_US*twoway_trade
+gen x_Tang_US_twoway=x_Tang_US*twoway_trade
 areg dlnprice_tr dlnRER x_twoway_trade dlnrgdp MS i.year, a(group_id)
+areg dlnprice_tr dlnRER x_twoway_trade x_ExtFin_US x_ExtFin_US_twoway dlnrgdp MS i.year, a(group_id)
+areg dlnprice_tr dlnRER x_twoway_trade x_Tang_US x_Tang_US_twoway dlnrgdp MS i.year, a(group_id)
+
+*-------------------------------------------------------------------------------
+* Export Destinations
+cd "D:\Project C\sample_matched"
+use sample_matched_exp,clear
+
+eststo exp_country: areg dlnprice_tr dlnRER x_coun_n dlnrgdp MS i.year, a(group_id)
+eststo exp_product: areg dlnprice_tr dlnRER x_prod_n dlnrgdp MS i.year, a(group_id)
+eststo exp_market: areg dlnprice_tr dlnRER x_source dlnrgdp MS i.year, a(group_id)
+
+gen x_ExtFin_US_market=x_ExtFin_US*source
+gen x_Tang_US_market=x_Tang_US*source
+eststo exp_ExtFin_US_market: areg dlnprice_tr dlnRER x_source x_ExtFin_US_source x_ExtFin_US dlnrgdp MS i.year, a(group_id)
+eststo exp_Tang_US_market: areg dlnprice_tr dlnRER x_source x_Tang_US_source x_Tang_US dlnrgdp MS i.year, a(group_id)
 
 *-------------------------------------------------------------------------------
 * Use the same method to construct import sample
 cd "D:\Project C\sample_matched"
 use customs_matched,clear
+merge n:1 FRDM year exp_imp HS6 using customs_matched_product_country,nogen
+rename prod_coun_n source
 keep if exp_imp =="imp"
 drop exp_imp
 merge n:1 FRDM year using ".\customs_twoway_list",nogen keep(matched) keepus(twoway_trade)
@@ -779,7 +828,7 @@ drop if year_count<=1
 drop if HS2=="93"|HS2=="97"|HS2=="98"|HS2=="99"
 egen group_id=group(FRDM HS2 coun_aim)
 winsor2 dlnprice, trim by(HS2 year)
-local varlist "FPC_US ExtFin_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 Tang Invent RDint Cash Liquid Levg MS MS_sqr Markup_DLWTLD tfp_tld Markup_lag tfp_lag scratio scratio_lag twoway_trade"
+local varlist "FPC_US ExtFin_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 Tang Invent RDint Cash Liquid Levg MS MS_sqr Markup_DLWTLD tfp_tld Markup_lag tfp_lag scratio scratio_lag twoway_trade coun_n prod_n source"
 foreach var of local varlist {
 	gen x_`var' = `var'*dlnRER
 }
@@ -869,4 +918,22 @@ eststo imp_oneway_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp MS i.year i
 estfe imp_twoway imp_twoway_ExtFin_US imp_twoway_Tang_US imp_oneway imp_oneway_ExtFin_US imp_oneway_Tang_US, labels(group_id "Firm-product-country FE")
 esttab imp_twoway imp_twoway_ExtFin_US imp_twoway_Tang_US imp_oneway imp_oneway_ExtFin_US imp_oneway_Tang_US using "D:\Project C\tables\matched\table_imp_twoway_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("Twoway" "Twoway" "Twoway" "Oneway" "Oneway" "Oneway") order(dlnRER dlnrgdp x_*_US)
 
-areg dlnprice_tr dlnRER x_twoway_trade dlnrgdp MS i.year, a(group_id)
+gen x_ExtFin_US_twoway=x_ExtFin_US*twoway_trade
+gen x_Tang_US_twoway=x_Tang_US*twoway_trade
+areg dlnprice_tr dlnRER x_twoway_trade dlnrgdp MS twoway_trade i.year, a(group_id)
+areg dlnprice_tr dlnRER x_twoway_trade x_ExtFin_US x_ExtFin_US_twoway dlnrgdp MS i.year, a(group_id)
+areg dlnprice_tr dlnRER x_twoway_trade x_Tang_US x_Tang_US_twoway dlnrgdp MS i.year, a(group_id)
+
+*-------------------------------------------------------------------------------
+* Import Sources
+cd "D:\Project C\sample_matched"
+use sample_matched_imp,clear
+
+eststo imp_country: areg dlnprice_tr dlnRER x_coun_n dlnrgdp MS i.year, a(group_id)
+eststo imp_product: areg dlnprice_tr dlnRER x_prod_n dlnrgdp MS i.year, a(group_id)
+eststo imp_source: areg dlnprice_tr dlnRER x_source dlnrgdp MS i.year, a(group_id)
+
+gen x_ExtFin_US_source=x_ExtFin_US*source
+gen x_Tang_US_source=x_Tang_US*source
+eststo imp_ExtFin_US_source: areg dlnprice_tr dlnRER x_source x_ExtFin_US_source x_ExtFin_US dlnrgdp MS i.year, a(group_id)
+eststo imp_Tang_US_source: areg dlnprice_tr dlnRER x_source x_Tang_US_source x_Tang_US dlnrgdp MS i.year, a(group_id)
