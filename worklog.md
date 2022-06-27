@@ -20,9 +20,9 @@
   - A real appreciation of the domestic currency reduces shipments and this negative effect is larger for exporters. 
   - The appreciation-induced reduction of scale negatively affects productivity at the plant level. This scale effect more than offsets any potential gains from the appreciation-induced reduction in the price of imported inputs. 
 - Berman, N., Martin, P., & Mayer, T. (2012). How do different exporters react to exchange rate changes? Quarterly Journal of Economics, 127(1), 437–492.
-  - High–performance firms react to a depreciation by increasing significantly more their markup and by increasing less their export volume.
+  - High–performance firms react to depreciation by increasing their markup significantly more and increasing their export volume less.
   - This heterogeneity in pricing-to-market is consistent with models where the demand elasticity decreases with firm performance.
-  - Since aggregate exports are concentrated on high-productivity firms, heterogeneous pricing-to-market may partly explain the weak impact of exchange rate movements on aggregate exports.
+  - Since aggregate exports are concentrated in high-productivity firms, heterogeneous pricing-to-market may partly explain the weak impact of exchange rate movements on aggregate exports.
 - Tang, H., & Zhang, Y. (2012). Exchange rates and the margins of trade: Evidence from Chinese exporters. CESifo Economic Studies, 58(4), 671-702. 
   - We find significant effects on the extensive margin. A 10% real appreciation of the renminbi is associated with a 1 percentage point decline in the probability of entry, and a 0.2 percentage point increase in the probability of exit. 
   - The effects among foreign-invested enterprises almost double for both entry and exit. 
@@ -356,7 +356,7 @@ Gopinath, Itskhoki, and Rigobon (2010) about currency choice and Gopinath and It
 
 The third channel is the marginal production cost.  While local distribution cost results in incomplete pass-through into consumer prices, the imported inputs channel by Amiti, Itskhoki, and Konings (2014) also get into producer factory gate prices. For example, an appreciation of home currency will decrease marginal costs due to cheaper imported inputs, thus partially offsetting the increases in export prices. The fact that large exporters are simultaneously large importers could help understand low aggregate exchange rate pass-through and the variation in pass-through across exporters.
 
-Recent literature finds more firm-level evidence on heterogeneous pass-through. Chen and Juvenal (2014) predict more pricing-to-market and a smaller response of export volumes for higher quality goods and provide strong support with experts wine ratings to measure quality. Garetto (2016) gives two more arguments: 1) firm-level pass-through is a U-shaped function of firm-level productivity and market share; and 2) producers under incomplete information, such as new entrants, have lower pass-through rates than those under complete information. Auer and Schoenle (2016) also show that the response of import prices to exchange rate changes is U-shaped in exporter market share using micro-data. Devereux, Dong, and Tomlin's (2017)'s novel feature are that ERPT and currency invoicing depend on the market share of both importers (negative) and exporters (U-shaped). It confirms that very small or very large exporters have higher rates of pass-through and tend to invoice in the foreign currency.
+Recent literature finds more firm-level evidence on heterogeneous pass-through. Chen and Juvenal (2014) predict more pricing-to-market and a smaller response of export volumes for higher quality goods and provide strong support with expert wine ratings to measure quality. Garetto (2016) gives two more arguments: 1) firm-level pass-through is a U-shaped function of firm-level productivity and market share; and 2) producers with incomplete information, such as new entrants, have lower pass-through rates than those under complete information. Auer and Schoenle (2016) also show that the response of import prices to exchange rate changes is U-shaped in exporter market share using micro-data. Devereux, Dong, and Tomlin's (2017)'s novel feature is that ERPT and currency invoicing depend on the market share of both importers (negative) and exporters (U-shaped). It confirms that very small or very large exporters have higher rates of pass-through and tend to invoice in the foreign currency.
 
 Strasser (2013) contributes to the ERPT literature by incorporating credit constraints. He finds that financially constrained firms keep PTM to a minimum and pass-through exchange rate changes to prices at almost twice the rate of unconstrained firms, and their exports respond to exchange rate changes more strongly. This literature about credit constraints and trade should refer to Manova (2013) and Manova, Wei, and Zhang (2015). They study how interactions between countries' financial development and sectors' financial vulnerability affect export activity.
 
@@ -434,7 +434,7 @@ I compute the first principal component of external finance dependence and asset
 $$
 \Delta \ln p_{EX;fpct}=\alpha+\beta_{1} \Delta \ln RER_{ct}+\beta_{2} \Delta \ln RER_{ct} * FinVuln_{f}+\gamma \Delta \ln RGDP_{ct}+\xi_{fpc}+\tau_{t}+\varepsilon_{fpct}
 $$
-Below are the regression results of exchange rate pass-through with different measures of credit constraints. The preliminary results verified the conclusion of Strasser (2013) which argues financially constrained firms have higher export price pass-through compared to the unconstrained firms.
+Below are the regression results of exchange rate pass-through with different measures of credit constraints. The preliminary results verified the conclusion of Strasser (2013) who argues that financially constrained firms have higher export price pass-through compared to unconstrained firms.
 
 |                         | (1)      | (2)      | (3)              | (4)         |
 | ----------------------- | -------- | -------- | ---------------- | ----------- |
@@ -582,9 +582,9 @@ $$
 | Year FE                 | Yes      | Yes              | Yes         | Yes       | Yes           |
 | Firm-product-country FE | Yes      | Yes              | Yes         | Yes       | Yes           |
 
-We can see that the import ERPT of China is around 35.9%, which is much lower compared to the export ERPT (96.9%). For most specifications except Table B column (2), the import ERPT is higher for firms in more financial vulnerable industries (i.e. higher external finance dependence, lower asset tangibility, high inventory ratio or high R&D intensity). 
+We can see that the import ERPT of China is around 35.9%, which is much lower compared to the export ERPT (96.9%). For most specifications except Table B column (2), the import ERPT is higher for firms in more financially vulnerable industries (i.e. higher external finance dependence, lower asset tangibility, high inventory ratio or high R&D intensity). 
 
-Therefore, we can reach a similar conclusion as in the export case that import prices in sectors with large financial constraints are more sensitive to exchange rate shocks (lower import ERPT).
+Therefore, we can reach a similar conclusion as in the export case that import prices in sectors with large financial constraints are more sensitive to exchange rate shocks (higher import ERPT).
 
 ## 2022/03/01
 
@@ -631,7 +631,7 @@ The results of regressions with import or export market shares are in the below 
 | Year FE                 | Yes       | Yes      | Yes      | Yes      |
 | Firm-product-country FE | Yes       | Yes      | Yes      | Yes      |
 
-The preliminary results show that for Chinese exporters with larger market shares tend to have more complete pass-through while Chinese importers with larger market shares usually have more incomplete pass-through. The negative relationship between import ERPT and market share is roughly consistent with Devereux, Dong, Tomlin (2017) while the export ERPT does not show a clear U-shape relationship.
+The preliminary results show that Chinese exporters with larger market shares tend to have more complete pass-through while Chinese importers with larger market shares usually have more incomplete pass-through. The negative relationship between import ERPT and market share is roughly consistent with Devereux, Dong, Tomlin (2017) while the export ERPT does not show a clear U-shape relationship.
 
 ## 2022/03/08
 
@@ -704,7 +704,7 @@ z_{i}^{r s 1}=\sum_{j} \theta_{i j} \boldsymbol{R}_{j}^{\text {neither }} \\
 z_{i}^{r s 2}=\sum_{j} \theta_{i j}\left(R_{j}^{\text {neither }}+R_{j}^{\text {ref price }}\right)
 \end{gathered}
 $$
-**Chor, Manova and Yu (2021)**'s industry upstreamness measures are originally based on the 2007 China IO Tables. After matching to HS6 product level, they could be integrated into our customs records. Conceptually, the upstreamness of industry i, Ui, is a weighted average of the number of stages from final demand at which i enters as an input in production processes. 
+**Chor, Manova, and Yu (2021)**'s industry upstreamness measures are originally based on the 2007 China IO Tables. After matching to HS6 product level, they could be integrated into our customs records. Conceptually, the upstreamness of industry i, Ui, is a weighted average of the number of stages from the final demand that i enters as an input in production processes. 
 
 In an economy with N ≥ 1 industries, we calculate Ui as follows: 
 $$
@@ -778,7 +778,7 @@ His result suggests that unconstrained firms intentionally absorb more import pr
 
 Since a higher external finance premium causes the marginal costs to be higher, firms with more severe financial constraints tend to set higher prices and therefore, with a linear demand function, face a higher price elasticity of demand. Thus, with markup values endogenously determined in the model, an exchange rate depreciation allows firms to increase their markups but the credit-constrained firms do so only to a limited extent because they have fewer margins to adjust their profit margins.
 
-**Xu, Guo (2021)**: Why does financial constraint matter? First, firms need to incur fixed costs, often paid in the currency of the destination country, to enter the foreign market (Chaney, 2016). Second, many firms hold both domestic and foreign assets; thus, the exchange rate fluctuations will change their capacity of pledging collateral (Kohn et al., 2020). Finally, with capital account liberalization, firms may also finance their fixed and/or variable production costs through the international market. Therefore, an appreciation will increase a firm's asset value in home currency, and decrease its export cost and debt value in foreign currency, thus, alleviating its financial burden, which may promote exports.
+**Xu and Guo (2021)**: Why does financial constraint matter? First, firms need to incur fixed costs, often paid in the currency of the destination country, to enter the foreign market (Chaney, 2016). Second, many firms hold both domestic and foreign assets; thus, the exchange rate fluctuations will change their capacity of pledging collateral (Kohn et al., 2020). Finally, with capital account liberalization, firms may also finance their fixed and/or variable production costs through the international market. Therefore, an appreciation will increase a firm's asset value in home currency, and decrease its export cost and debt value in foreign currency, thus, alleviating its financial burden, which may promote exports.
 
 However, in response to the markup channel as in BMM (2012), they found that the effect of financial constraints remains robust and significant besides the markup adjustment. The estimated pricing-to-market coefficients are moderate for Chinese firms. This suggests the possibility of other factors at work as well, and the financial constraints factor is the one we reveal in this paper.
 
@@ -841,7 +841,7 @@ De Loecker, J., & Warzynski, F. (2012). Markups and firm-level export status. Am
 
 Ackerberg, D. A., Caves, K., & Frazer, G. (2015). Identification Properties of Recent Production Function Estimators. Econometrica, 83(6), 2411–2451.
 
-According to Brooks, Kaboski, and Li (2021),  we need to construct four production variables (in log form): real output value (y_output), persons engaged (l), and real fixed assets at current value (k), and real material inputs (m). In practice, real output values are deflated by output deflators, while real fixed assets and real material inputs are deflated by investment deflators and input deflators, respectively.
+According to Brooks, Kaboski, and Li (2021), we need to construct four production variables (in log form): real output value (y_output), persons engaged (l), and real fixed assets at current value (k), and real material inputs (m). In practice, real output values are deflated by output deflators, while real fixed assets and real material inputs are deflated by investment deflators and input deflators, respectively.
 
 ## 2022/05/07
 
@@ -945,7 +945,7 @@ Third, I tried to study the channels under which credit constraints may affect t
 
 ### Future Plan
 
-Our future plan is to further study the underlying mechanism of the import price responses to exchange rate shocks. We will look at factors that influence the bargaining power of Chinese firms in the global markets. Besides, we will also examine whether firms change the product quality in response to exchange rate shocks, such as importing low-quality intermediate products when the local currency depreciates. We will also use alternative measures of credit constraints as robustness checks and use instrumental variables to deal with potential endogenity issues. 
+Our future plan is to further study the underlying mechanism of the import price responses to exchange rate shocks. We will look at factors that influence the bargaining power of Chinese firms in the global markets. Besides, we will also examine whether firms change the product quality in response to exchange rate shocks, such as importing low-quality intermediate products when the local currency depreciates. We will also use alternative measures of credit constraints as robustness checks and use instrumental variables to deal with potential endogeneity issues. 
 
 Finally, we would like to further discuss the time trend of China's import exchange in recent years. Ideally, we would like to be able to distinguish the contribution of each factor to the trend in import exchange rate pass-through.
 
@@ -1042,6 +1042,3 @@ In the previous regressions including estimated markup and TFP, we find that hig
 This week we empirically test how importers' sourcing diversity affects exchange rate pass-through. We measure the firm-product-level sourcing diversity as the number of source countries from which an importer imports a certain HS6 product type.
 
 Importers who import from more countries or import more products in total will have a slightly more complete pass-through, but those who import a certain product from more sources will have a less complete pass-through. However, exporters who export more products in total will have a less complete pass-through; but those who export to more destinations (both for a certain product or in total) will have a more complete pass-through
-
-
-
