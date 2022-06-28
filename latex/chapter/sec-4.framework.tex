@@ -1,0 +1,112 @@
+\chapter{Empirical Framework}\label{sec-4.framework}
+This section describes our econometric specifications and measurements of key variables of interest.
+
+\section{Estimating equations}
+
+\subsection{Baseline estimations of exchange rate pass-through}
+
+Since exchange rate pass-through is not an indicator that can be directly measured, we need to use panel data regression to estimate it. The first step goal is to estimate exchange rate pass-through as the elasticity of unit values to exchange rate changes using the firm-product-country details. Our strategy is based on both fixed effect panel regression and dynamic panel regression. Specifically, we run a regression of import price changes on the bilateral real exchange rate changes between China and the source, controlling for the real GDP of the source country. The baseline equation refers to AIK (2014)\cite{aik2014} and LMX (2015)\cite{lmx2015} and is as below:
+
+\begin{equation}
+\Delta \ln P^{D}_{i j c t}=\alpha+\beta^D \Delta \ln R E R_{c t}+\gamma \Delta \ln R G D P_{c t}+\xi_{i j c}+\tau_{t}+\varepsilon_{i j c t}
+\end{equation}
+
+where $P_{ijct}$ represents the import price of the product $i$ bought by firm j from country c during year t, and $D \in$ {Import, Export}. Therefore, this equation could be used to estimate both import and export exchange rate pass-through with different values of D. $R E R_{c t}$ is the bilateral real exchange rate between Chinese RMB and currency in country c, $RGDP_{ct}$ represents real GDP of the source country deflated to the constant price level, which proxy for market demand. $\xi_{ijc}$ is the firm-product-country level fixed effect to capture any time-invariant unobserved factors for a combination of firm, product, and destination. The multi-dimensional fixed effects restrict unit value changes to price adjustments, rather than other changes in corporate trade decisions. $\tau_t$, the year dummies, control for macro-shocks that are common to all exporters.
+
+To deal with possible non-stationarity of the panel sample, we use the first difference of the logarithms for prices $\Delta \ln P^{D}_{i j c t}$, real exchange rates $\Delta \ln R E R_{c t}$ and real GDP $\Delta \ln R G D P_{c t}$ to represent their annual rates of change. In this way, we transform the dynamic panel into a fixed effects regression. Therefore, the estimated coefficient of interest $\beta_1$ is the elasticity of price changes to exchange rate changes, i.e. the import exchange rate pass-through. We also provide estimations for export exchange rate pass-through which is more common in past literature, where the import prices are now replaced by export prices and the information of sources is replaced by which of destination markets. 
+
+The real prices for export and import are always denominated by the Chinese RMB in this paper. Using RMB denominated at both the import and export sides makes the meaning of the coefficients different. The level of coefficient $\beta^{D=Import}$ measures the completeness of import exchange rate pass-through, i.e. a higher $\beta$ means Chinese importers take more volatile import RMB prices during exchange rate shocks. However, for the export side,  $\beta^{D=Export}$ means the "incompleteness" of the export pass-through because a higher $\beta$ means Chinese exporters pass less exchange rate change to the destination market while having more volatile domestic currency prices. To be noticed, a majority of firms in our sample are both importers and exporters so they will appear in estimations of both exchange rate pass-through.
+
+\subsection{Estimations of credit constraint effect on exchange rate pass-through}\label{seq-4.1.2}
+
+Since our main focus is how firms' credit constraints affect exchange rate pass-through, we then include an interaction term of sectors’ financial vulnerability into estimation functions. Intuitively, firms operating in those financially vulnerable industries tend to have less access to enough funds to support their international trade activities, that is, they are subject to tighter credit constraints.
+
+Therefore, we study the credit constraint effect on exchange rate pass-through across sectors with the following panel regression:
+
+\begin{equation}
+	\Delta \ln P^{D}_{ijct}=\alpha+\beta^D_{1} \Delta \ln RER_{ct}+\beta^D_{2} \Delta \ln RER_{ct} \cdot FV_{j}+\gamma \Delta \ln RGDP_{ct}+\xi_{ijc}+\tau_{t} +\varepsilon_{ijct}
+	\label{eq4.2}
+\end{equation}
+
+where the variable $FV_{j}$ represents the financial vulnerability of the sector to which the firm j belongs and the rest are the same as those in the baseline equation. The interaction coefficient $\beta_2$ represents the effect of credit constraints on exchange rate pass-through. Similar to the baseline estimation, a positive $\beta^{Import}_2$ for importers implies more credit-constrained importers have a more complete import exchange rate pass-through, while a positive $\beta^{Export}_2$ implies more credit-constrained exporters have a less complete exchange rate pass-through. The overall import ERPT for an importer $j$ is given by $\beta^D_{1} +\beta^{Import}_{2} FV_j$ and the export ERPT for an exporter $j$ is  $\beta^D_{1} +\beta^{Export}_{2} FV_j$.
+
+Through this estimation strategy, we hope to scrutinize how the pricing behavior of Chinese importers in response to the exchange rate is affected by credit constraints and compare it with that of exporters. Although the functional forms for export and import pass-through are similar, the underlying mechanism could be different, which is one of our key innovation points. While credit-constrained exporters’ decisions to deal with exchange rate shocks are mainly related to production, the penetration effect of credit constraints on import prices is through a more direct channel, as the shortage of funds directly affects purchasing choices and bargaining.
+
+\subsection{Estimations with additional factors}\label{sec-4.1.3}
+
+After estimating exchange rate pass-through at the firm level and the impact of credit constraints on it, we need to go a step further to explore why. Through what channels will credit constraints affect the ability of importers to cope with exchange rate shocks? What other factors would exacerbate or diminish this effect?
+
+In this part, we explore additional factors that affect firm-level import exchange rate pass-through. To do so, we introduce a vector $\mathbb{Z}_{jt}$ (or its lagged form $\mathbb{Z}_{jt-1}$) to include those additional factors and apply it to both control terms and interaction terms: 
+
+\begin{equation}
+	\Delta \ln P^{D}_{ijct}=\alpha+[\beta^D_{1}+ \beta^D_{2} \cdot FV_{j}+\beta^D_{3} \cdot {\mathbb{Z}^{D}_{jt-1}}'] \Delta \ln RER_{ct} +\gamma \Delta \ln RGDP_{ct}+ {\mathbb{Z}^{D}_{jt}}' \eta+\xi_{ijc}+\tau_{t} +\varepsilon_{ijct}.
+	\label{eq4.3}
+\end{equation}
+
+We will then use the estimation strategy of the form Equation 3 to take into account a range of factors that may directly or indirectly affect exchange rate pass-through to verify that the effects of credit constraints are fully explained by some of these channels. Our firm-level data has the merit of containing information on its production, so we could connect the exchange rate pass-through with estimated firm-specific markup and total factor productivity. The coefficient of the interaction term between production factors and real exchange rate movement $\beta_3$ represents the direct effects of those factors on the exchange rate pass-through other than through financial constraints. 
+
+Market share is one of the most popular proxies for firm size or market power. For example, AIK (2014)\cite{aik2014} uses destination-specific market shares proxying for markup elasticity. When using market share as the additional factor, the above equation becomes the following form:
+
+\begin{equation}
+	\Delta \ln P^{D}_{ijct}=\alpha+[\beta^D_{1}+ \beta^D_{2} \cdot FV_{j}+\beta^D_{3} \cdot S^{D}_{ijct}+\beta^D_4 \cdot {S^{D}_{ijct}}^2] \Delta \ln RER_{ct} +\gamma \Delta \ln RGDP_{ct}+ \eta S^{D}_{ijct}+\xi_{ijc}+\tau_{t} +\varepsilon_{ijct}.
+	\label{eq4.4}
+\end{equation}
+
+The quadratic term for market share is used to test whether there is a non-monotonic relationship between exchange rate pass-through and market shares, such as the U-shape relationship documented by Garetto (2016)\cite{garetto2016} and Devereux, Dong, and Tomlin (2017)\cite{devereux2017}. In addition to this, controlling for market share improves the accuracy of our estimates of the effect of credit constraints on exchange rate pass-through.
+
+\section{Measurements}
+
+\subsection{Unit value as trade price}
+
+The customs records contain disaggregate trade values (denominated by US dollars) and quantities for each HS6 product $i$, each firm $j$,, from (or to) each country $c$, in each year $t$, $V_{ijct}$, and $Q_{ijct}$. We first convert the value of the goods into RMB using the average exchange rate for the year. Then, the import and export prices we use are computed as unit values, defined as 
+
+$$
+P^{D}_{ijct}=\frac{V^{D}_{ijct}\cdot NER_{US,t}}{Q^{D}_{ijct}}
+$$
+
+where $D \in$ \{Import, Export\} and $NER_{US,t}$ is the annualized nominal exchange rate of US dollars in terms of RMB in year $t$. Because product categories are highly subdivided, we believe that the unit value is an ideal proxy for the transaction price.
+
+Similar to real exchange rates, we take the first difference of the logarithm to represent price changes of a certain product across years. We will exclude observations with the annual growth rate of unit value in the top or bottom 1 percentile in the distribution, by HS2 product category and year.
+
+\subsection{Credit constraint}\label{sec-4.2.2}
+
+One of the most critical issues in our empirical strategy is to measure the extent of financial constraints. To deal with potential concurrent endogeneity, our measures of credit constraints are applied to each firm across the whole period. Following a widely recognized literature on the role of credit constraints in international trade (Kroszner, Laeven, and Klingebiel, 2007\cite{kroszner2007}; Manova, Wei, and Zhang, 2015\cite{manova-wei-zhang2015}; Fan, Lai, and Li, 2015\cite{fan-lai-li2015}), we use multiple financial vulnerability measures at the sector level to proxy for credit needs (demand of outside capital). These measures are designed to reflect the nature of each industry which should be regarded as exogenous for each individual firm. If a firm is in a more financially vulnerable industry, it tends to face a tighter credit constraint.
+
+The first measure we use is external finance dependence ($ExtFin_j$), the share of capital expenditures not financed by operational cash flows for each industry. If external finance dependence is high, the industry is more financially vulnerable and firms in this industry are more credit constrained.  The second measure is asset tangibility ($Tang_j$), which describes the share of the net value of tangible assets that firms can pledge as collateral to raise external finance, in its total book value. The third measure is the inventory-to-sales ratio ($Invent_j$). which measures the production cycle duration and the necessary working capital to maintain inventories and meet demand. 
+
+To utilize the U.S. industry-level credit measures, we match the CIC industry code system used in China to the International Standard Industrial Classification (ISIC) system. We first convert the older ISIC Revision 2 3-digit and 4-digit industries in the appendix table of Manova, Wei, and Zhang (2015) to match the newest ISIC Revision 3 codes; then we link the ISIC Revision 3 codes to the adjusted CIC codes in CIE datasets. Finally, we could match firms in the merged sample to those sector-level financial vulnerability measures.
+
+Although we construct three measures of credit constraints as in the literature, we will focus on the external finance dependence and tangibility in our later analysis. One important reason is that their interpretation can be linked to firms' exposure and resistance to financial frictions directly. In contrast, the inventory ratio may be connected to inventory management efficiency rather than liquidity and financial reasons.  Following Manova, Wei, and Zhang (2015)\cite{manova-wei-zhang2015}, we also construct the first principal component of external finance dependence and asset tangibility $FPC_j$, which increases with the former and falls with the latter. An industry with a higher $FPC_j$ is more financially sensitive if firms in it require more outside funds but own less collateralizable assets. Therefore, we could use $FPC_j$ as an aggregate measure to combine information about financial vulnerability from $ExtFin_j$ and $Tang_j$.
+
+We have two major reasons why we use credit constraint measures based on US data in our main regressions. First, we want to remove the distortion by the limited credit supply in China and focus on the credit demand associated with sectoral characteristics. Second, the U.S. patterns of sectoral credit demand are proved persistent in a cross-country setting in the literature (Kroszner, Laeven, and Klingebiel, 2007\cite{kroszner2007}; Manova, Wei, and Zhang, 2015\cite{manova-wei-zhang2015}; Fan, Lai, and Li, 2015\cite{fan-lai-li2015}), especially when the industry classification is broadly defined. Intuitively, the financial needs of an industry may differ in level across countries, but the relative ranking between industries is supposed to be the same across countries, due to Technical reasons specific to the industry itself.
+
+Alternatively, we also compute credit needs based on Chinese firm-level information from CIE data. In addition to the already mentioned three measures, external finance dependence ($ExtFin_j$), asset tangibility ($Tang_j$), and inventory ratio ($Invent_j$), we include the fourth measure is R\&D intensity ($RD_j$), defined as the ratio of research and development expenditure to the total sales. Usually, R\&D activities are capital-intensive so it requires firms to pay a large fixed cost before production and sales. Therefore, firms in an R\&D-intensive industry should be more financially vulnerable. However, since we only have the information on firms' R\&D expenditure in and after 2005, which narrows the range of available samples, we will only use R\&D intensity as an auxiliary proxy variable.
+
+We adopt the measure of external finance dependence used by Fan, Lai, and Li (2015)\cite{fan-lai-li2015}. Then we calculate the inventory ratio as the value of inventory over sales income, the asset tangibility as the value of fixed assets over total assets, and the R\&D intensity as R\&D spending over total sales income. To avoid credit constraints being endogenously affected by other corporate factors, we take the median of the firm-level credit constraint measure in the same CIC 2-digit industry as the industry-level credit constraint measure. The regression results using the Chinese industry measures are provided as robustness checks for our main conclusion.
+
+\subsection{Markup and TFP}\label{sec-4.2.3}
+
+We argue that the "absorptive capacity" of exchange rate shocks may be related to the firm's attributes. In the following work, we will control markup and productivity to test these conjectures concretely. Referring to Brooks, Kaboski, and Li (2021)\cite{bkl2021}, even without direct measures of prices and marginal cost, we can still estimate the markup and productivity, using the structural assumptions of De Loecker and Warzynski\cite{dlw2012} (2012) (DLW hereafter) and GMM estimation method.
+
+DLW (2012)\cite{dlw2012} derives the firm-specific markup as the ratio of an input factor's output elasticities to its firm-specific factor payment shares $\mu_{t}=\theta_{t}^{X}\left(\alpha_{t}^{X}\right)^{-1}$, where $\alpha_{t}^{X}$ is the share of expenditures on input X in total sales and $\theta^X_t$ denotes the output elasticity on an input X. The major difficulty is calculating the firm-specific output elasticity concerning materials, which requires estimating firm-specific production functions. We apply the methodology of Ackerberg, Caves, and Frazer (2015)\cite{acf2015} (hereafter, ACF) to address the endogeneity of inputs, presuming a third-order translog gross output production function in capital, labor, and materials:
+
+$$
+y_{t}= \beta_{k} k_{t}+\beta_{l} l_{t}+\beta_{i} m_{t}+\beta_{k 2} k_{t}^{2}+\beta_{l 2} l_{t}^{2}+\beta_{m 2} m_{t}^{2}+\beta_{k l} k_{ t} l_{t}+\beta_{k m} k_{t} m_{t}+\beta_{l m} l_{t} m_{t}+\beta_{k 3} k_{t}^{3}+\cdots+\omega_{t}+\epsilon_{t}.
+$$
+
+In practice, we need to construct four production variables in log form: real output value $y_t$, persons engaged $l_t$, real fixed assets at current value $k_t$, and real material inputs $m_t$. Real output values are deflated by output deflators, while real fixed assets and real material inputs are deflated by investment deflators and input deflators, respectively. The deflators are constructed as in Brandt, Van Biesebroeck, and Zhang (2012)\cite{brandt2012}.
+
+\subsection{Import sources and export markets}\label{sec-4.2.4}
+Following the literature about import sourcing, an importer's sourcing diversity could increase its bargaining power in import prices in addition to its production side characteristics. We want to test how importers' sourcing diversity affects exchange rate pass-through. We provide a simple measure of the firm-product-level sourcing diversity $Source_{ij}$ as the number of source countries from which an importer imports a certain HS6 product type. Similarly, for the export side, we count the number of destination countries to which an exporter exports a certain HS6 product type as the firm-product-level selling measure, $Market_{ij}$. Controlling other variables, the number of export markets for the same product can measure the export network diversity. To control for differences in the firm size, we separately include the total number of HS6 product types imported (or exported) by the firm and the total number of trading partners of the firm in the vector $\mathbb{Z}_{jt}$.
+
+\subsection{Market share}\label{sec-4.2.5}
+
+In addition to the extensive diversity measured by the number of import sources or export markets, we also describe the intensive competitive competitiveness of a firm's share in a specific import or export market. 
+
+Following AIK (2014)\cite{aik2014} and Devereux, Dong, and Tomlin (2017)\cite{devereux2017}, we define import market share as a given firm’s share of the import market in terms of value, within a given HS6 product category. Therefore, a single firm can have multiple import market shares for multiple products. Our definition of import market share is also year specific, and so a firm’s import market share can vary over time. 
+
+$$
+S^{D}_{ijct} \equiv \frac{v^{D}_{ijct}}{\sum_{j^{\prime} \in J_{ict}} v^{D}_{ij^{\prime}ct}}
+$$
+
+where $D \in$ \{Import, Export\}. The capital letter $J$ denotes the group of potential competitors in the same product-specific market. The destination-specific export market share proxy is similarly defined as the value share of a firm relative to all Chinese exporters in our sample who export the same product to the same market. Since we only have data from China Customs, our export market share $S^{D}_{ijct}$ is relative to other Chinese firms, and the external competitive stance in a particular sector destinations common for all Chinese exporters.

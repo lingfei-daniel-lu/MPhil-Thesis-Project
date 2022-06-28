@@ -1,0 +1,181 @@
+\chapter{Robustness and Discussion}\label{sec-6.robustness}
+
+\section{Alternative Measures of Credit Constraints}
+
+As the first robustness test to further verify our baseline results, we use alternative credit constraint measures from CIE database. The details of constructing these Chinese variables are detailed in section 4.2.2\ref{sec-4.2.2}. Although Chinese financial market is less mature than that of the US, the rankings of industries in credit constraints are comparable. Our results are reported in Table \ref{tab6.1} which can be easily compared with the results using US measures.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Alternative Estimations with Chinese Measures of Credit Constraints}
+	\begin{threeparttable}
+	\begin{tabular}{lcccc}
+		\toprule
+		& (1)   & (2)   & (3)   & (4) \\
+		\midrule
+		Panel A & \multicolumn{4}{c}{Import} \\
+		& External Finance & Tangibility & Inventory & R\&D Intensity \\
+		\midrule
+		$\Delta \ln RER_{ct}$ & 0.561*** & 2.109*** & -0.854*** & 0.051*** \\
+		& (0.016) & (0.049) & (0.040) & (0.017) \\
+		$\Delta \ln RGDP_{ct}$ & 0.356*** & 0.346*** & 0.442*** & 0.412*** \\
+		& (0.084) & (0.084) & (0.084) & (0.084) \\
+		$\Delta \ln RER_{ct}$*ExtFin & 0.263*** &       &       &  \\
+		& (0.013) &       &       &  \\
+		$\Delta \ln RER_{ct}$*Tang &       & -5.946*** &       &  \\
+		&       & (0.162) &       &  \\
+		$\Delta \ln RER_{ct}$*Inventory &       &       & 10.913*** &  \\
+		&       &       & (0.324) &  \\
+		$\Delta \ln RER_{ct}$*R\&D Intensity &       &       &       & 17.462*** \\
+		&       &       &       & (0.526) \\
+		Year FE  & Yes   & Yes   & Yes   & Yes \\
+		Firm-product-country FE & Yes   & Yes   & Yes   & Yes \\
+		Observations & 1792020 & 1792020 & 1792020 & 1792020 \\
+		\midrule
+		Panel B & \multicolumn{4}{c}{Export} \\
+		& External Finance & Tangibility & Inventory & R\&D Intensity \\
+		\midrule
+		$\Delta \ln RER_{ct}$ & 0.016** & -0.142*** & 0.089*** & 0.043*** \\
+		& (0.007) & (0.022) & (0.018) & (0.007) \\
+		$\Delta \ln RGDP_{ct}$ & -0.083** & -0.083** & -0.083** & -0.084** \\
+		& (0.036) & (0.036) & (0.036) & (0.036) \\
+		$\Delta \ln RER_{ct}$*ExtFin & -0.024*** &       &       &  \\
+		& (0.007) &       &       &  \\
+		$\Delta \ln RER_{ct}$*Tang &       & 0.587*** &       &  \\
+		&       & (0.072) &       &  \\
+		$\Delta \ln RER_{ct}$*Inventory &       &       & -0.512*** &  \\
+		&       &       & (0.159) &  \\
+		$\Delta \ln RER_{ct}$*R\&D Intensity &       &       &       & -0.516** \\
+		&       &       &       & (0.236) \\
+		Year FE  & Yes   & Yes   & Yes   & Yes \\
+		Firm-product-country FE & Yes   & Yes   & Yes   & Yes \\
+		Observations & 1793974 & 1793974 & 1793974 & 1793974 \\
+		\bottomrule
+	\end{tabular}
+	\label{tab6.1}
+	\begin{tablenotes}
+		\footnotesize
+		\item[*] Robust standard errors clustered at firm level; * significant at 5\%; ** significant at 1\%.
+	\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+Columns 1-4 of panel A of Table \ref{tab6.1} present the import-side results for external finance dependence, tangibility, inventory ratio, and R\&D intensity, respectively. Panel B report the export-side results for the same variables. Nevertheless, most of the interaction term coefficients exhibit the same signs as above, confirming the validity of our baseline findings of the effects of credit constraints on exchange rate pass-through. We can still conclude that financially more constrained firms have a more complete export exchange rate pass-through than those less constrained.
+
+\section{Alternative Estimates of Markup}
+
+Another potential issue is how accurate the markup estimates are. According to DLW (2012)\cite{dlw2012} and Brooks, Kaboski, and Li (2021)\cite{bkl2021}, we estimate production functions at the industry level, so the measurement error in markups depends on the number of firms in an industry. In any case, the DLW-based markup estimates are noisy in practice. Therefore, in this section, we estimate a firm's markup as simply its real sales over total real costs, which only requires an assumption of constant returns to scale. The total costs are computed as the sum of total operation input (as material input), current wage payable (as labor input) and asset depreciation rate multiplied by total fixed assets (as capital input). We calibrate the asset depreciation rate as 15\% according to literature conventions.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Alternative Estimations with Sales to Cost Ratio}
+	\begin{threeparttable}
+	\begin{tabular}{lccc}
+		\toprule
+		& (1)   & (2)   & (3) \\
+		\midrule
+		Panel A & \multicolumn{3}{c}{Import} \\
+		& Markup & Markup+ & Markup+ \\
+		&       & External Finance & Tangibility \\
+		\midrule
+		$\Delta \ln RER_{ct}$ & -0.275*** & -0.230*** & 0.490*** \\
+		& (0.032) & (0.032) & (0.043) \\
+		$\Delta \ln RGDP_{ct}$ & 0.382*** & 0.435*** & 0.397*** \\
+		& (0.084) & (0.084) & (0.084) \\
+		$\Delta \ln RER_{ct}$*$[SI/cost]_{t-1}$ & 0.546*** & 0.392*** & 0.501*** \\
+		& (0.024) & (0.024) & (0.024) \\
+		$\Delta \ln RER_{ct}$*ExtFin &       & 1.118*** &  \\
+		&       & (0.027) &  \\
+		$\Delta \ln RER_{ct}$*Tang &       &       & -2.888*** \\
+		&       &       & (0.108) \\
+		$[SI/cost]_{t-1}$ & -0.003 & -0.002 & -0.001 \\
+		& (0.004) & (0.004) & (0.004) \\
+		Year FE  & Yes   & Yes   & Yes \\
+		Firm-product-country FE & Yes   & Yes   & Yes \\
+		Observations & 1792020 & 1792020 & 1792020 \\
+		\bottomrule
+	\end{tabular}
+	\label{tab6.2}
+	\begin{tablenotes}
+		\footnotesize
+		\item[*] Robust standard errors clustered at firm level; * significant at 5\%; ** significant at 1\%. Panel B is shown in Appendix A.4.
+	\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+Table \ref{tab6.2} shows an alternative version of the results in section 5.3. The coefficients of the sales-to-cost ratio interaction terms are of same direction as previous ones. That is to say, higher cost of sales ratio leads to more complete import price pass-through and less complete export price pass-through. Results for export side are shown in Appendix \ref{tabA.4}.
+
+\section{Alternative Subsample: Two-way traders}
+
+Since most of China's imports go through two-way traders, who conduct both export and import simultaneously, import exchange rate pass-through is likely to be related to export behaviors. Specifically, importers who also export may pass part of the price fluctuations of imported intermediate goods caused by exchange rate shocks to their export destination to buffer the impact of exchange rate risks. 
+
+To test whether the pattern of China's import pass-through is mainly dominated by two-way traders, we use the sub-sample consisting only of two-way traders for a robustness check. Table 10 presents the results for this restricted sample.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Alternative Estimations with Two-way Traders}
+	\begin{threeparttable}
+	\begin{tabular}{lcccc}
+		\toprule
+		& (1)   & (2)   & (3)   & (4) \\
+		\midrule
+		Panel A & \multicolumn{4}{c}{Import (Two-way traders)} \\
+		& Baseline & FPC   & External Finance & Tangibility \\
+		\midrule
+		$\Delta \ln RER_{ct}$ & 0.394*** & 0.136*** & 0.231*** & 1.158*** \\
+		& (0.015) & (0.016) & (0.015) & (0.031) \\
+		$\Delta \ln RGDP_{ct}$ & 0.406*** & 0.459*** & 0.469*** & 0.427*** \\
+		& (0.086) & (0.086) & (0.086) & (0.086) \\
+		$\Delta \ln RER_{ct}$*FPC &       & 0.388*** &       &  \\
+		&       & (0.009) &       &  \\
+		$\Delta \ln RER_{ct}$*ExtFin &       &       & 1.246*** &  \\
+		&       &       & (0.028) &  \\
+		$\Delta \ln RER_{ct}$*Tang &       &       &       & -3.138*** \\
+		&       &       &       & (0.112) \\
+		Year FE  &       & Yes   & Yes   & Yes \\
+		Firm-product-country FE &       & Yes   & Yes   & Yes \\
+		Observations & 1712289 & 1712289 & 1712289 & 1712289 \\
+		Panel B & \multicolumn{4}{c}{Export (Two-way traders)} \\
+		& Baseline & FPC   & External Finance & Tangibility \\
+		\midrule
+		$\Delta \ln RER_{ct}$ & 0.040*** & 0.051*** & 0.044*** & -0.034** \\
+		& (0.006) & (0.006) & (0.006) & (0.016) \\
+		$\Delta \ln RGDP_{ct}$ & -0.144*** & -0.145*** & -0.144*** & -0.147*** \\
+		& (0.041) & (0.041) & (0.041) & (0.041) \\
+		$\Delta \ln RER_{ct}$*FPC &       & -0.022*** &       &  \\
+		&       & (0.005) &       &  \\
+		$\Delta \ln RER_{ct}$*ExtFin &       &       & -0.048*** &  \\
+		&       &       & (0.015) &  \\
+		$\Delta \ln RER_{ct}$*Tang &       &       &       & 0.284*** \\
+		&       &       &       & (0.059) \\
+		$\Delta \ln RER_{ct}$*Inventory &       &       &       &  \\
+		&       &       &       &  \\
+		Year FE  &       & Yes   & Yes   & Yes \\
+		Firm-product-country FE &       & Yes   & Yes   & Yes \\
+		Observations & 1415415 & 1415415 & 1415415 & 1415415 \\
+		\bottomrule
+	\end{tabular}
+	\label{tab6.3}
+	\begin{tablenotes}
+		\footnotesize
+		\item[*] Robust standard errors clustered at firm level; * significant at 5\%; ** significant at 1\%.
+	\end{tablenotes}
+	\end{threeparttable}
+\end{table}
+
+Table \ref{tab6.3} shows that the results for the subset of two-way traders are highly similar to the results for the entire matched sample, indicating that the exchange rate pass-through pattern of two-way traders dominates China’s imports and exports. 
+
+\section{Discussion on import-export linkage}
+
+Following the analysis of two-way traders, we discuss the potential relationship between import and export pass-through here in more detail. On the one hand, for two-way traders, export exchange rate pass-through could act as a "pressure-reducing valve" for import price pass-through. When a firm has the ability to pass more exchange rate fluctuations to destination prices, it has more room to absorb price fluctuations of imported inputs. In other words, the firm-level export pass-through will have a positive effect on all product-level import pass-throughs of the same firm.
+
+On the other hand, big importers are also big exporters (AIK, 2014\cite{aik2014}). Therefore, advantages in some firm characteristics, either explicit ones such as size, market share, or productivity, or implicit ones like foreign networks may lead them to have greater bargaining power on both the import side and the export side and thus cause lower export and import price pass-through at the same time. 
+
+To study whether and how those two channels affect the import exchange rate pass-through, ideally we need to control export price pass-through when calculating import price pass-through for all two-way traders. However, it is not available to estimate the price pass-through of each individual firm. We could only check potential influential factors individually using current strategies. However, this provides a future direction for studies to determine the factors of import pass-through.
+
+\section{Discussion on the trend of  China’s Exchange Rate Pass-through}
+
+In this article, we focus on the horizontal comparison of import and export exchange rate pass-through and its causes. In the future, we can extend our methodology to reveal the time-series trend by varying periods. Actually, in our preliminary research, we found that China's export exchange rate pass-through has shown an overall downward trend (to be more incomplete) during the 2000s while the trend of China's import pass-through is vague. However, a more detailed investigation requires a longer panel with more information from recent years. 
+
+Devereux, Dong, and Tomlin (2017)\cite{devereux2017} attempt to explore how changes in import market shares over time may be related to changes in aggregate pass-through over time. They run weighted rolling regressions on 12-month windows moving up by month covering 70 months. Although they find no perfect coincidence of the increase in import market share of large importers and the decrease in pass-through, the general trend does show that the aggregate pass-through is low when the import market share of large importers is large. Therefore, we have reason to suspect that the evolution in China's exchange rate pass-through over time may also be due to the concentration of market share, that is, large exporters and importers occupy more market shares and may thus have stronger bargaining power.
+
+To further ask whether the trend of exchange rate pass-through could be at least partially affected by credit constraints, there are two possible channels to discuss. First, the credit constraints on Chinese exporters are gradually loosening. It may be because of the decreasing credit needs of Chinese exporters or the improvement of the immature financial market in China. Second, China's exports switch from more credit-constrained to less-constrained industries. Credit-constrained firms find it harder to survive in export markets (extensive margin) or export less in value (intensive margin).
