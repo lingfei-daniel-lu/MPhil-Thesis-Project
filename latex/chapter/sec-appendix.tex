@@ -3,41 +3,49 @@
 \begin{table}[htbp]
 	\centering
 	\caption{Effects of Productivity and Markup on Export Exchange Rate Pass-through}
+	\resizebox{1.1\columnwidth}{52mm}{
+	\begin{threeparttable}
 	\begin{tabular}{lcccccc}
-		\midrule         & (1)   & (2)   & (3)   & (4)   & (5)   & (6) \\
-		\midrule
+		\toprule
 		Panel B & \multicolumn{6}{c}{Export} \\
 		& Markup & Markup+ & Markup+ & TFP   & TFP+  & TFP+ \\
-		&       & External & Tangibility &       & External & Tangibility \\
-		&       & Finance &  	&       & Fiance &  \\
+		&       & External Finance & Tangibility &       & External Finance & Tangibility \\
 		\midrule
-		$\Delta \ln RER_{ct}$ & -0.048*** & -0.045** & -0.113*** & 0.042*** & 0.047*** & -0.023 \\
-		& (0.017) & (0.017) & (0.023) & (0.006) & (0.006) & (0.016) \\
-		$\Delta \ln RGDP_{ct}$ & -0.087** & -0.088** & -0.089** & -0.087** & -0.088** & -0.089** \\
-		& (0.039) & (0.039) & (0.039) & (0.039) & (0.039) & (0.039) \\
-		$\Delta \ln RER_{ct}$*$Markup_{t-1}$ & 0.066*** & 0.066*** & 0.067*** &       &       &  \\
-		& (0.013) & (0.013) & (0.013) &       &       &  \\
-		$\Delta \ln RER_{ct}$*$TFP_{t-1}$ &       &       &       & 0.072*** & 0.083*** & 0.077*** \\
-		&       &       &       & (0.021) & (0.021) & (0.021) \\
-		$\Delta \ln RER_{ct}$*ExtFin &       & -0.049*** &       & -0.057*** &       &  \\
-		&       & (0.014) &       & (0.014) &       &  \\
-		$\Delta \ln RER_{ct}$*Tang &       &       & 0.242*** &       &       & 0.248*** \\
-		&       &       & (0.056) &       &       & (0.057) \\
-		$Markup_{t-1}$ & 0.010** & 0.011*** & 0.010** & 0.005 & 0.006 & 0.005 \\
-		& (0.004) & (0.004) & (0.004) & (0.004) & (0.004) & (0.004) \\
-		$TFP_{t-1}$ & -0.022*** & -0.024*** & -0.023*** & -0.016** & -0.017** & -0.016** \\
-		& (0.007) & (0.007) & (0.007) & (0.008) & (0.008) & (0.008) \\
+		$\Delta \ln RER_{ct}$ & -0.042** & -0.045** & -0.116*** & 0.046*** & 0.046*** & -0.001 \\
+		& (0.021) & (0.021) & (0.027) & (0.006) & (0.006) & (0.019) \\
+		$\Delta \ln RGDP_{ct}$ & -0.078* & -0.080* & -0.081* & -0.080* & -0.081* & -0.081* \\
+		& (0.042) & (0.042) & (0.042) & (0.042) & (0.042) & (0.042) \\
+		$\Delta \ln RER_{ct}$*$Markup_{jt-1}$ & 0.060*** & 0.066*** & 0.062*** &       &       &  \\
+		& (0.015) & (0.015) & (0.015) &       &       &  \\
+		$\Delta \ln RER_{ct}$*$TFP_{jt-1}$ &       &       &       & -0.045*** & -0.037*** & -0.035*** \\
+		&       &       &       & (0.009) & (0.009) & (0.009) \\
+		$\Delta \ln RER_{ct}$*$ExtFin_{jt}$ &       & -0.064*** &       &       & -0.035** &  \\
+		&       & (0.015) &       &       & (0.017) &  \\
+		$\Delta \ln RER_{ct}$*$Tang_{jt}$ &       &       & 0.271*** &       &       & 0.170** \\
+		&       &       & (0.061) &       &       & (0.067) \\
+		$Markup_{jt-1}$ & -0.005* & -0.004 & -0.005* &       &       &  \\
+		& (0.003) & (0.003) & (0.003) &       &       &  \\
+		$TFP_{jt-1}$ &       &       &       & -0.014*** & -0.014*** & -0.014*** \\
+		&       &       &       & (0.004) & (0.004) & (0.004) \\
 		Year FE  & Yes   & Yes   & Yes   & Yes   & Yes   & Yes \\
 		Firm-product-country FE & Yes   & Yes   & Yes   & Yes   & Yes   & Yes \\
-		Observations & 1559255 & 1559255 & 1559255 & 1559255 & 1559255 & 1559255 \\
-		\bottomrule
+		Observations & 1418443 & 1418443 & 1418443 & 1418443 & 1418443 & 1418443 \\
+		\bottomrule	
 	\end{tabular}
+	\begin{tablenotes}
+		\footnotesize
+		\item[*] Robust standard errors clustered at firm level; * significant at 5\%; ** significant at 1\%. Measures of credit constraints are calculated using U.S. data. Panel A is shown in Appendix \ref{tab5.3}.
+	\end{tablenotes}
+	\end{threeparttable}
 	\label{tabA.1}
+	}
 \end{table}
+
 
 \begin{table}[htbp]
 	\centering
-	\caption{Effects of Market Share on Export Exchange Rate Pass-Through}
+	\caption{Effects of Export Markets on Export Exchange Rate Pass-through}
+	\begin{threeparttable}
 	\begin{tabular}{lccccc}
 		\midrule& (1)   & (2)   & (3)   & (4)   & (5) \\
 		\midrule
@@ -50,18 +58,18 @@
 		& (0.008) & (0.006) & (0.007) & (0.007) & (0.020) \\
 		$\Delta \ln RGDR_{ct}$ & -0.079** & -0.085** & -0.080** & -0.080** & -0.082** \\
 		& (0.036) & (0.036) & (0.036) & (0.036) & (0.036) \\
-		\#Countries & -0.001*** &       &       &       &  \\
+		$\#Countries_{jt}$ & -0.001*** &       &       &       &  \\
 		& (0.000) &       &       &       &  \\
-		\#Products &       & 0.001*** &       &       &  \\
+		$\#Products_{jt}$ &       & 0.001*** &       &       &  \\
 		&       & (0.000) &       &       &  \\
-		\#Sources &       &       & -0.001*** & -0.001*** & -0.002*** \\
+		$\#Markets_{ijt}$ &       &       & -0.001*** & -0.001*** & -0.002*** \\
 		&       &       & (0.000) & (0.000) & (0.001) \\
-		$\Delta \ln RER_{ct}$*ExtFin*\#Sources &       &       &       & -0.000 &  \\
-		&       &       &       & (0.001) &  \\
-		$\Delta \ln RER_{ct}$*ExtFin &       &       &       & -0.040** &  \\
+		$\Delta \ln RER_{ct}$*$ExtFin_{jt}$ &       &       &       & -0.000 &  \\
+		*$\#Markets_{ijt}$ &       &       &       & (0.001) &  \\
+		$\Delta \ln RER_{ct}$*$ExtFin_{jt}$ &       &       &       & -0.040** &  \\
 		&       &       &       & (0.019) &  \\
-		$\Delta \ln RER_{ct}$*Tang*\#Sources &       &       &       &       & 0.003 \\
-		&       &       &       &       & (0.003) \\
+		$\Delta \ln RER_{ct}$*Tang &       &       &        &       & 0.003 \\
+		*$\#Markets_{ijt}$&       &       &       &       & (0.003) \\
 		$\Delta \ln RER_{ct}$*Tang &       &       &       &       & 0.192*** \\
 		&       &       &       &       & (0.073) \\
 		Year FE  & Yes   & Yes   & Yes   & Yes   & Yes \\
@@ -69,67 +77,49 @@
 		Observations & 1793974 & 1793974 & 1793974 & 1793974 & 1793974 \\
 		\bottomrule
 	\end{tabular}
+	\begin{tablenotes}
+	\footnotesize
+	\item[*] Robust standard errors clustered at firm level; * significant at 5\%; ** significant at 1\%. Measures of credit constraints are calculated using U.S. data. Panel A is shown in \ref{tab5.4}
+	\end{tablenotes}
+	\end{threeparttable}
 	\label{tabA.2}
 \end{table}
 
 \begin{table}[htbp]
 	\centering
-	\caption{Effects of Export Markets on Export Exchange Rate Pass-through}
+	\caption{Effects of Market Share on Export Exchange Rate Pass-Through}
+	\begin{threeparttable}
 	\begin{tabular}{lcccc}
 		\toprule
 		& (1)   & (2)   & (3)   & (4) \\
 		\midrule
 		Panel B & \multicolumn{4}{c}{Export} \\
-		& MS    & MS\^2 & External & Inventory \\
+		& MS    & $MS^2$ & External & Inventory \\
 		&       &       & Finance &  \\
 		\midrule
 		$\Delta \ln RER_{ct}$ & 0.034*** & 0.032*** & 0.034*** & -0.034** \\
 		& (0.006) & (0.007) & (0.007) & (0.015) \\
 		$\Delta \ln RGDP_{ct}$ & -0.083** & -0.084** & -0.084** & -0.084** \\
 		& (0.036) & (0.036) & (0.036) & (0.036) \\
-		$\Delta \ln RER_{ct}$*MS & -0.002 & 0.040 & 0.043 & 0.028 \\
+		$\Delta \ln RER_{ct}$*$MS_{ijct}$ & -0.002 & 0.040 & 0.043 & 0.028 \\
 		& (0.011) & (0.044) & (0.044) & (0.044) \\
-		$\Delta \ln RER_{ct}$*$MS^2$ &       & -0.044 & -0.046 & -0.037 \\
+		$\Delta \ln RER_{ct}$*$MS_{ijct}^2$ &       & -0.044 & -0.046 & -0.037 \\
 		&       & (0.046) & (0.046) & (0.046) \\
-		$\Delta \ln RER_{ct}$*ExtFin &       &       & -0.046*** &  \\
+		$\Delta \ln RER_{ct}$*$ExtFin_{jt}$ &       &       & -0.046*** &  \\
 		&       &       & (0.013) &  \\
-		$\Delta \ln RER_{ct}$*Tang &       &       &       & 0.256*** \\
+		$\Delta \ln RER_{ct}$*$Tang_{jt}$ &       &       &       & 0.256*** \\
 		&       &       &       & (0.052) \\
-		MS    & 0.022*** & 0.022*** & 0.022*** & 0.022*** \\
+		$MS_{ijct}$    & 0.022*** & 0.022*** & 0.022*** & 0.022*** \\
 		& (0.003) & (0.003) & (0.003) & (0.003) \\
 		Year FE  & Yes   & Yes   & Yes   & Yes \\
 		Firm-product-country FE & Yes   & Yes   & Yes   & Yes \\
 		Observations & 1793974 & 1793974 & 1793974 & 1793974 \\
 		\bottomrule
 	    \end{tabular}
+    \begin{tablenotes}
+    	\footnotesize
+    	\item[*] Robust standard errors clustered at firm level; * significant at 5\%; ** significant at 1\%. Measures of credit constraints are calculated using U.S. data. Panel A is shown in \ref{tab5.5}
+    \end{tablenotes}
+	\end{threeparttable}
 	\label{tabA.3}
-\end{table}
-
-\begin{table}[htbp]
-	\centering
-	\caption{Alternative Estimations with Sales to Cost Ratio}
-	\begin{tabular}{lcccc}
-		\toprule
-		Panel B & \multicolumn{3}{c}{Export} \\
-		& Markup & Markup+ & Markup+ \\
-		&       & External Finance & Tangibility \\
-		\midrule
-		$\Delta \ln RER_{ct}$ & -0.018 & -0.020 & -0.088*** \\
-		& (0.015) & (0.015) & (0.021) \\
-		$\Delta \ln RGDP_{ct}$ & -0.084** & -0.084** & -0.085** \\
-		& (0.036) & (0.036) & (0.036) \\
-		$\Delta \ln RER_{ct}$*$[SI/cost]_{t-1}$ & 0.043*** & 0.049*** & 0.044*** \\
-		& (0.012) & (0.012) & (0.012) \\
-		$\Delta \ln RER_{ct}$*ExtFin &       & -0.052*** &  \\
-		&       & (0.013) &  \\
-		$\Delta \ln RER_{ct}$*Tang &       &       & 0.262*** \\
-		&       &       & (0.052) \\
-		$[SI/cost]_{t-1}$ & -0.005** & -0.005** & -0.005** \\
-		& (0.002) & (0.002) & (0.002) \\
-		Year FE  & Yes   & Yes   & Yes \\
-		Firm-product-country FE & Yes   & Yes   & Yes \\
-		Observations & 1793974 & 1793974 & 1793974 \\
-		\bottomrule
-	    \end{tabular}
-	\label{tabA.4}
 \end{table}

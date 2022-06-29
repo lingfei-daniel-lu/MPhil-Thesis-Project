@@ -420,158 +420,7 @@ cd "D:\Project C\sample_matched\CIE"
 save cie_98_07,replace
 
 *-------------------------------------------------------------------------------
-* Markup estimation according to DLW(2012)
-cd "D:\Project C\sample_matched\CIE"
-use cie_98_07,clear
-*********************
-*Step 1
-*********************
-egen newid=group(FRDM)
-gen y_output=log(GIOV_CR/OutputDefl)
-gen rkap1=FA/inv_deflator
-gen realmat=TOIPT/InputDefl  /*real material input*/
-gen k=log(rkap1)
-gen m=log(realmat)
-gen l=log(PERSENG)
-drop if y_output==. | l==. | k==.| m==.
-save cie_98_07_newid,replace
-
-use cie_98_07_newid,clear
-tsset newid year, yearly
-local M=3
-local N=3
-forvalues i=1/`M' {
-gen l`i'=l^(`i')
-gen m`i'=m^(`i')
-gen k`i'=k^(`i')
-local `N'=`M'-`i'
-*interaction terms
-forvalues j=1/`N' {
-gen l`i'm`j'=l^(`i')*m^(`j')
-gen l`i'k`j'=l^(`i')*k^(`j')
-gen k`i'm`j'=k^(`i')*m^(`j')
-}
-}
-gen l1k1m1=l*k*m
-
-xi: reg y_output l1 k1 m1 l2 k2 m2 l1k1 l1m1 k1m1 l3 k3 m3 l2k1 l2m1 l1k2 k2m1 l1m2 k1m2 l1k1m1 i.year
-
-local varlist "l1 k1 m1 l2 k2 m2 l1k1 l1m1 k1m1 l3 k3 m3 l2k1 l2m1 l1k2 k2m1 l1m2 k1m2 l1k1m1"
-foreach var of local varlist {
-	gen b`var'ols = _b[`var']
-}
-
-gen b_mOLS=bm1ols+2*bm2ols*m1+bl1m1ols*l1+bk1m1ols*k1+3*bm3ols*m2+bl2m1ols*l2+bk2m1ols*k2 + 2*bl1m2ols*l1m1+2*bk1m2ols*k1m1+bl1k1m1ols*l1k1 
-
-*------FIRST STAGE------
-xi: reg y_output l* k* m* i.year
-
-*ask e*(l* m* k*)
-predict phi
-predict epsilon, res
-label var phi "phi_it"
-label var epsilon "measurement error first stage"
-
-gen phi_lag=L.phi
-local varlist "l k m"
-foreach var of local varlist {
-	gen `var'_lag=L.`var'
-	gen `var'_lag2=`var'_lag^2
-	gen `var'_lag3=`var'_lag^3
-}
-
-gen l_lagk=l_lag*k
-gen l_lagk2=l_lag*k^2
-gen l_lagk_lag=l_lag*k_lag
-gen l_lagk_lag2=l_lag*k_lag^2
-gen l_lag2k=l_lag^2*k
-gen l_lag2k_lag=l_lag^2*k_lag
-
-gen km_lag=m_lag*k
-gen km_lag2=m_lag^2*k
-gen k2m_lag=m_lag*k^2
-gen k_lagm_lag=m_lag*k_lag
-gen k_lag2m_lag=m_lag*k_lag^2
-gen k_lagm_lag2=m_lag^2*k_lag
-
-gen l_lagm_lag=l_lag*m_lag
-gen l_lag2m_lag=l_lag^2*m_lag
-gen l_lagm_lag2=l_lag*m_lag^2
-
-
-gen l_lagkm_lag=l_lag*k*m_lag
-gen l_lagk_lagm_lag=l_lag*k_lag*m_lag
-
-gen alpha_m=TOIPT/GIOV_CR 
-drop _I*
-sort newid year
-gen const=1
-drop if y_output==. | l_lag==. | k_lag==. | m_lag==. | phi==. | phi_lag==.
-
-*********************
-*Step 2
-*********************
-gmm (phi-{betal}*l1-{betak}*k1-{betam}*m1-{betal2}*l2-{betak2}*k2-{betam2}*m2-{betalk}*l1k1-{betalm}*l1m1-{betakm}*k1m1 ///
-- {betal3}*l3 - {betak3}*k3 - {betam3}*m3 - {betal2k1}*l2k1 - {betal2m1}*l2m1 - {betal1k2}*l1k2 - {betak2m1}*k2m1 - {betal1m2}*l1m2 - {betak1m2}*k1m2 - {betalkm}*l1k1m1  ///
--{alpha1}*(phi_lag-{betal}*l_lag-{betak}*k_lag-{betam}*m_lag-{betal2}*l_lag2-{betak2}*k_lag2-{betam2}*m_lag2-{betalk}*l_lagk_lag-{betalm}*l_lagm_lag-{betakm}*k_lagm_lag  ///
-- {betal3}*l_lag3 - {betak3}*k_lag3 - {betam3}*m_lag3 - {betal2k1}*l_lag2k_lag - {betal2m1}*l_lag2m_lag - {betal1k2}*l_lagk_lag2 - {betak2m1}*k_lag2m_lag - {betal1m2}*l_lagm_lag2 - {betak1m2}*k_lagm_lag2 - {betalkm}*l_lagk_lagm_lag) ///
--{alpha2}*(phi_lag-{betal}*l_lag-{betak}*k_lag-{betam}*m_lag-{betal2}*l_lag2-{betak2}*k_lag2-{betam2}*m_lag2-{betalk}*l_lagk_lag-{betalm}*l_lagm_lag-{betakm}*k_lagm_lag  ///
-- {betal3}*l_lag3 - {betak3}*k_lag3 - {betam3}*m_lag3 - {betal2k1}*l_lag2k_lag - {betal2m1}*l_lag2m_lag - {betal1k2}*l_lagk_lag2 - {betak2m1}*k_lag2m_lag - {betal1m2}*l_lagm_lag2 - {betak1m2}*k_lagm_lag2 - {betalkm}*l_lagk_lagm_lag)^2  ///
--{alpha3}*(phi_lag-{betal}*l_lag-{betak}*k_lag-{betam}*m_lag-{betal2}*l_lag2-{betak2}*k_lag2-{betam2}*m_lag2-{betalk}*l_lagk_lag-{betalm}*l_lagm_lag-{betakm}*k_lagm_lag  ///
-- {betal3}*l_lag3 - {betak3}*k_lag3 - {betam3}*m_lag3 - {betal2k1}*l_lag2k_lag - {betal2m1}*l_lag2m_lag - {betal1k2}*l_lagk_lag2 - {betak2m1}*k_lag2m_lag - {betal1m2}*l_lagm_lag2 - {betak1m2}*k_lagm_lag2 - {betalkm}*l_lagk_lagm_lag)^3)  ///
-, instruments(k1 k2 k3 l_lag m_lag k_lag l_lag2 k_lag2 m_lag2 l_lag3 k_lag3 m_lag3 km_lag km_lag2 k2m_lag k_lagm_lag k_lag2m_lag k_lagm_lag2 l_lagm_lag l_lag2m_lag l_lagm_lag2 ///
- l_lagk l_lagk2 l_lagk_lag l_lagk_lag2 l_lag2k l_lag2k_lag l_lagkm_lag l_lagk_lagm_lag)
- 
-gen betal1_tld=_b[/betal]
-gen betak1_tld=_b[/betak]
-gen betam1_tld=_b[/betam]
-gen betal2_tld=_b[/betal2]
-gen betak2_tld=_b[/betak2]
-gen betam2_tld=_b[/betam2]
-gen betal1k1_tld=_b[/betalk]
-gen betal1m1_tld=_b[/betalm]
-gen betak1m1_tld=_b[/betakm]
-
-gen betal3_tld=_b[/betal3]
-gen betak3_tld=_b[/betak3]
-gen betam3_tld=_b[/betam3]
-gen betal2k1_tld = _b[/betal2k1]
-gen betal2m1_tld = _b[/betal2m1]
-gen betal1k2_tld = _b[/betal1k2]
-gen betak2m1_tld = _b[/betak2m1]
-gen betal1m2_tld = _b[/betal1m2]
-gen betak1m2_tld = _b[/betak1m2]
-gen betalkm_tld = _b[/betalkm]
-
-gen betam_tld=betam1_tld+2*betam2_tld*m1+betal1m1_tld*l1+betak1m1_tld*k1+3*betam3_tld*m2+betal2m1_tld*l2+betak2m1_tld*k2 + 2*betal1m2_tld*l1m1+2*betak1m2_tld*k1m1+betalkm_tld*l1k1 
-
-gen Markup_ols=b_mOLS/alpha_m
-gen Markup_DLWTLD=betam_tld/alpha_m
-sum Markup_ols Markup_DLWTLD, detail
-keep year FRDM newid Markup_ols Markup_DLWTLD betal1_tld betak1_tld betam1_tld betal2_tld betak2_tld betam2_tld betal1k1_tld betal1m1_tld betak1m1_tld  betal3_tld betak3_tld betam3_tld betal2k1_tld betal2m1_tld betal1k2_tld betak2m1_tld betal1m2_tld betak1m2_tld betalkm_tld
-cd "D:\Project C\markup"
-save cie_99_07_markup_beta.dta,replace
-
-use cie_99_07_markup_beta.dta,clear
-merge 1:1 newid year using "D:\Project C\sample_matched\CIE\cie_98_07_newid",nogen keep(matched)
-tab year
-gen tfp_tld= y_output - betal1_tld*l- betak1_tld*k- betam1_tld*m -betal2_tld*l*l- betak2_tld*k*k- betam2_tld*m*m- betal1k1_tld*l*k- betal1m1_tld*l*m - betak1m1_tld*k*m ///
- - betal3_tld*l*l*l - betak3_tld*k*k*k - betam3_tld*m*m*m - betal2k1_tld*l*l*k - betal2m1_tld*l*l*m - betal1k2_tld*l*k*k - betak2m1_tld*k*k*m - betal1m2_tld*l*m*m - betak1m2_tld*k*m*m - betalkm_tld*l*k*m 
-compress
-save cie_99_07_markup, replace
-
-cd "D:\Project C\markup"
-use cie_99_07_markup,clear
-destring INDTYPE,replace
-merge 1:1 FRDM year using cie9907markup
-* 1256199 matched, 58609 master, 2132 using
-keep FRDM year EN tfp_tld Markup_*
-sort FRDM year
-by FRDM: gen Markup_lag=Markup_DLWTLD[_n-1] if year==year[_n-1]+1
-by FRDM: egen Markup_avg=mean(Markup_DLWTLD)
-by FRDM: gen tfp_lag=tfp_tld[_n-1] if year==year[_n-1]+1
-by FRDM: egen tfp_avg=mean(tfp_tld)
-save cie_99_07_markup_merged,replace
+* Markup estimation according to DLW(2012) in DLW.do
 
 *-------------------------------------------------------------------------------
 * Add markup and financial vulnerability measures to firm data
@@ -580,7 +429,7 @@ use cie_98_07,clear
 keep if year>=1999
 gen IND2=substr(INDTYPE,1,2)
 * Add markup and tfp info
-merge 1:1 FRDM year using "D:\Project C\markup\cie_99_07_markup_merged", nogen keepus(Markup_DLWTLD Markup_lag tfp_tld tfp_lag) keep(matched master)
+merge 1:1 FRDM year using "D:\Project C\markup\cie_99_07_markup", nogen keepus(Markup_DLWTLD Markup_lag tfp_tld tfp_lag) keep(matched master)
 sum Markup_*,detail
 winsor2 Markup_*, replace by(year IND2)
 sum tfp_*,detail
@@ -789,13 +638,13 @@ esttab exp_MS4_* using "D:\Project C\tables\matched\table_exp_MS_xt4.csv", repla
 cd "D:\Project C\sample_matched"
 use sample_matched_exp,clear
 
-eststo exp_markup: areg dlnprice_tr dlnRER x_Markup_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo exp_ExtFin_US_markup: areg dlnprice_tr dlnRER x_ExtFin_US x_Markup_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo exp_Tang_US_markup: areg dlnprice_tr dlnRER x_Tang_US x_Markup_lag Markup_lag tfp_lag dlnrgdp i.year, a(group_id)
+eststo exp_markup: areg dlnprice_tr dlnRER x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
+eststo exp_ExtFin_US_markup: areg dlnprice_tr dlnRER x_ExtFin_US x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
+eststo exp_Tang_US_markup: areg dlnprice_tr dlnRER x_Tang_US x_Markup_lag Markup_lag dlnrgdp i.year, a(group_id)
 
-eststo exp_tfp: areg dlnprice_tr dlnRER x_tfp_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo exp_ExtFin_US_tfp: areg dlnprice_tr dlnRER x_ExtFin_US x_tfp_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo exp_Tang_US_tfp: areg dlnprice_tr dlnRER x_Tang_US x_tfp_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
+eststo exp_tfp: areg dlnprice_tr dlnRER x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
+eststo exp_ExtFin_US_tfp: areg dlnprice_tr dlnRER x_ExtFin_US x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
+eststo exp_Tang_US_tfp: areg dlnprice_tr dlnRER x_Tang_US x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
 
 eststo exp_scratio: areg dlnprice_tr dlnRER x_scratio_lag dlnrgdp scratio_lag i.year, a(group_id)
 eststo exp_ExtFin_US_scratio: areg dlnprice_tr dlnRER x_ExtFin_US x_scratio_lag dlnrgdp scratio_lag i.year, a(group_id)
@@ -940,13 +789,13 @@ esttab imp_MS4_* using "D:\Project C\tables\matched\table_imp_MS_xt4.csv", repla
 cd "D:\Project C\sample_matched"
 use sample_matched_imp,clear
 
-eststo imp_markup: areg dlnprice_tr dlnRER x_Markup_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo imp_ExtFin_US_markup: areg dlnprice_tr dlnRER x_ExtFin_US x_Markup_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo imp_Tang_US_markup: areg dlnprice_tr dlnRER x_Tang_US x_Markup_lag Markup_lag tfp_lag dlnrgdp i.year, a(group_id)
+eststo imp_markup: areg dlnprice_tr dlnRER x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
+eststo imp_ExtFin_US_markup: areg dlnprice_tr dlnRER x_ExtFin_US x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
+eststo imp_Tang_US_markup: areg dlnprice_tr dlnRER x_Tang_US x_Markup_lag Markup_lag dlnrgdp i.year, a(group_id)
 
-eststo imp_tfp: areg dlnprice_tr dlnRER x_tfp_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo imp_ExtFin_US_tfp: areg dlnprice_tr dlnRER x_ExtFin_US x_tfp_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo imp_Tang_US_tfp: areg dlnprice_tr dlnRER x_Tang_US x_tfp_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
+eststo imp_tfp: areg dlnprice_tr dlnRER x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
+eststo imp_ExtFin_US_tfp: areg dlnprice_tr dlnRER x_ExtFin_US x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
+eststo imp_Tang_US_tfp: areg dlnprice_tr dlnRER x_Tang_US x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
 
 eststo imp_scratio: areg dlnprice_tr dlnRER x_scratio_lag dlnrgdp scratio_lag i.year, a(group_id)
 eststo imp_ExtFin_US_scratio: areg dlnprice_tr dlnRER x_ExtFin_US x_scratio_lag dlnrgdp scratio_lag i.year, a(group_id)
@@ -956,11 +805,11 @@ estfe imp_markup imp_ExtFin_US_markup imp_Tang_US_markup imp_tfp imp_ExtFin_US_t
 esttab imp_markup imp_ExtFin_US_markup imp_Tang_US_markup imp_tfp imp_ExtFin_US_tfp imp_Tang_US_tfp imp_scratio imp_ExtFin_US_scratio imp_Tang_US_scratio using "D:\Project C\tables\matched\table_imp_markup_tfp_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_US)
 
 * Alternative CN measures for financial constraints
-eststo imp_ExtFin_cic2_markup: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_Markup_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo imp_Tang_cic2_markup: areg dlnprice_tr dlnRER x_Tang_cic2 x_Markup_lag Markup_lag tfp_lag dlnrgdp i.year, a(group_id)
+eststo imp_ExtFin_cic2_markup: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
+eststo imp_Tang_cic2_markup: areg dlnprice_tr dlnRER x_Tang_cic2 x_Markup_lag Markup_lag dlnrgdp i.year, a(group_id)
 
-eststo imp_ExtFin_cic2_tfp: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_tfp_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo imp_Tang_cic2_tfp: areg dlnprice_tr dlnRER x_Tang_cic2 x_tfp_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
+eststo imp_ExtFin_cic2_tfp: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
+eststo imp_Tang_cic2_tfp: areg dlnprice_tr dlnRER x_Tang_cic2 x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
 
 eststo imp_ExtFin_cic2_scratio: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_scratio_lag dlnrgdp scratio_lag i.year, a(group_id)
 eststo imp_Tang_cic2_scratio: areg dlnprice_tr dlnRER x_Tang_cic2 x_scratio_lag dlnrgdp scratio_lag i.year, a(group_id)

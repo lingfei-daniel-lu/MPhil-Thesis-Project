@@ -5,23 +5,23 @@ This section describes our econometric specifications and measurements of key va
 
 \subsection{Baseline estimations of exchange rate pass-through}
 
-Since exchange rate pass-through is not an indicator that can be directly measured, we need to use panel data regression to estimate it. The first step goal is to estimate exchange rate pass-through as the elasticity of unit values to exchange rate changes using the firm-product-country details. Our strategy is based on both fixed effect panel regression and dynamic panel regression. Specifically, we run a regression of import price changes on the bilateral real exchange rate changes between China and the source, controlling for the real GDP of the source country. The baseline equation refers to AIK (2014)\cite{aik2014} and LMX (2015)\cite{lmx2015} and is as below:
+Since exchange rate pass-through is not an indicator that can be directly measured, we need to use panel data regression to estimate it. The first step goal is to estimate exchange rate pass-through as the elasticity of unit values to exchange rate changes using the firm-product-country details. Our strategy is based on both fixed effects panel regression and dynamic panel regression. Specifically, we run a regression of import price changes on the bilateral real exchange rate changes between China and the source, controlling for the real GDP of the source country. The baseline equation refers to AIK (2014)\cite{aik2014} and LMX (2015)\cite{lmx2015} and is as below:
 
 \begin{equation}
 \Delta \ln P^{D}_{i j c t}=\alpha+\beta^D \Delta \ln R E R_{c t}+\gamma \Delta \ln R G D P_{c t}+\xi_{i j c}+\tau_{t}+\varepsilon_{i j c t}
 \end{equation}
 
-where $P_{ijct}$ represents the import price of the product $i$ bought by firm j from country c during year t, and $D \in$ {Import, Export}. Therefore, this equation could be used to estimate both import and export exchange rate pass-through with different values of D. $R E R_{c t}$ is the bilateral real exchange rate between Chinese RMB and currency in country c, $RGDP_{ct}$ represents real GDP of the source country deflated to the constant price level, which proxy for market demand. $\xi_{ijc}$ is the firm-product-country level fixed effect to capture any time-invariant unobserved factors for a combination of firm, product, and destination. The multi-dimensional fixed effects restrict unit value changes to price adjustments, rather than other changes in corporate trade decisions. $\tau_t$, the year dummies, control for macro-shocks that are common to all exporters.
+where $P_{ijct}$ represents the import price of the product $i$ bought by firm j from country c during year t, and $D \in$ {Import, Export}. Therefore, this equation could be used to estimate both import and export exchange rate pass-through with different values of D. $R E R_{c t}$ is the bilateral real exchange rate between Chinese RMB and currency in country c, $RGDP_{ct}$ represents real GDP of the source country deflated to the constant price level, which proxy for market demand. $\xi_{ijc}$ denotes the firm-product-country level fixed effects to capture any time-invariant unobserved factors for a combination of firm, product, and destination. The multi-dimensional fixed effects restrict unit value changes to price adjustments, rather than other changes in corporate trade decisions. $\tau_t$, the year dummies, control for macro-shocks that are common to all exporters.
 
 To deal with possible non-stationarity of the panel sample, we use the first difference of the logarithms for prices $\Delta \ln P^{D}_{i j c t}$, real exchange rates $\Delta \ln R E R_{c t}$ and real GDP $\Delta \ln R G D P_{c t}$ to represent their annual rates of change. In this way, we transform the dynamic panel into a fixed effects regression. Therefore, the estimated coefficient of interest $\beta_1$ is the elasticity of price changes to exchange rate changes, i.e. the import exchange rate pass-through. We also provide estimations for export exchange rate pass-through which is more common in past literature, where the import prices are now replaced by export prices and the information of sources is replaced by which of destination markets. 
 
 The real prices for export and import are always denominated by the Chinese RMB in this paper. Using RMB denominated at both the import and export sides makes the meaning of the coefficients different. The level of coefficient $\beta^{D=Import}$ measures the completeness of import exchange rate pass-through, i.e. a higher $\beta$ means Chinese importers take more volatile import RMB prices during exchange rate shocks. However, for the export side,  $\beta^{D=Export}$ means the "incompleteness" of the export pass-through because a higher $\beta$ means Chinese exporters pass less exchange rate change to the destination market while having more volatile domestic currency prices. To be noticed, a majority of firms in our sample are both importers and exporters so they will appear in estimations of both exchange rate pass-through.
 
-\subsection{Estimations of credit constraint effect on exchange rate pass-through}\label{seq-4.1.2}
+\subsection{Estimations of credit constraint effects on exchange rate pass-through}\label{seq-4.1.2}
 
 Since our main focus is how firms' credit constraints affect exchange rate pass-through, we then include an interaction term of sectors’ financial vulnerability into estimation functions. Intuitively, firms operating in those financially vulnerable industries tend to have less access to enough funds to support their international trade activities, that is, they are subject to tighter credit constraints.
 
-Therefore, we study the credit constraint effect on exchange rate pass-through across sectors with the following panel regression:
+Therefore, we study the credit constraint effects on exchange rate pass-through across sectors with the following panel regression:
 
 \begin{equation}
 	\Delta \ln P^{D}_{ijct}=\alpha+\beta^D_{1} \Delta \ln RER_{ct}+\beta^D_{2} \Delta \ln RER_{ct} \cdot FV_{j}+\gamma \Delta \ln RGDP_{ct}+\xi_{ijc}+\tau_{t} +\varepsilon_{ijct}
@@ -48,17 +48,20 @@ We will then use the estimation strategy of the form Equation 3 to take into acc
 Market share is one of the most popular proxies for firm size or market power. For example, AIK (2014)\cite{aik2014} uses destination-specific market shares proxying for markup elasticity. When using market share as the additional factor, the above equation becomes the following form:
 
 \begin{equation}
-	\Delta \ln P^{D}_{ijct}=\alpha+[\beta^D_{1}+ \beta^D_{2} \cdot FV_{j}+\beta^D_{3} \cdot S^{D}_{ijct}+\beta^D_4 \cdot {S^{D}_{ijct}}^2] \Delta \ln RER_{ct} +\gamma \Delta \ln RGDP_{ct}+ \eta S^{D}_{ijct}+\xi_{ijc}+\tau_{t} +\varepsilon_{ijct}.
+	\begin{aligned}
+	\Delta \ln P^{D}_{ijct}=&\alpha+[\beta^D_{1}+ \beta^D_{2} \cdot FV_{j}+\beta^D_{3} \cdot S^{D}_{ijct}+\beta^D_4 \cdot {S^{D}_{ijct}}^2] \Delta \ln RER_{ct} \\
+	&+\gamma \Delta \ln RGDP_{ct}+ \eta S^{D}_{ijct}+\xi_{ijc}+\tau_{t} +\varepsilon_{ijct}.
+	\end{aligned}
 	\label{eq4.4}
 \end{equation}
 
-The quadratic term for market share is used to test whether there is a non-monotonic relationship between exchange rate pass-through and market shares, such as the U-shape relationship documented by Garetto (2016)\cite{garetto2016} and Devereux, Dong, and Tomlin (2017)\cite{devereux2017}. In addition to this, controlling for market share improves the accuracy of our estimates of the effect of credit constraints on exchange rate pass-through.
+The quadratic term for market share is used to test whether there is a non-monotonic relationship between exchange rate pass-through and market shares, such as the U-shape relationship documented by Garetto (2016)\cite{garetto2016} and Devereux, Dong, and Tomlin (2017)\cite{devereux2017}. In addition to this, controlling for market share improves our estimation accuracy of the effect of credit constraints on exchange rate pass-through.
 
 \section{Measurements}
 
 \subsection{Unit value as trade price}
 
-The customs records contain disaggregate trade values (denominated by US dollars) and quantities for each HS6 product $i$, each firm $j$,, from (or to) each country $c$, in each year $t$, $V_{ijct}$, and $Q_{ijct}$. We first convert the value of the goods into RMB using the average exchange rate for the year. Then, the import and export prices we use are computed as unit values, defined as 
+The customs records contain disaggregated trade values (denominated by US dollars) and quantities for each HS6 product $i$, each firm $j$,, from (or to) each country $c$, in each year $t$, $V_{ijct}$, and $Q_{ijct}$. We first convert the value of the goods into RMB using the average exchange rate for the year. Then, the import and export prices we use are computed as unit values, defined as 
 
 $$
 P^{D}_{ijct}=\frac{V^{D}_{ijct}\cdot NER_{US,t}}{Q^{D}_{ijct}}
@@ -68,7 +71,7 @@ where $D \in$ \{Import, Export\} and $NER_{US,t}$ is the annualized nominal exch
 
 Similar to real exchange rates, we take the first difference of the logarithm to represent price changes of a certain product across years. We will exclude observations with the annual growth rate of unit value in the top or bottom 1 percentile in the distribution, by HS2 product category and year.
 
-\subsection{Credit constraint}\label{sec-4.2.2}
+\subsection{Credit constraints}\label{sec-4.2.2}
 
 One of the most critical issues in our empirical strategy is to measure the extent of financial constraints. To deal with potential concurrent endogeneity, our measures of credit constraints are applied to each firm across the whole period. Following a widely recognized literature on the role of credit constraints in international trade (Kroszner, Laeven, and Klingebiel, 2007\cite{kroszner2007}; Manova, Wei, and Zhang, 2015\cite{manova-wei-zhang2015}; Fan, Lai, and Li, 2015\cite{fan-lai-li2015}), we use multiple financial vulnerability measures at the sector level to proxy for credit needs (demand of outside capital). These measures are designed to reflect the nature of each industry which should be regarded as exogenous for each individual firm. If a firm is in a more financially vulnerable industry, it tends to face a tighter credit constraint.
 
@@ -97,7 +100,9 @@ $$
 In practice, we need to construct four production variables in log form: real output value $y_t$, persons engaged $l_t$, real fixed assets at current value $k_t$, and real material inputs $m_t$. Real output values are deflated by output deflators, while real fixed assets and real material inputs are deflated by investment deflators and input deflators, respectively. The deflators are constructed as in Brandt, Van Biesebroeck, and Zhang (2012)\cite{brandt2012}.
 
 \subsection{Import sources and export markets}\label{sec-4.2.4}
-Following the literature about import sourcing, an importer's sourcing diversity could increase its bargaining power in import prices in addition to its production side characteristics. We want to test how importers' sourcing diversity affects exchange rate pass-through. We provide a simple measure of the firm-product-level sourcing diversity $Source_{ij}$ as the number of source countries from which an importer imports a certain HS6 product type. Similarly, for the export side, we count the number of destination countries to which an exporter exports a certain HS6 product type as the firm-product-level selling measure, $Market_{ij}$. Controlling other variables, the number of export markets for the same product can measure the export network diversity. To control for differences in the firm size, we separately include the total number of HS6 product types imported (or exported) by the firm and the total number of trading partners of the firm in the vector $\mathbb{Z}_{jt}$.
+Following the literature about import sourcing, an importer's sourcing diversity could increase its bargaining power in import prices in addition to its production side characteristics. We want to test how importers' sourcing diversity affects exchange rate pass-through. We provide a simple measure of the firm-product-level sourcing diversity $Source_{ijt}$ as the number of source countries from which an importer imports a certain HS6 product type $i$. 
+
+Similarly, for the export side, we count the number of destination countries to which an exporter exports a certain HS6 product type as the firm-product-level selling measure, $Market_{ijt}$. Controlling other variables, the number of export markets for the same product can measure the export network diversity. To control for differences in the firm size, we separately include the total number of HS6 product types imported (or exported) by the firm and the total number of trading partners of the firm in the vector $\mathbb{Z}_{jt}$.
 
 \subsection{Market share}\label{sec-4.2.5}
 

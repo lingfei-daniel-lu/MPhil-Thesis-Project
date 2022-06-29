@@ -2,7 +2,7 @@
 
 \section{Alternative Measures of Credit Constraints}
 
-As the first robustness test to further verify our baseline results, we use alternative credit constraint measures from CIE database. The details of constructing these Chinese variables are detailed in section 4.2.2\ref{sec-4.2.2}. Although Chinese financial market is less mature than that of the US, the rankings of industries in credit constraints are comparable. Our results are reported in Table \ref{tab6.1} which can be easily compared with the results using US measures.
+As the first robustness test to further verify our baseline results, we use alternative credit constraint measures from CIE database. The details of constructing these Chinese variables are detailed in section \ref{sec-4.2.2}. Although Chinese financial market is less mature than that of the US, the rankings of industries in credit constraints are comparable. Our results are reported in Table \ref{tab6.1} which can be easily compared with the results using US measures.
 
 \begin{table}[htbp]
 	\centering
@@ -19,13 +19,13 @@ As the first robustness test to further verify our baseline results, we use alte
 		& (0.016) & (0.049) & (0.040) & (0.017) \\
 		$\Delta \ln RGDP_{ct}$ & 0.356*** & 0.346*** & 0.442*** & 0.412*** \\
 		& (0.084) & (0.084) & (0.084) & (0.084) \\
-		$\Delta \ln RER_{ct}$*ExtFin & 0.263*** &       &       &  \\
+		$\Delta \ln RER_{ct}$*$ExtFin_{jt}$ & 0.263*** &       &       &  \\
 		& (0.013) &       &       &  \\
-		$\Delta \ln RER_{ct}$*Tang &       & -5.946*** &       &  \\
+		$\Delta \ln RER_{ct}$*$Tang_{jt}$ &       & -5.946*** &       &  \\
 		&       & (0.162) &       &  \\
-		$\Delta \ln RER_{ct}$*Inventory &       &       & 10.913*** &  \\
+		$\Delta \ln RER_{ct}$*$Inventory_{jt}$ &       &       & 10.913*** &  \\
 		&       &       & (0.324) &  \\
-		$\Delta \ln RER_{ct}$*R\&D Intensity &       &       &       & 17.462*** \\
+		$\Delta \ln RER_{ct}$*$R\&D_{jt}$ &       &       &       & 17.462*** \\
 		&       &       &       & (0.526) \\
 		Year FE  & Yes   & Yes   & Yes   & Yes \\
 		Firm-product-country FE & Yes   & Yes   & Yes   & Yes \\
@@ -38,13 +38,13 @@ As the first robustness test to further verify our baseline results, we use alte
 		& (0.007) & (0.022) & (0.018) & (0.007) \\
 		$\Delta \ln RGDP_{ct}$ & -0.083** & -0.083** & -0.083** & -0.084** \\
 		& (0.036) & (0.036) & (0.036) & (0.036) \\
-		$\Delta \ln RER_{ct}$*ExtFin & -0.024*** &       &       &  \\
+		$\Delta \ln RER_{ct}$*$ExtFin_{jt}$ & -0.024*** &       &       &  \\
 		& (0.007) &       &       &  \\
-		$\Delta \ln RER_{ct}$*Tang &       & 0.587*** &       &  \\
+		$\Delta \ln RER_{ct}$*$Tang_{jt}$ &       & 0.587*** &       &  \\
 		&       & (0.072) &       &  \\
-		$\Delta \ln RER_{ct}$*Inventory &       &       & -0.512*** &  \\
+		$\Delta \ln RER_{ct}$*$Inventory_{jt}$ &       &       & -0.512*** &  \\
 		&       &       & (0.159) &  \\
-		$\Delta \ln RER_{ct}$*R\&D Intensity &       &       &       & -0.516** \\
+		$\Delta \ln RER_{ct}$*$R\&D_{jt}$ &       &       &       & -0.516** \\
 		&       &       &       & (0.236) \\
 		Year FE  & Yes   & Yes   & Yes   & Yes \\
 		Firm-product-country FE & Yes   & Yes   & Yes   & Yes \\
@@ -60,49 +60,6 @@ As the first robustness test to further verify our baseline results, we use alte
 \end{table}
 
 Columns 1-4 of panel A of Table \ref{tab6.1} present the import-side results for external finance dependence, tangibility, inventory ratio, and R\&D intensity, respectively. Panel B report the export-side results for the same variables. Nevertheless, most of the interaction term coefficients exhibit the same signs as above, confirming the validity of our baseline findings of the effects of credit constraints on exchange rate pass-through. We can still conclude that financially more constrained firms have a more complete export exchange rate pass-through than those less constrained.
-
-\section{Alternative Estimates of Markup}
-
-Another potential issue is how accurate the markup estimates are. According to DLW (2012)\cite{dlw2012} and Brooks, Kaboski, and Li (2021)\cite{bkl2021}, we estimate production functions at the industry level, so the measurement error in markups depends on the number of firms in an industry. In any case, the DLW-based markup estimates are noisy in practice. Therefore, in this section, we estimate a firm's markup as simply its real sales over total real costs, which only requires an assumption of constant returns to scale. The total costs are computed as the sum of total operation input (as material input), current wage payable (as labor input) and asset depreciation rate multiplied by total fixed assets (as capital input). We calibrate the asset depreciation rate as 15\% according to literature conventions.
-
-\begin{table}[htbp]
-	\centering
-	\caption{Alternative Estimations with Sales to Cost Ratio}
-	\begin{threeparttable}
-	\begin{tabular}{lccc}
-		\toprule
-		& (1)   & (2)   & (3) \\
-		\midrule
-		Panel A & \multicolumn{3}{c}{Import} \\
-		& Markup & Markup+ & Markup+ \\
-		&       & External Finance & Tangibility \\
-		\midrule
-		$\Delta \ln RER_{ct}$ & -0.275*** & -0.230*** & 0.490*** \\
-		& (0.032) & (0.032) & (0.043) \\
-		$\Delta \ln RGDP_{ct}$ & 0.382*** & 0.435*** & 0.397*** \\
-		& (0.084) & (0.084) & (0.084) \\
-		$\Delta \ln RER_{ct}$*$[SI/cost]_{t-1}$ & 0.546*** & 0.392*** & 0.501*** \\
-		& (0.024) & (0.024) & (0.024) \\
-		$\Delta \ln RER_{ct}$*ExtFin &       & 1.118*** &  \\
-		&       & (0.027) &  \\
-		$\Delta \ln RER_{ct}$*Tang &       &       & -2.888*** \\
-		&       &       & (0.108) \\
-		$[SI/cost]_{t-1}$ & -0.003 & -0.002 & -0.001 \\
-		& (0.004) & (0.004) & (0.004) \\
-		Year FE  & Yes   & Yes   & Yes \\
-		Firm-product-country FE & Yes   & Yes   & Yes \\
-		Observations & 1792020 & 1792020 & 1792020 \\
-		\bottomrule
-	\end{tabular}
-	\label{tab6.2}
-	\begin{tablenotes}
-		\footnotesize
-		\item[*] Robust standard errors clustered at firm level; * significant at 5\%; ** significant at 1\%. Panel B is shown in Appendix A.4.
-	\end{tablenotes}
-\end{threeparttable}
-\end{table}
-
-Table \ref{tab6.2} shows an alternative version of the results in section 5.3. The coefficients of the sales-to-cost ratio interaction terms are of same direction as previous ones. That is to say, higher cost of sales ratio leads to more complete import price pass-through and less complete export price pass-through. Results for export side are shown in Appendix \ref{tabA.4}.
 
 \section{Alternative Subsample: Two-way traders}
 
@@ -154,7 +111,7 @@ To test whether the pattern of China's import pass-through is mainly dominated b
 		Observations & 1415415 & 1415415 & 1415415 & 1415415 \\
 		\bottomrule
 	\end{tabular}
-	\label{tab6.3}
+	\label{tab6.2}
 	\begin{tablenotes}
 		\footnotesize
 		\item[*] Robust standard errors clustered at firm level; * significant at 5\%; ** significant at 1\%.
