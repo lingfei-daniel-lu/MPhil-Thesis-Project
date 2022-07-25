@@ -2,7 +2,7 @@ library(ggplot2)
 library(lubridate)
 library(readxl)
 
-mydata <- read_xlsx("figure 1.xlsx")
+mydata <- read_xlsx("figure.xlsx")
 
 colnames(mydata) <- c("Currency","Year","NER","RER")
 

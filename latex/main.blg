@@ -1,48 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2022)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-The style file: plain.bst
+The style file: apalike.bst.bst
 Database file #1: ref.bib
-Warning--I didn't find a database entry for "bmm"
 You've used 36 entries,
-            2118 wiz_defined-function locations,
-            707 strings with 8907 characters,
-and the built_in function-call counts, 12089 in all, are:
-= -- 1186
+            1935 wiz_defined-function locations,
+            680 strings with 8585 characters,
+and the built_in function-call counts, 14499 in all, are:
+= -- 1413
 > -- 543
-< -- 0
-+ -- 214
+< -- 16
++ -- 181
 - -- 176
-* -- 956
-:= -- 2054
+* -- 1320
+:= -- 2518
 add.period$ -- 108
 call.type$ -- 36
-change.case$ -- 196
-chr.to.int$ -- 0
+change.case$ -- 268
+chr.to.int$ -- 35
 cite$ -- 36
-duplicate$ -- 396
-empty$ -- 961
-format.name$ -- 176
-if$ -- 2498
-int.to.chr$ -- 0
-int.to.str$ -- 36
+duplicate$ -- 504
+empty$ -- 1069
+format.name$ -- 234
+if$ -- 2849
+int.to.chr$ -- 2
+int.to.str$ -- 0
 missing$ -- 36
 newline$ -- 183
-num.names$ -- 72
-pop$ -- 124
+num.names$ -- 108
+pop$ -- 180
 preamble$ -- 1
-purify$ -- 160
+purify$ -- 268
 quote$ -- 0
-skip$ -- 262
+skip$ -- 376
 stack$ -- 0
-substring$ -- 951
+substring$ -- 1205
 swap$ -- 36
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 144
+type$ -- 216
 warning$ -- 0
 while$ -- 112
-width$ -- 38
-write$ -- 398
-(There was 1 warning)
+width$ -- 0
+write$ -- 470

@@ -1042,3 +1042,12 @@ In the previous regressions including estimated markup and TFP, we find that hig
 This week we empirically test how importers' sourcing diversity affects exchange rate pass-through. We measure the firm-product-level sourcing diversity as the number of source countries from which an importer imports a certain HS6 product type.
 
 Importers who import from more countries or import more products in total will have a slightly more complete pass-through, but those who import a certain product from more sources will have a less complete pass-through. However, exporters who export more products in total will have a less complete pass-through; but those who export to more destinations (both for a certain product or in total) will have a more complete pass-through
+
+## 2022/07/08
+
+After the meeting, we propose four points to work on in the next stage:
+
+1. Check the baseline ERPT for ordinary and processing firms
+2. Use alternative measures of processing trade (only keeping pure assembling transactions）
+3. Try to cluster standard error to check the significance.
+4. Calculate export intensity at the firm level to check the export-import linkage

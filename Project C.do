@@ -193,7 +193,7 @@ by party_id HS6 coun_aim: gen dlnprice=ln(price_RMB)-ln(price_RMB[_n-1]) if year
 by party_id HS6 coun_aim: egen year_count=count(year)
 drop if year_count<=1
 winsor2 dlnprice, trim by(HS2 year)
-egen group_id=group(party_id HS2 coun_aim)
+egen group_id=group(party_id HS6 coun_aim)
 save sample_all_exp,replace
 
 cd "D:\Project C\sample_all"
@@ -240,7 +240,7 @@ by party_id HS6 coun_aim: gen dlnprice=ln(price_RMB)-ln(price_RMB[_n-1]) if year
 by party_id HS6 coun_aim: egen year_count=count(year)
 drop if year_count<=1
 winsor2 dlnprice, trim by(HS2 year)
-egen group_id=group(party_id HS2 coun_aim)
+egen group_id=group(party_id HS6 coun_aim)
 save sample_all_imp,replace
 
 cd "D:\Project C\sample_all"
@@ -275,7 +275,6 @@ merge n:1 coun_aim using "D:\Project A\customs merged\cust_country",nogen keep(m
 drop coun_aim
 rename country_adj coun_aim
 drop if coun_aim==""|coun_aim=="中华人民共和国"
-collapse (sum) value_year quant_year, by (FRDM EN exp_imp hs_id coun_aim year)
 rename hs_id HS8
 tostring HS8,replace
 replace HS8 = "0" + HS8 if length(HS8) == 7
@@ -286,13 +285,14 @@ merge n:1 HS2002 using "D:\Project C\HS Conversion\HS2002to1996.dta",nogen updat
 replace HS1996=substr(HS8,1,6) if year<2002
 rename HS1996 HS6
 drop if HS6=="" | FRDM=="" | quant_year==0 | value_year==0
-collapse (sum) value_year quant_year, by (FRDM EN exp_imp HS6 coun_aim year)
+gen shipment_type=1 if shipment=="一般贸易" | shipment==""
+replace shipment_type=2 if shipment=="进料加工贸易" | shipment=="来料加工贸易" | shipment=="来料加工装配贸易" | shipment=="来料加工装配进口的设备"
+replace shipment_type=0 if shipment_type==.
+collapse (sum) value_year quant_year, by (FRDM EN exp_imp HS6 coun_aim year shipment_type)
 merge n:1 year using "D:\Project C\PWT10.0\US_NER_99_11",nogen keep(matched)
-gen price_RMB=value_year*NER_US/quant_year
 merge n:1 year coun_aim using "D:\Project C\PWT10.0\RER_99_11.dta",nogen keep(matched) keepus(NER RER dlnRER dlnrgdp)
 drop if dlnRER==.
 gen HS2=substr(HS6,1,2)
-gen HS4=substr(HS6,1,4)
 sort FRDM HS6 coun_aim year
 format EN %30s
 format coun_aim %20s
@@ -508,7 +508,6 @@ save CIC_contract,replace
 *-------------------------------------------------------------------------------
 * Trading Partner Base
 cd "D:\Project C\sample_matched"
-
 use customs_matched,clear
 keep FRDM year exp_imp HS6
 duplicates drop
@@ -557,6 +556,8 @@ merge n:1 FRDM year exp_imp HS6 using customs_matched_product_country,nogen
 rename prod_coun_n market
 keep if exp_imp =="exp"
 drop exp_imp
+collapse (sum) value_year quant_year, by(FRDM EN year coun_aim NER NER_US RER dlnRER dlnrgdp HS2 HS6 market)
+gen price_RMB=value_year*NER_US/quant_year
 merge n:1 FRDM year using ".\customs_twoway_list",nogen keep(matched) keepus(twoway_trade)
 merge n:1 FRDM year using ".\CIE\cie_credit",nogen keep(matched)
 merge n:1 coun_aim using ".\customs_matched_top_partners",nogen keep(matched)
@@ -571,9 +572,9 @@ by FRDM HS6 coun_aim: gen dlnprice=ln(price_RMB)-ln(price_RMB[_n-1]) if year==ye
 by FRDM HS6 coun_aim: egen year_count=count(year)
 drop if year_count<=1
 drop if HS2=="93"|HS2=="97"|HS2=="98"|HS2=="99"
-egen group_id=group(FRDM HS2 coun_aim)
+egen group_id=group(FRDM HS6 coun_aim)
 winsor2 dlnprice, trim by(HS2 year)
-local varlist "FPC_US ExtFin_US Invent_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 Tang Invent RDint Cash Liquid Levg MS MS_sqr Markup_DLWTLD tfp_tld Markup_lag tfp_lag scratio scratio_lag twoway_trade coun_n prod_n market"
+local varlist "FPC_US ExtFin_US Invent_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 MS MS_sqr Markup_DLWTLD tfp_tld Markup_lag tfp_lag scratio scratio_lag twoway_trade market"
 foreach var of local varlist {
 	gen x_`var' = `var'*dlnRER
 }
@@ -620,11 +621,12 @@ use sample_matched_exp,clear
 
 eststo exp_MS: areg dlnprice_tr dlnRER x_MS dlnrgdp MS i.year, a(group_id)
 eststo exp_MS_sqr: areg dlnprice_tr dlnRER x_MS x_MS_sqr dlnrgdp MS i.year, a(group_id)
+eststo exp_MS_sqr_FPC_US: areg dlnprice_tr dlnRER x_MS x_MS_sqr x_FPC_US dlnrgdp MS i.year, a(group_id)
 eststo exp_MS_sqr_ExtFin_US: areg dlnprice_tr dlnRER x_MS x_MS_sqr x_ExtFin_US dlnrgdp MS i.year, a(group_id)
 eststo exp_MS_sqr_Tang_US: areg dlnprice_tr dlnRER x_MS x_MS_sqr x_Tang_US dlnrgdp MS i.year, a(group_id)
 
-estfe exp_MS exp_MS_sqr exp_MS_sqr_ExtFin_US exp_MS_sqr_Tang_US, labels(group_id "Firm-product-country FE")
-esttab exp_MS exp_MS_sqr exp_MS_sqr_ExtFin_US exp_MS_sqr_Tang_US using "D:\Project C\tables\matched\table_exp_MS.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("MS" "MS^2" "Add ExtFin" "Add Tangibility") order(dlnRER dlnrgdp x_*)
+estfe exp_MS exp_MS_sqr exp_MS_sqr_FPC_US exp_MS_sqr_ExtFin_US exp_MS_sqr_Tang_US, labels(group_id "Firm-product-country FE")
+esttab exp_MS exp_MS_sqr exp_MS_sqr_FPC_US exp_MS_sqr_ExtFin_US exp_MS_sqr_Tang_US using "D:\Project C\tables\matched\table_exp_MS.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("MS" "MS^2" "Add FPC" "Add ExtFin" "Add Tangibility") order(dlnRER dlnrgdp x_*)
 
 forv i=1/4{
 	eststo exp_MS4_`i': areg dlnprice_tr dlnRER dlnrgdp i.year if MS_xt4==`i', a(group_id)
@@ -633,14 +635,26 @@ forv i=1/4{
 estfe exp_MS4_*, labels(group_id "Firm-product-country FE")
 esttab exp_MS4_* using "D:\Project C\tables\matched\table_exp_MS_xt4.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles( "1st" "2nd" "3rd" "4th")
 
+forv i=1/4{
+	eststo exp_MS4_`i'_ExtFin_US: areg dlnprice_tr dlnRER x_ExtFin_US dlnrgdp i.year if MS_xt4==`i', a(group_id)
+	eststo exp_MS4_`i'_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp i.year if MS_xt4==`i', a(group_id)
+}
+estfe exp_MS4_1_* exp_MS4_2_* exp_MS4_3_* exp_MS4_4_*, labels(group_id "Firm-product-country FE")
+esttab exp_MS4_1* exp_MS4_2* exp_MS4_3* exp_MS4_4* using "D:\Project C\tables\matched\table_exp_MS_xt4_fin_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles( "1st" "1st" "2nd" "2nd" "3rd" "3rd" "4th" "4th") order(dlnRER dlnrgdp x_*)
+
 *-------------------------------------------------------------------------------
 * Regressions controlling firms' markup and TFP
 cd "D:\Project C\sample_matched"
 use sample_matched_exp,clear
 
 eststo exp_markup: areg dlnprice_tr dlnRER x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
+eststo exp_FPC_US_markup: areg dlnprice_tr dlnRER x_FPC_US x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
 eststo exp_ExtFin_US_markup: areg dlnprice_tr dlnRER x_ExtFin_US x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
 eststo exp_Tang_US_markup: areg dlnprice_tr dlnRER x_Tang_US x_Markup_lag Markup_lag dlnrgdp i.year, a(group_id)
+eststo exp_Invent_US_markup: areg dlnprice_tr dlnRER x_Invent_US x_Markup_lag Markup_lag dlnrgdp i.year, a(group_id)
+
+estfe exp_markup exp_FPC_US_markup exp_ExtFin_US_markup exp_Tang_US_markup exp_Invent_US_markup, labels(group_id "Firm-product-country FE")
+esttab exp_markup exp_FPC_US_markup exp_ExtFin_US_markup exp_Tang_US_markup exp_Invent_US_markup using "D:\Project C\tables\matched\table_exp_markup_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_US)
 
 eststo exp_tfp: areg dlnprice_tr dlnRER x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
 eststo exp_ExtFin_US_tfp: areg dlnprice_tr dlnRER x_ExtFin_US x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
@@ -652,19 +666,6 @@ eststo exp_Tang_US_scratio: areg dlnprice_tr dlnRER x_Tang_US x_scratio_lag dlnr
 
 estfe exp_markup exp_ExtFin_US_markup exp_Tang_US_markup exp_tfp exp_ExtFin_US_tfp exp_Tang_US_tfp exp_scratio exp_ExtFin_US_scratio exp_Tang_US_scratio, labels(group_id "Firm-product-country FE")
 esttab exp_markup exp_ExtFin_US_markup exp_Tang_US_markup exp_tfp exp_ExtFin_US_tfp exp_Tang_US_tfp exp_scratio exp_ExtFin_US_scratio exp_Tang_US_scratio using "D:\Project C\tables\matched\table_exp_markup_tfp_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_US)
-
-* Alternative CN measures for financial constraints
-eststo exp_ExtFin_cic2_markup: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_Markup_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo exp_Tang_cic2_markup: areg dlnprice_tr dlnRER x_Tang_cic2 x_Markup_lag Markup_lag tfp_lag dlnrgdp i.year, a(group_id)
-
-eststo exp_ExtFin_cic2_tfp: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_tfp_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-eststo exp_Tang_cic2_tfp: areg dlnprice_tr dlnRER x_Tang_cic2 x_tfp_lag dlnrgdp Markup_lag tfp_lag i.year, a(group_id)
-
-eststo exp_ExtFin_cic2_scratio: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_scratio_lag dlnrgdp scratio_lag i.year, a(group_id)
-eststo exp_Tang_cic2_scratio: areg dlnprice_tr dlnRER x_Tang_cic2 x_scratio_lag dlnrgdp scratio_lag i.year, a(group_id)
-
-estfe exp_markup exp_ExtFin_cic2_markup exp_Tang_cic2_markup exp_tfp exp_ExtFin_cic2_tfp exp_Tang_cic2_tfp exp_scratio exp_ExtFin_cic2_scratio exp_Tang_cic2_scratio, labels(group_id "Firm-product-country FE")
-esttab exp_markup exp_ExtFin_cic2_markup exp_Tang_cic2_markup exp_tfp exp_ExtFin_cic2_tfp exp_Tang_cic2_tfp exp_scratio exp_ExtFin_cic2_scratio exp_Tang_cic2_scratio using "D:\Project C\tables\matched\table_exp_markup_tfp_CN.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_cic2)
 
 *-------------------------------------------------------------------------------
 * Two-way traders
@@ -688,17 +689,60 @@ esttab exp_twoway exp_twoway_FPC_US exp_twoway_ExtFin_US exp_twoway_Tang_US exp_
 cd "D:\Project C\sample_matched"
 use sample_matched_exp,clear
 
-eststo exp_country: areg dlnprice_tr dlnRER x_coun_n dlnrgdp i.year, a(group_id)
-eststo exp_product: areg dlnprice_tr dlnRER x_prod_n dlnrgdp i.year, a(group_id)
-eststo exp_market: areg dlnprice_tr dlnRER x_market x_coun_n x_prod_n dlnrgdp i.year, a(group_id)
+eststo exp_market: areg dlnprice_tr dlnRER x_market dlnrgdp i.year, a(group_id)
 
+gen x_FPC_US_market=x_FPC_US*market
 gen x_ExtFin_US_market=x_ExtFin_US*market
 gen x_Tang_US_market=x_Tang_US*market
+gen x_Invent_US_market=x_Invent_US*market
+
+eststo exp_FPC_US_market: areg dlnprice_tr dlnRER x_market x_FPC_US_market x_FPC_US dlnrgdp i.year, a(group_id)
 eststo exp_ExtFin_US_market: areg dlnprice_tr dlnRER x_market x_ExtFin_US_market x_ExtFin_US dlnrgdp i.year, a(group_id)
 eststo exp_Tang_US_market: areg dlnprice_tr dlnRER x_market x_Tang_US_market x_Tang_US dlnrgdp i.year, a(group_id)
+eststo exp_Invent_US_market: areg dlnprice_tr dlnRER x_market x_Invent_US_market x_Invent_US dlnrgdp i.year, a(group_id)
 
-estfe exp_country exp_product exp_market exp_ExtFin_US_market exp_Tang_US_market, labels(group_id "Firm-product-country FE")
-esttab exp_country exp_product exp_market exp_ExtFin_US_market exp_Tang_US_market using "D:\Project C\tables\matched\table_exp_market.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*)
+estfe exp_market exp_FPC_US_market exp_ExtFin_US_market exp_Tang_US_market exp_Invent_US_market, labels(group_id "Firm-product-country FE")
+esttab exp_market exp_FPC_US_market exp_ExtFin_US_market exp_Tang_US_market exp_Invent_US_market using "D:\Project C\tables\matched\table_exp_market.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*)
+
+*-------------------------------------------------------------------------------
+* Alternative FEs
+cd "D:\Project C\sample_matched"
+use sample_matched_exp,clear
+
+egen group_id_fy=group(FRDM year)
+egen group_id_pc=group(HS6 coun_aim)
+
+eststo exp_FPC_US_fe1: reghdfe dlnprice_tr dlnRER x_FPC_US dlnrgdp, absorb(group_id_fy coun_aim HS6)
+eststo exp_ExtFin_US_fe1: reghdfe dlnprice_tr dlnRER x_ExtFin_US dlnrgdp, absorb(group_id_fy coun_aim HS6)
+eststo exp_Tang_US_fe1: reghdfe dlnprice_tr dlnRER x_Tang_US dlnrgdp, absorb(group_id_fy coun_aim HS6)
+eststo exp_Invent_US_fe1: reghdfe dlnprice_tr dlnRER x_Invent_US dlnrgdp, absorb(group_id_fy coun_aim HS6)
+
+eststo exp_FPC_US_fe2: reghdfe dlnprice_tr dlnRER x_FPC_US dlnrgdp, absorb(group_id_fy group_id_pc)
+eststo exp_ExtFin_US_fe2: reghdfe dlnprice_tr dlnRER x_ExtFin_US dlnrgdp, absorb(group_id_fy group_id_pc)
+eststo exp_Tang_US_fe2: reghdfe dlnprice_tr dlnRER x_Tang_US dlnrgdp, absorb(group_id_fy group_id_pc)
+eststo exp_Invent_US_fe2: reghdfe dlnprice_tr dlnRER x_Invent_US dlnrgdp, absorb(group_id_fy group_id_pc)
+
+estfe exp_FPC_US_fe1 exp_ExtFin_US_fe1 exp_Tang_US_fe1 exp_Invent_US_fe1 exp_FPC_US_fe2 exp_ExtFin_US_fe2 exp_Tang_US_fe2 exp_Invent_US_fe2, labels(group_id "Firm-product-country FE" group_id_fy "Firm-year FE" group_id_pc "Product-Country FE" coun_aim "Country FE" HS6 "Product FE")
+esttab exp_FPC_US_fe1 exp_ExtFin_US_fe1 exp_Tang_US_fe1 exp_Invent_US_fe1 exp_FPC_US_fe2 exp_ExtFin_US_fe2 exp_Tang_US_fe2 exp_Invent_US_fe2 using "D:\Project C\tables\matched\table_exp_fe.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate(`r(indicate_fe)') mtitles("FPC" "External Finance" "Tangibility" "Inventory" "FPC" "External Finance" "Tangibility" "Inventory") order(dlnRER dlnrgdp x_*)
+
+*-------------------------------------------------------------------------------
+* Ordinary vs Processing
+cd "D:\Project C\sample_matched"
+use sample_matched_exp,clear
+
+eststo exp_ordinary_FPC_US: areg dlnprice_tr dlnRER x_FPC_US dlnrgdp i.year if shipment_type==1, a(group_id)
+eststo exp_ordinary_ExtFin_US: areg dlnprice_tr dlnRER x_ExtFin_US dlnrgdp i.year if shipment_type==1, a(group_id)
+eststo exp_ordinary_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp i.year if shipment_type==1, a(group_id)
+eststo exp_ordinary_Invent_US: areg dlnprice_tr dlnRER x_Invent_US dlnrgdp i.year if shipment_type==1, a(group_id)
+
+eststo exp_process_FPC_US: areg dlnprice_tr dlnRER x_FPC_US dlnrgdp i.year if shipment_type==2, a(group_id)
+eststo exp_process_ExtFin_US: areg dlnprice_tr dlnRER x_ExtFin_US dlnrgdp i.year if shipment_type==2, a(group_id)
+eststo exp_process_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp i.year if shipment_type==2, a(group_id)
+eststo exp_process_Invent_US: areg dlnprice_tr dlnRER x_Invent_US dlnrgdp i.year if shipment_type==2, a(group_id)
+
+estfe exp_ordinary_FPC_US exp_ordinary_ExtFin_US exp_ordinary_Tang_US exp_ordinary_Invent_US exp_process_FPC_US exp_process_ExtFin_US exp_process_Tang_US exp_process_Invent_US, labels(group_id "Firm-product-country FE")
+
+esttab exp_ordinary_FPC_US exp_ordinary_ExtFin_US exp_ordinary_Tang_US exp_ordinary_Invent_US exp_process_FPC_US exp_process_ExtFin_US exp_process_Tang_US exp_process_Invent_US using "D:\Project C\tables\matched\table_exp_process.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("Ordinary" "Ordinary" "Ordinary" "Ordinary" "Processing" "Processing" "Processing" "Processing") order(dlnRER dlnrgdp x_*)
 
 *-------------------------------------------------------------------------------
 * Use the same method to construct import sample
@@ -708,6 +752,8 @@ merge n:1 FRDM year exp_imp HS6 using customs_matched_product_country,nogen
 rename prod_coun_n source
 keep if exp_imp =="imp"
 drop exp_imp
+collapse (sum) value_year quant_year, by(FRDM EN year coun_aim NER NER_US RER dlnRER dlnrgdp HS2 HS6 source)
+gen price_RMB=value_year*NER_US/quant_year
 merge n:1 FRDM year using ".\customs_twoway_list",nogen keep(matched) keepus(twoway_trade)
 merge n:1 FRDM year using ".\CIE\cie_credit",nogen keep(matched)
 merge n:1 coun_aim using ".\customs_matched_top_partners",nogen keep(matched)
@@ -722,9 +768,9 @@ by FRDM HS6 coun_aim: gen dlnprice=ln(price_RMB)-ln(price_RMB[_n-1]) if year==ye
 by FRDM HS6 coun_aim: egen year_count=count(year)
 drop if year_count<=1
 drop if HS2=="93"|HS2=="97"|HS2=="98"|HS2=="99"
-egen group_id=group(FRDM HS2 coun_aim)
+egen group_id=group(FRDM HS6 coun_aim)
 winsor2 dlnprice, trim by(HS2 year)
-local varlist "FPC_US ExtFin_US Invent_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 Tang Invent RDint Cash Liquid Levg MS MS_sqr Markup_DLWTLD tfp_tld Markup_lag tfp_lag scratio scratio_lag twoway_trade coun_n prod_n source"
+local varlist "FPC_US ExtFin_US Invent_US Tang_US ExtFin_cic2 Tang_cic2 Invent_cic2 RDint_cic2 Cash_cic2 Liquid_cic2 Levg_cic2 MS MS_sqr Markup_DLWTLD tfp_tld Markup_lag tfp_lag scratio scratio_lag twoway_trade source"
 foreach var of local varlist {
 	gen x_`var' = `var'*dlnRER
 }
@@ -771,18 +817,25 @@ use sample_matched_imp,clear
 
 eststo imp_MS: areg dlnprice_tr dlnRER x_MS dlnrgdp MS i.year, a(group_id)
 eststo imp_MS_sqr: areg dlnprice_tr dlnRER x_MS x_MS_sqr dlnrgdp MS i.year, a(group_id)
+eststo imp_MS_sqr_FPC_US: areg dlnprice_tr dlnRER x_MS x_MS_sqr x_FPC_US dlnrgdp MS i.year, a(group_id)
 eststo imp_MS_sqr_ExtFin_US: areg dlnprice_tr dlnRER x_MS x_MS_sqr x_ExtFin_US dlnrgdp MS i.year, a(group_id)
 eststo imp_MS_sqr_Tang_US: areg dlnprice_tr dlnRER x_MS x_MS_sqr x_Tang_US dlnrgdp MS i.year, a(group_id)
 
-estfe imp_MS imp_MS_sqr imp_MS_sqr_ExtFin_US imp_MS_sqr_Tang_US, labels(group_id "Firm-product-country FE")
-esttab imp_MS imp_MS_sqr imp_MS_sqr_ExtFin_US imp_MS_sqr_Tang_US using "D:\Project C\tables\matched\table_imp_MS.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("MS" "MS^2" "Add ExtFin" "Add Tangibility") order(dlnRER dlnrgdp x_*)
+estfe imp_MS imp_MS_sqr imp_MS_sqr_FPC_US imp_MS_sqr_ExtFin_US imp_MS_sqr_Tang_US, labels(group_id "Firm-product-country FE")
+esttab imp_MS imp_MS_sqr imp_MS_sqr_FPC_US imp_MS_sqr_ExtFin_US imp_MS_sqr_Tang_US using "D:\Project C\tables\matched\table_imp_MS.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("MS" "MS^2" "Add FPC" "Add ExtFin" "Add Tangibility") order(dlnRER dlnrgdp x_*)
 
 forv i=1/4{
-	eststo imp_MS4_`i': areg dlnprice_tr dlnRER dlnrgdp i.year if MS_xt4==`i', a(group_id)
-	
+	eststo imp_MS4_`i': areg dlnprice_tr dlnRER dlnrgdp i.year if MS_xt4==`i', a(group_id)	
 }
-estfe imp_MS4_*, labels(group_id "Firm-product-country FE")
-esttab imp_MS4_* using "D:\Project C\tables\matched\table_imp_MS_xt4.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles( "1st" "2nd" "3rd" "4th")
+estfe imp_MS4_1 imp_MS4_2 imp_MS4_3 imp_MS4_4, labels(group_id "Firm-product-country FE")
+esttab imp_MS4_1 imp_MS4_2 imp_MS4_3 imp_MS4_4 using "D:\Project C\tables\matched\table_imp_MS_xt4.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles( "1st" "2nd" "3rd" "4th")
+
+forv i=1/4{
+	eststo imp_MS4_`i'_ExtFin_US: areg dlnprice_tr dlnRER x_ExtFin_US dlnrgdp i.year if MS_xt4==`i', a(group_id)
+	eststo imp_MS4_`i'_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp i.year if MS_xt4==`i', a(group_id)
+}
+estfe imp_MS4_1_* imp_MS4_2_* imp_MS4_3_* imp_MS4_4_*, labels(group_id "Firm-product-country FE")
+esttab imp_MS4_1* imp_MS4_2* imp_MS4_3* imp_MS4_4* using "D:\Project C\tables\matched\table_imp_MS_xt4_fin_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles( "1st" "1st" "2nd" "2nd" "3rd" "3rd" "4th" "4th") order(dlnRER dlnrgdp x_*)
 
 *-------------------------------------------------------------------------------
 * Regressions controlling firms' markup and TFP
@@ -790,8 +843,13 @@ cd "D:\Project C\sample_matched"
 use sample_matched_imp,clear
 
 eststo imp_markup: areg dlnprice_tr dlnRER x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
+eststo imp_FPC_US_markup: areg dlnprice_tr dlnRER x_FPC_US x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
 eststo imp_ExtFin_US_markup: areg dlnprice_tr dlnRER x_ExtFin_US x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
 eststo imp_Tang_US_markup: areg dlnprice_tr dlnRER x_Tang_US x_Markup_lag Markup_lag dlnrgdp i.year, a(group_id)
+eststo imp_Invent_US_markup: areg dlnprice_tr dlnRER x_Invent_US x_Markup_lag Markup_lag dlnrgdp i.year, a(group_id)
+
+estfe imp_markup imp_FPC_US_markup imp_ExtFin_US_markup imp_Tang_US_markup imp_Invent_US_markup, labels(group_id "Firm-product-country FE")
+esttab imp_markup imp_FPC_US_markup imp_ExtFin_US_markup imp_Tang_US_markup imp_Invent_US_markup using "D:\Project C\tables\matched\table_imp_markup_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_US)
 
 eststo imp_tfp: areg dlnprice_tr dlnRER x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
 eststo imp_ExtFin_US_tfp: areg dlnprice_tr dlnRER x_ExtFin_US x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
@@ -803,19 +861,6 @@ eststo imp_Tang_US_scratio: areg dlnprice_tr dlnRER x_Tang_US x_scratio_lag dlnr
 
 estfe imp_markup imp_ExtFin_US_markup imp_Tang_US_markup imp_tfp imp_ExtFin_US_tfp imp_Tang_US_tfp imp_scratio imp_ExtFin_US_scratio imp_Tang_US_scratio, labels(group_id "Firm-product-country FE")
 esttab imp_markup imp_ExtFin_US_markup imp_Tang_US_markup imp_tfp imp_ExtFin_US_tfp imp_Tang_US_tfp imp_scratio imp_ExtFin_US_scratio imp_Tang_US_scratio using "D:\Project C\tables\matched\table_imp_markup_tfp_US.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_US)
-
-* Alternative CN measures for financial constraints
-eststo imp_ExtFin_cic2_markup: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_Markup_lag dlnrgdp Markup_lag i.year, a(group_id)
-eststo imp_Tang_cic2_markup: areg dlnprice_tr dlnRER x_Tang_cic2 x_Markup_lag Markup_lag dlnrgdp i.year, a(group_id)
-
-eststo imp_ExtFin_cic2_tfp: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
-eststo imp_Tang_cic2_tfp: areg dlnprice_tr dlnRER x_Tang_cic2 x_tfp_lag dlnrgdp tfp_lag i.year, a(group_id)
-
-eststo imp_ExtFin_cic2_scratio: areg dlnprice_tr dlnRER x_ExtFin_cic2 x_scratio_lag dlnrgdp scratio_lag i.year, a(group_id)
-eststo imp_Tang_cic2_scratio: areg dlnprice_tr dlnRER x_Tang_cic2 x_scratio_lag dlnrgdp scratio_lag i.year, a(group_id)
-
-estfe imp_markup imp_ExtFin_cic2_markup imp_Tang_cic2_markup imp_tfp imp_ExtFin_cic2_tfp imp_Tang_cic2_tfp imp_scratio imp_ExtFin_cic2_scratio imp_Tang_cic2_scratio, labels(group_id "Firm-product-country FE")
-esttab imp_markup imp_ExtFin_cic2_markup imp_Tang_cic2_markup imp_tfp imp_ExtFin_cic2_tfp imp_Tang_cic2_tfp imp_scratio imp_ExtFin_cic2_scratio imp_Tang_cic2_scratio using "D:\Project C\tables\matched\table_imp_markup_tfp_CN.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*_lag x_*_cic2)
 
 *-------------------------------------------------------------------------------
 * Two-way traders
@@ -845,14 +890,57 @@ areg dlnprice_tr dlnRER x_twoway_trade x_Tang_US x_Tang_US_twoway dlnrgdp i.year
 cd "D:\Project C\sample_matched"
 use sample_matched_imp,clear
 
-eststo imp_country: areg dlnprice_tr dlnRER x_coun_n dlnrgdp i.year, a(group_id)
-eststo imp_product: areg dlnprice_tr dlnRER x_prod_n dlnrgdp i.year, a(group_id)
-eststo imp_source: areg dlnprice_tr dlnRER x_source dlnrgdp  i.year, a(group_id)
+eststo imp_source: areg dlnprice_tr dlnRER x_source dlnrgdp i.year, a(group_id)
 
+gen x_FPC_US_source=x_FPC_US*source
 gen x_ExtFin_US_source=x_ExtFin_US*source
 gen x_Tang_US_source=x_Tang_US*source
+gen x_Invent_US_source=x_Invent_US*source
+
+eststo imp_FPC_US_source: areg dlnprice_tr dlnRER x_source x_FPC_US_source x_FPC_US dlnrgdp i.year, a(group_id)
 eststo imp_ExtFin_US_source: areg dlnprice_tr dlnRER x_source x_ExtFin_US_source x_ExtFin_US dlnrgdp i.year, a(group_id)
 eststo imp_Tang_US_source: areg dlnprice_tr dlnRER x_source x_Tang_US_source x_Tang_US dlnrgdp i.year, a(group_id)
+eststo imp_Invent_US_source: areg dlnprice_tr dlnRER x_source x_Invent_US_source x_Invent_US dlnrgdp i.year, a(group_id)
 
-estfe imp_country imp_product imp_source imp_ExtFin_US_source imp_Tang_US_source, labels(group_id "Firm-product-country FE")
-esttab imp_country imp_product imp_source imp_ExtFin_US_source imp_Tang_US_source using "D:\Project C\tables\matched\table_imp_source.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*)
+estfe imp_source imp_FPC_US_source imp_ExtFin_US_source imp_Tang_US_source imp_Invent_US_source, labels(group_id "Firm-product-country FE")
+esttab imp_source imp_FPC_US_source imp_ExtFin_US_source imp_Tang_US_source imp_Invent_US_source using "D:\Project C\tables\matched\table_imp_source.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') order(dlnRER dlnrgdp x_*)
+
+*-------------------------------------------------------------------------------
+* Alternative FEs
+cd "D:\Project C\sample_matched"
+use sample_matched_imp,clear
+
+egen group_id_fy=group(FRDM year)
+egen group_id_pc=group(HS6 coun_aim)
+
+eststo imp_FPC_US_fe1: reghdfe dlnprice_tr dlnRER x_FPC_US dlnrgdp, absorb(group_id_fy coun_aim HS6)
+eststo imp_ExtFin_US_fe1: reghdfe dlnprice_tr dlnRER x_ExtFin_US dlnrgdp, absorb(group_id_fy coun_aim HS6)
+eststo imp_Tang_US_fe1: reghdfe dlnprice_tr dlnRER x_Tang_US dlnrgdp, absorb(group_id_fy coun_aim HS6)
+eststo imp_Invent_US_fe1: reghdfe dlnprice_tr dlnRER x_Invent_US dlnrgdp, absorb(group_id_fy coun_aim HS6)
+
+eststo imp_FPC_US_fe2: reghdfe dlnprice_tr dlnRER x_FPC_US dlnrgdp, absorb(group_id_fy group_id_pc)
+eststo imp_ExtFin_US_fe2: reghdfe dlnprice_tr dlnRER x_ExtFin_US dlnrgdp, absorb(group_id_fy group_id_pc)
+eststo imp_Tang_US_fe2: reghdfe dlnprice_tr dlnRER x_Tang_US dlnrgdp, absorb(group_id_fy group_id_pc)
+eststo imp_Invent_US_fe2: reghdfe dlnprice_tr dlnRER x_Invent_US dlnrgdp, absorb(group_id_fy group_id_pc)
+
+estfe imp_FPC_US_fe1 imp_ExtFin_US_fe1 imp_Tang_US_fe1 imp_Invent_US_fe1 imp_FPC_US_fe2 imp_ExtFin_US_fe2 imp_Tang_US_fe2 imp_Invent_US_fe2, labels(group_id "Firm-product-country FE" group_id_fy "Firm-year FE" group_id_pc "Product-Country FE" coun_aim "Country FE" HS6 "Product FE")
+esttab imp_FPC_US_fe1 imp_ExtFin_US_fe1 imp_Tang_US_fe1 imp_Invent_US_fe1 imp_FPC_US_fe2 imp_ExtFin_US_fe2 imp_Tang_US_fe2 imp_Invent_US_fe2 using "D:\Project C\tables\matched\table_imp_fe.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate(`r(indicate_fe)') mtitles("FPC" "External Finance" "Tangibility" "Inventory" "FPC" "External Finance" "Tangibility" "Inventory") order(dlnRER dlnrgdp x_*)
+
+*-------------------------------------------------------------------------------
+* Ordinary vs Processing
+cd "D:\Project C\sample_matched"
+use sample_matched_imp,clear
+
+eststo imp_ordinary_FPC_US: areg dlnprice_tr dlnRER x_FPC_US dlnrgdp i.year if shipment_type==1, a(group_id)
+eststo imp_ordinary_ExtFin_US: areg dlnprice_tr dlnRER x_ExtFin_US dlnrgdp i.year if shipment_type==1, a(group_id)
+eststo imp_ordinary_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp i.year if shipment_type==1, a(group_id)
+eststo imp_ordinary_Invent_US: areg dlnprice_tr dlnRER x_Invent_US dlnrgdp i.year if shipment_type==1, a(group_id)
+
+eststo imp_process_FPC_US: areg dlnprice_tr dlnRER x_FPC_US dlnrgdp i.year if shipment_type==2, a(group_id)
+eststo imp_process_ExtFin_US: areg dlnprice_tr dlnRER x_ExtFin_US dlnrgdp i.year if shipment_type==2, a(group_id)
+eststo imp_process_Tang_US: areg dlnprice_tr dlnRER x_Tang_US dlnrgdp i.year if shipment_type==2, a(group_id)
+eststo imp_process_Invent_US: areg dlnprice_tr dlnRER x_Invent_US dlnrgdp i.year if shipment_type==2, a(group_id)
+
+estfe imp_ordinary_FPC_US imp_ordinary_ExtFin_US imp_ordinary_Tang_US imp_ordinary_Invent_US imp_process_FPC_US imp_process_ExtFin_US imp_process_Tang_US imp_process_Invent_US, labels(group_id "Firm-product-country FE")
+
+esttab imp_ordinary_FPC_US imp_ordinary_ExtFin_US imp_ordinary_Tang_US imp_ordinary_Invent_US imp_process_FPC_US imp_process_ExtFin_US imp_process_Tang_US imp_process_Invent_US using "D:\Project C\tables\matched\table_imp_process.csv", replace b(3) se(3) noconstant starlevels(* 0.1 ** 0.05 *** 0.01) indicate("Year FE =*.year" `r(indicate_fe)') mtitles("Ordinary" "Ordinary" "Ordinary" "Ordinary" "Processing" "Processing" "Processing" "Processing") order(dlnRER dlnrgdp x_*)

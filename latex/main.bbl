@@ -1,195 +1,192 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{}
 
-\bibitem{auer2018}
-Raphael~Auer A., Thomas Chaney, and Philip Sauré.
-\newblock Quality pricing-to-market.
-\newblock {\em Journal of International Economics}, 110(110):87--102, 2018.
-
-\bibitem{acf2015}
-Daniel~A Ackerberg, Kevin Caves, and Garth Frazer.
+\bibitem[Ackerberg et~al., 2015]{acf2015}
+Ackerberg, D.~A., Caves, K., and Frazer, G. (2015).
 \newblock Identification properties of recent production function estimators.
-\newblock {\em Econometrica}, 83(6):2411--2451, 2015.
+\newblock {\em Econometrica}, 83(6):2411--2451.
 
-\bibitem{aik2014}
-Mary Amiti, Oleg Itskhoki, and Jozef Konings.
+\bibitem[Amiti et~al., 2014]{aik2014}
+Amiti, M., Itskhoki, O., and Konings, J. (2014).
 \newblock Importers, exporters, and exchange rate disconnect.
-\newblock {\em The American Economic Review}, 104(7):1942--1978, 2014.
+\newblock {\em The American Economic Review}, 104(7):1942--1978.
 
-\bibitem{atkeson2008}
-Andrew Atkeson and Ariel Burstein.
+\bibitem[Atkeson and Burstein, 2008]{atkeson2008}
+Atkeson, A. and Burstein, A. (2008).
 \newblock Pricing-to-market, trade costs, and international relative prices.
-\newblock {\em The American Economic Review}, 98(5):1998--2031, 2008.
+\newblock {\em The American Economic Review}, 98(5):1998--2031.
 
-\bibitem{auer2016}
-Raphael~A. Auer and Raphael~S. Schoenle.
+\bibitem[Auer et~al., 2018]{auer2018}
+Auer, R., Chaney, T., and Sauré, P. (2018).
+\newblock Quality pricing-to-market.
+\newblock {\em Journal of International Economics}, 110(110):87--102.
+
+\bibitem[Auer and Schoenle, 2016]{auer2016}
+Auer, R.~A. and Schoenle, R.~S. (2016).
 \newblock Market structure and exchange rate pass-through.
-\newblock {\em Journal of International Economics}, 98:60--77, 2016.
+\newblock {\em Journal of International Economics}, 98:60--77.
 
-\bibitem{bmm2012}
-Nicolas Berman, Philippe Martin, and Thierry Mayer.
+\bibitem[Berman et~al., 2012]{bmm2012}
+Berman, N., Martin, P., and Mayer, T. (2012).
 \newblock How do different exporters react to exchange rate changes?
-\newblock {\em The Quarterly journal of economics}, 127(1):437--492, 2012.
+\newblock {\em The Quarterly journal of economics}, 127(1):437--492.
 
-\bibitem{brandt2012}
-Loren Brandt, Johannes~Van Biesebroeck, and Yifan Zhang.
+\bibitem[Brandt et~al., 2012]{brandt2012}
+Brandt, L., {Van Biesebroeck}, J., and Zhang, Y. (2012).
 \newblock Creative accounting or creative destruction? firm-level productivity
   growth in chinese manufacturing.
-\newblock {\em Journal of Development Economics}, 97(2):339--351, 2012.
+\newblock {\em Journal of Development Economics}, 97(2):339--351.
 
-\bibitem{bkl2021}
-Wyatt~J Brooks, Joseph~P Kaboski, and Yao~Amber Li.
+\bibitem[Brooks et~al., 2021]{bkl2021}
+Brooks, W.~J., Kaboski, J.~P., and Li, Y.~A. (2021).
 \newblock Agglomeration, misallocation, and (the lack of) competition.
-\newblock {\em American Economic Journal: Macroeconomics}, 13(4):483--519,
-  2021.
+\newblock {\em American Economic Journal: Macroeconomics}, 13(4):483--519.
 
-\bibitem{campa2005}
-José~Manuel Campa and Linda~S. Goldberg.
+\bibitem[Campa and Goldberg, 2005]{campa2005}
+Campa, J.~M. and Goldberg, L.~S. (2005).
 \newblock Exchange rate pass-through into import prices.
-\newblock {\em The review of economics and statistics}, 87(4):679--690, 2005.
+\newblock {\em The review of economics and statistics}, 87(4):679--690.
 
-\bibitem{chaney2016}
-Thomas Chaney.
+\bibitem[Chaney, 2016]{chaney2016}
+Chaney, T. (2016).
 \newblock Liquidity constrained exporters.
-\newblock {\em Journal of economic dynamics and control}, 72:141--154, 2016.
+\newblock {\em Journal of economic dynamics and control}, 72:141--154.
 
-\bibitem{chatterjee2013}
-Arpita Chatterjee, Rafael Dix-Carneiro, and Jade Vichyanond.
+\bibitem[Chatterjee et~al., 2013]{chatterjee2013}
+Chatterjee, A., Dix-Carneiro, R., and Vichyanond, J. (2013).
 \newblock Multi-product firms and exchange rate fluctuations.
-\newblock {\em American economic journal.Economic policy}, 5(2):77--110, 2013.
+\newblock {\em American economic journal.Economic policy}, 5(2):77--110.
 
-\bibitem{chen2016}
-Natalie Chen and Luciana Juvenal.
+\bibitem[Chen and Juvenal, 2016]{chen2016}
+Chen, N. and Juvenal, L. (2016).
 \newblock Quality, trade, and exchange rate pass-through.
-\newblock {\em Journal of International Economics}, 100:61--80, 2016.
+\newblock {\em Journal of International Economics}, 100:61--80.
 
-\bibitem{dai2021}
-Mi~Dai, Francesco Nucci, Alberto~F. Pozzolo, and Jianwei Xu.
+\bibitem[Dai et~al., 2021]{dai2021}
+Dai, M., Nucci, F., Pozzolo, A.~F., and Xu, J. (2021).
 \newblock Access to finance and the exchange rate elasticity of exports.
-\newblock {\em Journal of International Money and Finance}, 115:102386, 2021.
+\newblock {\em Journal of International Money and Finance}, 115:102386.
 
-\bibitem{devereux2017}
-Michael~B. Devereux, Wei Dong, and Ben Tomlin.
+\bibitem[{De Loecker} and Warzynski, 2012]{dlw2012}
+{De Loecker}, J. and Warzynski, F. (2012).
+\newblock Markups and firm-level export status.
+\newblock {\em The American Economic Review}, 102(6):2437--2471.
+
+\bibitem[Devereux et~al., 2017]{devereux2017}
+Devereux, M.~B., Dong, W., and Tomlin, B. (2017).
 \newblock Importers and exporters in exchange rate pass-through and currency
   invoicing.
-\newblock {\em Journal of International Economics}, 105:187--204, 2017.
+\newblock {\em Journal of International Economics}, 105:187--204.
 
-\bibitem{engel2002}
-Charles Engel.
+\bibitem[Engel, 2002]{engel2002}
+Engel, C. (2002).
 \newblock Expenditure switching and exchange-rate policy.
-\newblock {\em NBER macroeconomics annual}, 17:231--272, 2002.
+\newblock {\em NBER macroeconomics annual}, 17:231--272.
 
-\bibitem{fan-lai-li2015}
-Haichao Fan, Edwin L.~C Lai, and Yao~Amber Li.
+\bibitem[Fan et~al., 2015a]{fan-lai-li2015}
+Fan, H., Lai, E. L.~C., and Li, Y.~A. (2015a).
 \newblock Credit constraints, quality, and export prices: Theory and evidence
   from china.
-\newblock {\em Journal of Comparative Economics}, 43(2):390--416, 2015.
+\newblock {\em Journal of Comparative Economics}, 43(2):390--416.
 
-\bibitem{fan-li-yeaple2015}
-Haichao Fan, Yao~Amber Li, and Stephen~R. Yeaple.
+\bibitem[Fan et~al., 2015b]{fan-li-yeaple2015}
+Fan, H., Li, Y.~A., and Yeaple, S.~R. (2015b).
 \newblock Trade liberalization, quality, and export prices.
-\newblock {\em The review of economics and statistics}, 97(5):1033--1051, 2015.
+\newblock {\em The review of economics and statistics}, 97(5):1033--1051.
 
-\bibitem{feenstra2015}
-Robert~C. Feenstra, Robert Inklaar, and Marcel~P. Timmer.
+\bibitem[Feenstra et~al., 2015]{feenstra2015}
+Feenstra, R.~C., Inklaar, R., and Timmer, M.~P. (2015).
 \newblock The next generation of the penn world table.
-\newblock {\em The American Economic Review}, 105(10):3150--3182, 2015.
+\newblock {\em The American Economic Review}, 105(10):3150--3182.
 
-\bibitem{feenstra-li-yu2014}
-Robert~C. Feenstra, Zhiyuan Li, and Miaojie Yu.
+\bibitem[Feenstra et~al., 2014]{feenstra-li-yu2014}
+Feenstra, R.~C., Li, Z., and Yu, M. (2014).
 \newblock Exports and credit constraints under incomplete information: Theory
   and evidence from china.
-\newblock {\em The review of economics and statistics}, 96(4):729--744, 2014.
+\newblock {\em The review of economics and statistics}, 96(4):729--744.
 
-\bibitem{garetto2016}
-Stefania Garetto.
+\bibitem[Garetto, 2016]{garetto2016}
+Garetto, S. (2016).
 \newblock Firms' heterogeneity, incomplete information, and pass-through.
-\newblock {\em Journal of International Economics}, 101:158, 2016.
+\newblock {\em Journal of International Economics}, 101:158.
 
-\bibitem{gopinath2010-frequency}
-Gita Gopinath and Oleg Itskhoki.
+\bibitem[Gopinath and Itskhoki, 2010]{gopinath2010-frequency}
+Gopinath, G. and Itskhoki, O. (2010).
 \newblock Frequency of price adjustment and pass-through.
-\newblock {\em The Quarterly journal of economics}, 125(2):675--727, 2010.
+\newblock {\em The Quarterly journal of economics}, 125(2):675--727.
 
-\bibitem{gopinath2010-currency}
-Gita Gopinath, Oleg Itskhoki, and Roberto Rigobon.
+\bibitem[Gopinath et~al., 2010]{gopinath2010-currency}
+Gopinath, G., Itskhoki, O., and Rigobon, R. (2010).
 \newblock Currency choice and exchange rate pass-through.
-\newblock {\em The American Economic Review}, 100(1):304--336, 2010.
+\newblock {\em The American Economic Review}, 100(1):304--336.
 
-\bibitem{gopinath2008}
-Gita Gopinath and Roberto Rigobon.
+\bibitem[Gopinath and Rigobon, 2008]{gopinath2008}
+Gopinath, G. and Rigobon, R. (2008).
 \newblock Sticky borders.
-\newblock {\em The Quarterly journal of economics}, 123(2):531--575, 2008.
+\newblock {\em The Quarterly journal of economics}, 123(2):531--575.
 
-\bibitem{kohn2020}
-David Kohn, Fernando Leibovici, and Michal Szkup.
+\bibitem[Kohn et~al., 2020]{kohn2020}
+Kohn, D., Leibovici, F., and Szkup, M. (2020).
 \newblock Financial frictions and export dynamics in large devaluations.
-\newblock {\em Journal of International Economics}, 122:103257, 2020.
+\newblock {\em Journal of International Economics}, 122:103257.
 
-\bibitem{kroszner2007}
-Randall~S. Kroszner, Luc Laeven, and Daniela Klingebiel.
+\bibitem[Kroszner et~al., 2007]{kroszner2007}
+Kroszner, R.~S., Laeven, L., and Klingebiel, D. (2007).
 \newblock Banking crises, financial dependence, and growth.
-\newblock {\em Journal of Financial Economics}, 84(1):187--228, 2007.
+\newblock {\em Journal of Financial Economics}, 84(1):187--228.
 
-\bibitem{lmx2015}
-Hongbin Li, Hong Ma, and Yuan Xu.
+\bibitem[Li et~al., 2015]{lmx2015}
+Li, H., Ma, H., and Xu, Y. (2015).
 \newblock How do exchange rate movements affect chinese exports? — a
   firm-level investigation.
-\newblock {\em Journal of International Economics}, 97(1):148--161, 2015.
+\newblock {\em Journal of International Economics}, 97(1):148--161.
 
-\bibitem{li-lan-ouyang2015}
-Jie Li, Liping Lan, and Zhigang Ouyang.
+\bibitem[Li et~al., 2020]{li-lan-ouyang2020}
+Li, J., Lan, L., and Ouyang, Z. (2020).
 \newblock Credit constraints, currency depreciation and international trade.
-\newblock {\em Journal of International Money and Finance}, 104:102175, 2020.
+\newblock {\em Journal of International Money and Finance}, 104:102175.
 
-\bibitem{llz2018}
-Yao~Amber Li, Wei Liao, and Chen~Carol Zhao.
+\bibitem[Li et~al., 2018]{llz2018}
+Li, Y.~A., Liao, W., and Zhao, C.~C. (2018).
 \newblock Credit constraints and firm productivity: Microeconomic evidence from
   china.
-\newblock {\em Research in International Business and Finance}, 45:134--149,
-  2018.
+\newblock {\em Research in International Business and Finance}, 45:134--149.
 
-\bibitem{dlw2012}
-Jan~De Loecker and Frederic Warzynski.
-\newblock Markups and firm-level export status.
-\newblock {\em The American Economic Review}, 102(6):2437--2471, 2012.
-
-\bibitem{manova2013}
-Kalina Manova.
+\bibitem[Manova, 2013]{manova2013}
+Manova, K. (2013).
 \newblock {Credit constraints, heterogeneous firms, and international trade}.
-\newblock {\em Review of Economic Studies}, 80(2):711--744, 2013.
+\newblock {\em Review of Economic Studies}, 80(2):711--744.
 
-\bibitem{manova-wei-zhang2015}
-Kalina Manova, Shang-Jin Wei, and Zhiwei Zhang.
+\bibitem[Manova et~al., 2015]{manova-wei-zhang2015}
+Manova, K., Wei, S.-J., and Zhang, Z. (2015).
 \newblock Firm exports and multinational activity under credit constraints.
-\newblock {\em The review of economics and statistics}, 97(3):574--588, 2015.
+\newblock {\em The review of economics and statistics}, 97(3):574--588.
 
-\bibitem{manova-zhang2012}
-Kalina Manova and Zhiwei Zhang.
+\bibitem[Manova and Zhang, 2012]{manova-zhang2012}
+Manova, K. and Zhang, Z. (2012).
 \newblock Export prices across firms and destinations.
-\newblock {\em The Quarterly journal of economics}, 127(1):379--436, 2012.
+\newblock {\em The Quarterly journal of economics}, 127(1):379--436.
 
-\bibitem{obstfeld2000}
-Maurice Obstfeld and Kenneth Rogoff.
+\bibitem[Obstfeld and Rogoff, 2000]{obstfeld2000}
+Obstfeld, M. and Rogoff, K. (2000).
 \newblock The six major puzzles in international macroeconomics: Is there a
   common cause?
-\newblock {\em NBER macroeconomics annual}, 15(1):339--390, 2000.
+\newblock {\em NBER macroeconomics annual}, 15(1):339--390.
 
-\bibitem{strasser2013}
-Georg Strasser.
+\bibitem[Strasser, 2013]{strasser2013}
+Strasser, G. (2013).
 \newblock Exchange rate pass-through and credit constraints.
-\newblock {\em Journal of Monetary Economics}, 60(1):25--38, 2013.
+\newblock {\em Journal of Monetary Economics}, 60(1):25--38.
 
-\bibitem{wang-yu2021}
-Yaqi Wang and Miaojie Yu.
+\bibitem[Wang and Yu, 2021]{wang-yu2021}
+Wang, Y. and Yu, M. (2021).
 \newblock Imports and rmb exchange rate pass-through: The role of quality
   sorting.
-\newblock {\em Journal of economic behavior and organization}, 187:470--487,
-  2021.
+\newblock {\em Journal of economic behavior and organization}, 187:470--487.
 
-\bibitem{xu-guo2021}
-Yuan Xu and Yuwei Guo.
+\bibitem[Xu and Guo, 2021]{xu-guo2021}
+Xu, Y. and Guo, Y. (2021).
 \newblock Exchange rate disconnect and financial constraints —evidence from
   chinese firms.
-\newblock {\em Journal of Comparative Economics}, 49(4):1008--1019, 2021.
+\newblock {\em Journal of Comparative Economics}, 49(4):1008--1019.
 
 \end{thebibliography}
