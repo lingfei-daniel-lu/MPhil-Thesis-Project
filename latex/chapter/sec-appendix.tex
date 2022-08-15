@@ -8,7 +8,7 @@
 			\toprule
 			& (1)   & (2)   & (3)   & (4)    \\
 			\midrule
-			Panel B & \multicolumn{4}{c}{Import} \\
+			Panel B & \multicolumn{4}{c}{Export} \\
 			& \#Markets & \#Markets+ & \#Markets+ & \#Markets+	 \\
 			&       & FPC &External & Tangibility \\
 			&       & &Finance &			\\
@@ -38,7 +38,7 @@
 		\end{tabular}
 		\begin{tablenotes}
 			\footnotesize
-			\item[*] Standard errors in parentheses; *, **, and *** indicate significance at 10\%, 5\% and 1\% levels. The dependent variable is the price change $\Delta \ln P_{ijct}$. Columns (2)-(4) use different measures of credit constraints calculated using U.S. data. Panel A is shown in \ref{tab5.3}. All regressions include firm-product-country fixed effects and year fixed effects
+			\item[*] Standard errors in parentheses; *, **, and *** indicate significance at 10\%, 5\% and 1\% levels. The dependent variable is the price change $\Delta \ln P_{ijct}$. Columns (2)-(4) use different measures of credit constraints calculated using U.S. data. Panel A is shown in Table \ref{tab5.3}. All regressions include firm-product-country fixed effects and year fixed effects
 		\end{tablenotes}
 	\end{threeparttable}
 	\label{tabA.1}
@@ -51,7 +51,7 @@
 		\begin{tabular}{lcccc}
 			\midrule          & (1)   & (2)   & (3)   & (4)     \\
 			\midrule
-			Panel B & \multicolumn{4}{c}{Import} \\
+			Panel B & \multicolumn{4}{c}{Export} \\
 			& Markup & Markup+& Markup+ & Markup+      \\
 			&       &FPC& External & Tangibility        \\
 			&       & & Finance &  	          \\
@@ -77,7 +77,7 @@
 		\end{tabular}
 		\begin{tablenotes}
 			\footnotesize
-			\item[*] Standard errors in parentheses; *, **, and *** indicate significance at 10\%, 5\% and 1\% levels. The dependent variable is the price change $\Delta \ln P_{ijct}$. Columns (2)-(4) use different measures of credit constraints calculated using U.S. data. Panel A is shown in \ref{tab6.1}. All regressions include firm-product-country fixed effects and year fixed effects.
+			\item[*] Standard errors in parentheses; *, **, and *** indicate significance at 10\%, 5\% and 1\% levels. The dependent variable is the price change $\Delta \ln P_{ijct}$. Columns (2)-(4) use different measures of credit constraints calculated using U.S. data. Panel A is shown in Table \ref{tab7.1}. All regressions include firm-product-country fixed effects and year fixed effects.
 		\end{tablenotes}
 	\end{threeparttable}
 	\label{tabA.2}
@@ -118,8 +118,65 @@
 	    \end{tabular}
     \begin{tablenotes}
     	\footnotesize
-    	\item[*] Standard errors in parentheses; *, **, and *** indicate significance at 10\%, 5\% and 1\% levels. The dependent variable is the price change $\Delta \ln P_{ijct}$. Columns (3)-(5) use different measures of credit constraints calculated using U.S. data. Panel A is shown in \ref{tab6.2}. All regressions include firm-product-country fixed effects and year fixed effects.
+    	\item[*] Standard errors in parentheses; *, **, and *** indicate significance at 10\%, 5\% and 1\% levels. The dependent variable is the price change $\Delta \ln P_{ijct}$. Columns (3)-(5) use different measures of credit constraints calculated using U.S. data. Panel A is shown in Table \ref{tab7.2}. All regressions include firm-product-country fixed effects and year fixed effects.
     \end{tablenotes}
 	\end{threeparttable}
 	\label{tabA.3}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+	\caption{Estimations with Exporters of Different Ownership Types}
+	\label{tabA.4}
+	\resizebox{1.1\linewidth}{!}{
+	\begin{threeparttable}
+	\begin{tabular}{lllllllll}
+		\toprule
+		& (1)   & (2)   & (3)   & (4)   & (5)   & (6)   & (7)   & (8) \\
+		\midrule
+		Panel B-1 & \multicolumn{4}{c}{State-owned Enterprises} & \multicolumn{4}{c}{Domestic Private Enterprises} \\
+		& Baseline & FPC   & External  & Tangibility & Baseline & FPC   & External  & Tangibility \\
+		&  &   & Finance &  &  &   &  Finance &  \\
+		\midrule
+		$\Delta \ln RER_{ct}$ & -0.012 & -0.032 & -0.034 & 0.028 & 0.031*** & 0.032*** & 0.030*** & -0.008 \\
+		& (0.034) & (0.036) & (0.035) & (0.089) & (0.011) & (0.011) & (0.011) & (0.032) \\
+		$\Delta \ln RGDP_{ct}$ & 0.310 & 0.301 & 0.298 & 0.308 & 0.079 & 0.079 & 0.079 & 0.078 \\
+		& (0.225) & (0.225) & (0.225) & (0.225) & (0.076) & (0.076) & (0.076) & (0.076) \\
+		$\Delta \ln RER_{ct}$*$FPC_{j}$ &       & 0.034 &       &       &       & -0.004 &       &  \\
+		&       & (0.021) &       &       &       & (0.009) &       &  \\
+		$\Delta \ln RER_{ct}$*$ExtFin_{j}$ &       &       & 0.116** &       &       &       & 0.008 &  \\
+		&       &       & (0.058) &       &       &       & (0.026) &  \\
+		$\Delta \ln RER_{ct}$*$Tang_{j}$ &       &       &       & -0.146 &       &       &       & 0.143 \\
+		&       &       &       & (0.304) &       &       &       & (0.109) \\
+		Year FE  & Yes   & Yes   & Yes   & Yes   & Yes   & Yes   & Yes   & Yes \\
+		Firm-product & Yes   & Yes   & Yes   & Yes   & Yes   & Yes   & Yes   & Yes \\
+		-country FE &&&&&&&& \\
+		Observations     & 26894 & 26894 & 26894 & 26894 & 484522 & 484522 & 484522 & 484522 \\
+		\midrule
+		Panel B-2 & \multicolumn{4}{c}{Multinational Enterprises} & \multicolumn{4}{c}{Joint Ventures} \\
+		& Baseline & FPC   & External  & Tangibility & Baseline & FPC   & External  & Tangibility \\
+		&  &   & Finance &  &  &   &  Finance &  \\
+		\midrule
+		$\Delta \ln RER_{ct}$ & 0.032*** & 0.045*** & 0.038*** & -0.048** & 0.031*** & 0.042*** & 0.036*** & -0.026 \\
+		& (0.009) & (0.009) & (0.009) & (0.024) & (0.009) & (0.010) & (0.009) & (0.025) \\
+		$\Delta \ln RGDP_{ct}$ & -0.183*** & -0.187*** & -0.185*** & -0.188*** & -0.080 & -0.079 & -0.078 & -0.080 \\
+		& (0.059) & (0.059) & (0.059) & (0.059) & (0.062) & (0.062) & (0.062) & (0.062) \\
+		$\Delta \ln RER_{ct}$*$FPC_{j}$ &       & -0.028*** &       &       &       & -0.026*** &       &  \\
+		&       & (0.007) &       &       &       & (0.007) &       &  \\
+		$\Delta \ln RER_{ct}$*$ExtFin_{j}$ &       &       & -0.072*** &       &       &       & -0.078*** &  \\
+		&       &       & (0.023) &       &       &       & (0.022) &  \\
+		$\Delta \ln RER_{ct}$*$Tang_{j}$ &       &       &       & 0.308*** &       &       &       & 0.218** \\
+		&       &       &       & (0.086) &       &       &       & (0.089) \\
+		Year FE  & Yes   & Yes   & Yes   & Yes   & Yes   & Yes   & Yes   & Yes \\
+		Firm-product & Yes   & Yes   & Yes   & Yes   & Yes   & Yes   & Yes   & Yes \\
+		-country FE &&&&&&&& \\
+		Observations     & 711685 & 711685 & 711685 & 711685 & 570873 & 570873 & 570873 & 570873 \\
+		\bottomrule
+	\end{tabular}
+	\begin{tablenotes}
+		\footnotesize
+		\item[*] Standard errors in parentheses; *, **, and *** indicate significance at 10\%, 5\% and 1\% levels. The dependent variable is the price change $\Delta \ln P_{ijct}$. Columns (2)-(4) use different measures of credit constraints calculated using U.S. data. Panel A-1 and A-2 are shown in Table \ref{tab7.4}. All regressions include firm-product-country fixed effects and year fixed effects.
+	\end{tablenotes}
+\end{threeparttable}
+}
 \end{table}

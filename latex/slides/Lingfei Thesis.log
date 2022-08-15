@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.15)  24 JUL 2022 18:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.15)  27 JUL 2022 13:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1051,7 +1051,7 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 pdf UST4C_L3.eps>
 (epstopdf)             \includegraphics on input line 32.
 Package epstopdf Info: Output file is already uptodate.
-<UST4C_L3-eps-converted-to.pdf, id=144, 279.0425pt x 53.19875pt>
+<UST4C_L3-eps-converted-to.pdf, id=142, 279.0425pt x 53.19875pt>
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
 Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 32.
@@ -1060,47 +1060,41 @@ Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 32.
 
  <./UST4C_L3-eps-converted-to.pdf>]
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 48.
+ 45.
  (c:/texlive/2022/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 48.
+ 45.
 
 (c:/texlive/2022/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 48.
+ 45.
 
 (c:/texlive/2022/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 4
-8.
+5.
 
 (c:/texlive/2022/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 48.
+ut line 45.
 
 (c:/texlive/2022/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
 (epstopdf)                    size: 187046 bytes
@@ -1109,11 +1103,11 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 48.
+(epstopdf)             \includegraphics on input line 45.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 48.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 45.
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
 
 [3
@@ -1127,11 +1121,11 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 59.
+(epstopdf)             \includegraphics on input line 53.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 59.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 53.
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [4
 
@@ -1144,11 +1138,11 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 68.
+(epstopdf)             \includegraphics on input line 62.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 68.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 62.
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [5
 
@@ -1161,15 +1155,21 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 77.
+(epstopdf)             \includegraphics on input line 71.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 77.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 71.
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [6
 
 ]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 88.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
 (epstopdf)                    size: 187046 bytes
@@ -1178,11 +1178,11 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 93.
+(epstopdf)             \includegraphics on input line 88.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 93.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 88.
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [7
 
@@ -1195,12 +1195,11 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 104.
+(epstopdf)             \includegraphics on input line 99.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 104.
-
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 99.
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [8
 
@@ -1213,11 +1212,11 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 117.
+(epstopdf)             \includegraphics on input line 118.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 117.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 118.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [9
@@ -1231,74 +1230,20 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 130.
+(epstopdf)             \includegraphics on input line 131.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 130.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 131.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [10
 
 ]
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 141.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 141.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [11
-
-]
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 158.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 158.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [12
-
-]
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 169.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 169.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [13
-
-]
-<Table3.1.jpg, id=1194, 961.5925pt x 633.36626pt>
+<Table3.1.jpg, id=916, 961.5925pt x 633.36626pt>
 File: Table3.1.jpg Graphic file (type jpg)
 <use Table3.1.jpg>
-Package pdftex.def Info: Table3.1.jpg  used on input line 180.
+Package pdftex.def Info: Table3.1.jpg  used on input line 142.
 (pdftex.def)             Requested size: 243.77225pt x 160.56467pt.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
@@ -1308,14 +1253,14 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 180.
+(epstopdf)             \includegraphics on input line 142.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 180.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 142.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [14
+ [11
 
  <./Table3.1.jpg>]
 Package epstopdf Info: Source file: <UST4C_L3.eps>
@@ -1326,36 +1271,101 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 194.
+(epstopdf)             \includegraphics on input line 156.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 194.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 156.
+
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+ [12
+
+]
+<Figure3.1.jpg, id=1076, 1055.945pt x 558.58687pt>
+File: Figure3.1.jpg Graphic file (type jpg)
+<use Figure3.1.jpg>
+Package pdftex.def Info: Figure3.1.jpg  used on input line 177.
+(pdftex.def)             Requested size: 169.01035pt x 89.40129pt.
+
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 177--177
+ [] 
+ []
+
+<Figure3.2.jpg, id=1077, 1055.44313pt x 560.59438pt>
+File: Figure3.2.jpg Graphic file (type jpg)
+<use Figure3.2.jpg>
+Package pdftex.def Info: Figure3.2.jpg  used on input line 177.
+(pdftex.def)             Requested size: 169.01035pt x 89.76535pt.
+
+Overfull \hbox (15.36542pt too wide) in paragraph at lines 177--177
+ [] 
+ []
+
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 177.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 177.
+
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+[13
+
+ <./Figure3.1.jpg> <./Figure3.2.jpg>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 191.
+LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 
+191.
+LaTeX Font Info:    No file OMScmss.fd. on input line 191.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 191.
+
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 191.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 191.
+
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+[14
+
+]
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 202.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 202.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [15
 
 ]
-<Figure3.1.jpg, id=1357, 1055.945pt x 558.58687pt>
-File: Figure3.1.jpg Graphic file (type jpg)
-<use Figure3.1.jpg>
-Package pdftex.def Info: Figure3.1.jpg  used on input line 215.
-(pdftex.def)             Requested size: 169.01035pt x 89.40129pt.
-
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 215--215
- [] 
- []
-
-<Figure3.2.jpg, id=1358, 1055.44313pt x 560.59438pt>
-File: Figure3.2.jpg Graphic file (type jpg)
-<use Figure3.2.jpg>
-Package pdftex.def Info: Figure3.2.jpg  used on input line 215.
-(pdftex.def)             Requested size: 169.01035pt x 89.76535pt.
-
-Overfull \hbox (15.36542pt too wide) in paragraph at lines 215--215
- [] 
- []
-
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
 (epstopdf)                    size: 187046 bytes
@@ -1364,43 +1374,14 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 215.
+(epstopdf)             \includegraphics on input line 209.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 215.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 209.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
-[16
-
- <./Figure3.1.jpg> <./Figure3.2.jpg>]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 229.
-LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 
-229.
-LaTeX Font Info:    No file OMScmss.fd. on input line 229.
-
-
-LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 229.
-
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 229.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 229.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
-[17
+ [16
 
 ]
 Package epstopdf Info: Source file: <UST4C_L3.eps>
@@ -1411,74 +1392,38 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 240.
+(epstopdf)             \includegraphics on input line 224.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 240.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 224.
+
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+ [17
+
+]
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 236.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 236.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [18
 
 ]
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 247.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 247.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [19
-
-]
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 262.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 262.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [20
-
-]
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 274.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 274.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [21
-
-]
-<Table4.1.jpg, id=1843, 1133.23375pt x 520.94624pt>
+<Table4.1.jpg, id=1549, 1133.23375pt x 520.94624pt>
 File: Table4.1.jpg Graphic file (type jpg)
 <use Table4.1.jpg>
-Package pdftex.def Info: Table4.1.jpg  used on input line 286.
+Package pdftex.def Info: Table4.1.jpg  used on input line 248.
 (pdftex.def)             Requested size: 276.559pt x 127.12819pt.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
@@ -1488,14 +1433,14 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 286.
+(epstopdf)             \includegraphics on input line 248.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 286.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 248.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [22
+ [19
 
  <./Table4.1.jpg>]
 Package epstopdf Info: Source file: <UST4C_L3.eps>
@@ -1506,17 +1451,17 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 298.
+(epstopdf)             \includegraphics on input line 260.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 298.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 260.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [23
+ [20
 
 ]
-Overfull \hbox (14.53058pt too wide) detected at line 327
+Overfull \hbox (14.53058pt too wide) detected at line 289
 [][][][][]
  []
 
@@ -1528,25 +1473,21 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 327.
+(epstopdf)             \includegraphics on input line 289.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 327.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 289.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
-[24
+[21
 
 ]
-<Table5.1.jpg, id=2091, 739.76375pt x 628.3475pt>
+<Table5.1.jpg, id=1793, 739.76375pt x 628.3475pt>
 File: Table5.1.jpg Graphic file (type jpg)
 <use Table5.1.jpg>
-Package pdftex.def Info: Table5.1.jpg  used on input line 340.
-(pdftex.def)             Requested size: 230.46739pt x 195.75407pt.
-
-Overfull \vbox (7.30962pt too high) detected at line 340
- []
-
+Package pdftex.def Info: Table5.1.jpg  used on input line 302.
+(pdftex.def)             Requested size: 215.10196pt x 182.70508pt.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
 (epstopdf)                    size: 187046 bytes
@@ -1555,14 +1496,14 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 340.
+(epstopdf)             \includegraphics on input line 302.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 340.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 302.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
-[25
+ [22
 
  <./Table5.1.jpg>]
 Package epstopdf Info: Source file: <UST4C_L3.eps>
@@ -1573,20 +1514,20 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 352.
+(epstopdf)             \includegraphics on input line 314.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 352.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 314.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [26
+ [23
 
 ]
-<Table5.2A.jpg, id=2253, 856.70062pt x 578.16pt>
+<Table5.2A.jpg, id=1949, 856.70062pt x 578.16pt>
 File: Table5.2A.jpg Graphic file (type jpg)
 <use Table5.2A.jpg>
-Package pdftex.def Info: Table5.2A.jpg  used on input line 363.
+Package pdftex.def Info: Table5.2A.jpg  used on input line 325.
 (pdftex.def)             Requested size: 245.83282pt x 165.90652pt.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
@@ -1596,20 +1537,20 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 363.
+(epstopdf)             \includegraphics on input line 325.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 363.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 325.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [27
+ [24
 
  <./Table5.2A.jpg>]
-<Table5.2B.jpg, id=2334, 856.70062pt x 511.9125pt>
+<Table5.2B.jpg, id=2028, 856.70062pt x 511.9125pt>
 File: Table5.2B.jpg Graphic file (type jpg)
 <use Table5.2B.jpg>
-Package pdftex.def Info: Table5.2B.jpg  used on input line 374.
+Package pdftex.def Info: Table5.2B.jpg  used on input line 336.
 (pdftex.def)             Requested size: 245.83282pt x 146.89641pt.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
@@ -1619,14 +1560,14 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 374.
+(epstopdf)             \includegraphics on input line 336.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 374.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 336.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [28
+ [25
 
  <./Table5.2B.jpg>]
 Package epstopdf Info: Source file: <UST4C_L3.eps>
@@ -1637,21 +1578,21 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 387.
+(epstopdf)             \includegraphics on input line 349.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 387.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 349.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
 
-[29
+[26
 
 ]
-<Table5.3.jpg, id=2494, 684.05562pt x 613.29124pt>
+<Table5.3.jpg, id=2186, 684.05562pt x 613.29124pt>
 File: Table5.3.jpg Graphic file (type jpg)
 <use Table5.3.jpg>
-Package pdftex.def Info: Table5.3.jpg  used on input line 395.
+Package pdftex.def Info: Table5.3.jpg  used on input line 357.
 (pdftex.def)             Requested size: 230.46739pt x 206.62593pt.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
@@ -1661,14 +1602,14 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 395.
+(epstopdf)             \includegraphics on input line 357.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 395.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 357.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [30
+ [27
 
  <./Table5.3.jpg>]
 Package epstopdf Info: Source file: <UST4C_L3.eps>
@@ -1679,25 +1620,21 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 407.
+(epstopdf)             \includegraphics on input line 369.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 407.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 369.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [31
+ [28
 
 ]
-<TableA2.jpg, id=2659, 820.06375pt x 638.88687pt>
-File: TableA2.jpg Graphic file (type jpg)
-<use TableA2.jpg>
-Package pdftex.def Info: TableA2.jpg  used on input line 421.
-(pdftex.def)             Requested size: 230.46739pt x 179.55pt.
-
-Overfull \vbox (3.10555pt too high) detected at line 421
- []
-
+<Table7.1A.jpg, id=2341, 948.54375pt x 588.1975pt>
+File: Table7.1A.jpg Graphic file (type jpg)
+<use Table7.1A.jpg>
+Package pdftex.def Info: Table7.1A.jpg  used on input line 382.
+(pdftex.def)             Requested size: 276.559pt x 171.49734pt.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
 (epstopdf)                    size: 187046 bytes
@@ -1706,20 +1643,113 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 421.
+(epstopdf)             \includegraphics on input line 382.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 421.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 382.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
-[32
+ [29
+
+ <./Table7.1A.jpg>]
+<Table7.1B.jpg, id=2420, 948.04187pt x 527.9725pt>
+File: Table7.1B.jpg Graphic file (type jpg)
+<use Table7.1B.jpg>
+Package pdftex.def Info: Table7.1B.jpg  used on input line 390.
+(pdftex.def)             Requested size: 276.559pt x 154.01845pt.
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 390.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 390.
+
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+ [30
+
+ <./Table7.1B.jpg>]
+<Table7.2A.jpg, id=2499, 746.28813pt x 459.7175pt>
+File: Table7.2A.jpg Graphic file (type jpg)
+<use Table7.2A.jpg>
+Package pdftex.def Info: Table7.2A.jpg  used on input line 401.
+(pdftex.def)             Requested size: 261.19826pt x 160.89651pt.
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 401.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 401.
+
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+
+[31
+
+ <./Table7.2A.jpg>]
+<Table7.2B.jpg, id=2578, 991.20313pt x 537.00626pt>
+File: Table7.2B.jpg Graphic file (type jpg)
+<use Table7.2B.jpg>
+Package pdftex.def Info: Table7.2B.jpg  used on input line 409.
+(pdftex.def)             Requested size: 261.19826pt x 141.51115pt.
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 409.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 409.
+
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+ [32
+
+ <./Table7.2B.jpg>]
+<TableA2.jpg, id=2657, 818.55812pt x 638.385pt>
+File: TableA2.jpg Graphic file (type jpg)
+<use TableA2.jpg>
+Package pdftex.def Info: TableA2.jpg  used on input line 423.
+(pdftex.def)             Requested size: 230.46739pt x 179.74014pt.
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 423.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 423.
+
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+ [33
 
  <./TableA2.jpg>]
-<Table6.1.jpg, id=2740, 822.57312pt x 644.90938pt>
+<Table6.1.jpg, id=2736, 822.57312pt x 644.90938pt>
 File: Table6.1.jpg Graphic file (type jpg)
 <use Table6.1.jpg>
-Package pdftex.def Info: Table6.1.jpg  used on input line 433.
+Package pdftex.def Info: Table6.1.jpg  used on input line 436.
 (pdftex.def)             Requested size: 230.46739pt x 180.69148pt.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
@@ -1729,25 +1759,21 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 433.
+(epstopdf)             \includegraphics on input line 436.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 433.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 436.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [33
+ [34
 
  <./Table6.1.jpg>]
-<Table6.2.jpg, id=2822, 765.35938pt x 621.32124pt>
+<Table6.2.jpg, id=2815, 765.35938pt x 621.32124pt>
 File: Table6.2.jpg Graphic file (type jpg)
 <use Table6.2.jpg>
-Package pdftex.def Info: Table6.2.jpg  used on input line 444.
+Package pdftex.def Info: Table6.2.jpg  used on input line 447.
 (pdftex.def)             Requested size: 245.83282pt x 199.56635pt.
-
-Overfull \vbox (11.12189pt too high) detected at line 444
- []
-
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
 (epstopdf)                    size: 187046 bytes
@@ -1756,20 +1782,20 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 444.
+(epstopdf)             \includegraphics on input line 447.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 444.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 447.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
-[34
+ [35
 
  <./Table6.2.jpg>]
-<Table6.3.jpg, id=2902, 598.235pt x 454.69875pt>
+<Table6.3.jpg, id=2893, 598.235pt x 454.69875pt>
 File: Table6.3.jpg Graphic file (type jpg)
 <use Table6.3.jpg>
-Package pdftex.def Info: Table6.3.jpg  used on input line 455.
+Package pdftex.def Info: Table6.3.jpg  used on input line 458.
 (pdftex.def)             Requested size: 245.83282pt x 186.8509pt.
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
@@ -1779,14 +1805,14 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 455.
+(epstopdf)             \includegraphics on input line 458.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 455.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 458.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [35
+ [36
 
  <./Table6.3.jpg>]
 Package epstopdf Info: Source file: <UST4C_L3.eps>
@@ -1797,44 +1823,16 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 473.
+(epstopdf)             \includegraphics on input line 476.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 473.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [36
-
-]
-<Table7.1A.jpg, id=3063, 948.54375pt x 588.1975pt>
-File: Table7.1A.jpg Graphic file (type jpg)
-<use Table7.1A.jpg>
-Package pdftex.def Info: Table7.1A.jpg  used on input line 486.
-(pdftex.def)             Requested size: 276.559pt x 171.49734pt.
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 486.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 486.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 476.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [37
 
- <./Table7.1A.jpg>]
-<Table7.1B.jpg, id=3145, 948.04187pt x 527.9725pt>
-File: Table7.1B.jpg Graphic file (type jpg)
-<use Table7.1B.jpg>
-Package pdftex.def Info: Table7.1B.jpg  used on input line 494.
-(pdftex.def)             Requested size: 276.559pt x 154.01845pt.
+]
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
 (epstopdf)                    size: 187046 bytes
@@ -1843,22 +1841,35 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 494.
+(epstopdf)             \includegraphics on input line 491.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 494.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 491.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+ [38
 
-[38
+]
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 496.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 496.
 
- <./Table7.1B.jpg>]
-<Table7.2A.jpg, id=3226, 746.28813pt x 459.7175pt>
-File: Table7.2A.jpg Graphic file (type jpg)
-<use Table7.2A.jpg>
-Package pdftex.def Info: Table7.2A.jpg  used on input line 505.
-(pdftex.def)             Requested size: 276.559pt x 170.35936pt.
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+ [39
+
+]
+(./Lingfei Thesis.bbl)
 Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    date: 2015-05-10 01:35:38
 (epstopdf)                    size: 187046 bytes
@@ -1874,67 +1885,7 @@ File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 505.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [39
-
- <./Table7.2A.jpg>]
-<Table7.2B.jpg, id=3306, 748.29562pt x 403.5075pt>
-File: Table7.2B.jpg Graphic file (type jpg)
-<use Table7.2B.jpg>
-Package pdftex.def Info: Table7.2B.jpg  used on input line 513.
-(pdftex.def)             Requested size: 276.559pt x 149.1292pt.
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 513.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 513.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [40
-
- <./Table7.2B.jpg>]
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 528.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 528.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [41
-
-]
-(./Lingfei Thesis.bbl)
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 538.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 538.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [42
 
  <c:/texlive/2022/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 Package epstopdf Info: Source file: <UST4C_L3.eps>
@@ -1945,11 +1896,49 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 538.
+(epstopdf)             \includegraphics on input line 505.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 538.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 505.
+
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+ [41
+
+
+]
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 505.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 505.
+
+(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
+ [42
+
+
+]
+Package epstopdf Info: Source file: <UST4C_L3.eps>
+(epstopdf)                    date: 2015-05-10 01:35:38
+(epstopdf)                    size: 187046 bytes
+(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
+(epstopdf)                    date: 2022-05-04 11:34:08
+(epstopdf)                    size: 10783 bytes
+(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
+pdf UST4C_L3.eps>
+(epstopdf)             \includegraphics on input line 505.
+Package epstopdf Info: Output file is already uptodate.
+File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
+<use UST4C_L3-eps-converted-to.pdf>
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 505.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [43
@@ -1964,11 +1953,11 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 538.
+(epstopdf)             \includegraphics on input line 505.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 538.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 505.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [44
@@ -1983,52 +1972,14 @@ Package epstopdf Info: Source file: <UST4C_L3.eps>
 (epstopdf)                    size: 10783 bytes
 (epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
 pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 538.
+(epstopdf)             \includegraphics on input line 505.
 Package epstopdf Info: Output file is already uptodate.
 File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
 <use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 538.
+Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 505.
 
 (pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
  [45
-
-
-]
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 538.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 538.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [46
-
-
-]
-Package epstopdf Info: Source file: <UST4C_L3.eps>
-(epstopdf)                    date: 2015-05-10 01:35:38
-(epstopdf)                    size: 187046 bytes
-(epstopdf)             Output file: <UST4C_L3-eps-converted-to.pdf>
-(epstopdf)                    date: 2022-05-04 11:34:08
-(epstopdf)                    size: 10783 bytes
-(epstopdf)             Command: <repstopdf --outfile=UST4C_L3-eps-converted-to.
-pdf UST4C_L3.eps>
-(epstopdf)             \includegraphics on input line 538.
-Package epstopdf Info: Output file is already uptodate.
-File: UST4C_L3-eps-converted-to.pdf Graphic file (type pdf)
-<use UST4C_L3-eps-converted-to.pdf>
-Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 538.
-
-(pdftex.def)             Requested size: 41.85455pt x 7.97946pt.
- [47
 
 
 ]
@@ -2046,14 +1997,14 @@ Package pdftex.def Info: UST4C_L3-eps-converted-to.pdf  used on input line 538.
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `"Lingfei Thesis".out' has not changed.
-(rerunfilecheck)             Checksum: 68694BB0D4D9DDB34234169AC01F3AF8;969.
+(rerunfilecheck)             Checksum: 73FC5E878D046FE7322FB371FBF921D8;916.
  ) 
 Here is how much of TeX's memory you used:
- 25042 strings out of 478268
- 498556 string characters out of 5850345
- 820784 words of memory out of 5000000
- 42544 multiletter control sequences out of 15000+600000
- 509541 words of font info for 128 fonts, out of 8000000 for 9000
+ 25034 strings out of 478268
+ 498486 string characters out of 5850345
+ 817985 words of memory out of 5000000
+ 42540 multiletter control sequences out of 15000+600000
+ 509543 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,122p,440b,791s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/tex
@@ -2063,16 +2014,17 @@ st/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2022/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmssbx10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmssi10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mssi8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb
-><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texl
-ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2022/t
-exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/texmf
--dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2022/texmf-dist/fonts/type1/u
-rw/symbol/usyr.pfb>
-Output written on "Lingfei Thesis.pdf" (47 pages, 3603560 bytes).
+mssi12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pf
+b><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb><c:/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2022/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/texmf-dist/fo
+nts/type1/urw/symbol/usyr.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/symbo
+l/usyr.pfb>
+Output written on "Lingfei Thesis.pdf" (45 pages, 3656659 bytes).
 PDF statistics:
- 4054 PDF objects out of 4296 (max. 8388607)
- 3854 compressed objects within 39 object streams
- 153 named destinations out of 1000 (max. 500000)
+ 3791 PDF objects out of 4296 (max. 8388607)
+ 3597 compressed objects within 36 object streams
+ 149 named destinations out of 1000 (max. 500000)
  206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

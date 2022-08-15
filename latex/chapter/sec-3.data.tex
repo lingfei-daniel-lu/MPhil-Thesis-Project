@@ -1,6 +1,6 @@
 \chapter{Data}\label{sec-3.data}
 
-We conduct our empirical research using various data sources: (1) detailed transaction data from provided by China’s General Administration of Customs, (2) the annual surveys from Chinese Industrial Enterprises provided by National Bureau of Statistics of China, and (3) country-level macro data from Penn World Table 10.0. In this section, we will introduce the basic information of these datasets.
+We conduct our empirical research using various data sources: (1) detailed transaction data provided by China’s General Administration of Customs, (2) the annual surveys from Chinese Industrial Enterprises provided by the National Bureau of Statistics of China, and (3) country-level macro data from Penn World Table 10.0. In this section, we will introduce the basic information of these datasets.
 
 \section{Customs Transaction Records}
 
@@ -16,13 +16,13 @@ Our source of Chinese firm-level production and financial information is the Chi
 
 To merge this firm-level survey data with customs records, we follow the standard procedure to match the identification codes based on the contact information of firms as in \cite{fan-li-yeaple2015}. Manufacturing firms participating in international trade in the matched sample are uniquely identified by the FRDM codes and year. We drop unsatisfactory observations following the criteria of \cite{bkl2021}. This merged sample contains the overlapping time of the two datasets, i.e. from 2000 to 2007, and all indicators are in annual terms. We will refer to this combined dataset as the "matched sample" in the rest of this paper.
 
-The summary statistics of the whole customs records, the firm information dataset, and the final matched sample are shown in the panels A, B, and C in table \ref{tab3.1}, respectively.
+The summary statistics of the whole customs records, the firm information dataset, and the final matched sample are shown in panels A, B, and C in table \ref{tab3.1}, respectively.
 
 \begin{table}[htbp]
 	\centering
 	\caption{Summary Statistics for Main Samples}
 	\label{tab3.1}
-	\resizebox{1.05\textwidth}{55mm}{
+	\resizebox{1.1\textwidth}{!}{
 	\begin{threeparttable}
 	\begin{tabular}{lcccccc}
 		\toprule
@@ -55,7 +55,7 @@ The summary statistics of the whole customs records, the firm information datase
 	\end{tabular}
 	\begin{tablenotes}
 		\footnotesize
-		\item[*] This table shows the summary statistics of some important variables in our three major datasets. Panel A and panel C describe the total annual values, annual average prices, and price changes for the whole customs records and the matched sample, respectively. The observations in panel A and panel C are at the firm-product-country-year level. The trade values in panel A and and panel C are in US dollar while prices are in RMB. Panel B describes sales and costs information of Chinese manufacturing firms during 2000-2007. The money values in panel B are in thousands of RMB. The observations in panel B are at the firm-year level.
+		\item[*] This table shows the summary statistics of some important variables in our three major datasets. Panel A and panel C describe the total annual values, annual average prices, and price changes for the whole customs records and the matched sample, respectively. The observations in panel A and panel C are at the firm-product-country-year level. The trade values in panel A and panel C are in US dollars while prices are in RMB. Panel B describes sales and costs information of Chinese manufacturing firms during 2000-2007. The money values in panel B are in thousands of RMB. The observations in panel B are at the firm-year level.
 	\end{tablenotes}
 	\end{threeparttable}
 	}
@@ -67,7 +67,7 @@ A notable point is that for all variables involved in the amount of money in the
 
 We obtain bilateral nominal exchange rates and price level of household consumption from the newest Penn World Table (PWT 10.0) (referring to \cite{feenstra2015}). From the whole table, we keep 183 countries (or districts) using 136 different fiat currencies, which have full records of exchange rates during the period from 1999 to 2011. 
 
-The bilateral nominal exchange rate is defined as the number of home currency units that can purchase a unit of foreign currency. An increase in $NER_{ct}$ means a nominal depreciation of the Chinese RMB against this currency from country $c$. Following LMX \cite{lmx2015}, the CPI-based real exchange rate ($RER_{ct}$) is defined as the nominal exchange rate multiplied by foreign consumer price index (CPI) and divided by Chinese consumer price index (CPI) at the same year, which is
+The bilateral nominal exchange rate is defined as the number of home currency units that can purchase a unit of foreign currency. An increase in $NER_{ct}$ means a nominal depreciation of the Chinese RMB against this currency from country $c$. Following LMX \cite{lmx2015}, the CPI-based real exchange rate ($RER_{ct}$) is defined as the nominal exchange rate multiplied by the foreign consumer price index (CPI) and divided by the Chinese consumer price index (CPI) at the same year, which is
 
 $$
 RER_{ct}=NER_{ct} \cdot \frac{CPI_{ct}}{CPI_{CHN,t}}.
@@ -91,4 +91,4 @@ We saw substantial variations in RMB exchange rate fluctuations against differen
 	\label{fig3.2}
 \end{figure}
 
-In addition to nominal and real exchange rates, we also use the real GDP of the destination countries from PWT 10.0. The real GDP is computed with national-accounts growth rates. The controls of real GDP changes of the destination country, $\Delta RGDP_{ct}$, help us exclude the effect of economic growth on price movements. All macro variables including exchange rates and real GDPs are annual to match the firm information survey.
+In addition to nominal and real exchange rates, we also use the real GDP of the destination countries from PWT 10.0. The real GDP is computed with national-accounts growth rates. The controls of real GDP changes of the destination country, $\Delta RGDP_{ct}$, help us exclude the effect of economic growth on price movements. All macro variables including exchange rates and real GDPs are in annual terms to match the firm information survey.

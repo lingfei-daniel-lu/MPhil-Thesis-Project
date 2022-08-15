@@ -1051,3 +1051,7 @@ After the meeting, we propose four points to work on in the next stage:
 2. Use alternative measures of processing trade (only keeping pure assembling transactions）
 3. Try to cluster standard error to check the significance.
 4. Calculate export intensity at the firm level to check the export-import linkage
+
+## 2022/07/28
+
+![img](file:///C:/Users/Lenovo/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif)
