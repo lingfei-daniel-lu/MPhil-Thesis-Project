@@ -145,7 +145,6 @@ merge n:1 coun_aim using ".\customs data\customs_country_name",nogen keep(matche
 drop coun_aim
 rename country_adj coun_aim
 drop if coun_aim==""|coun_aim=="中华人民共和国"
-collapse (sum) value quant, by (party_id EN HS8 coun_aim year exp_imp)
 gen HS2007=substr(HS8,1,6) if year>=2007
 merge n:1 HS2007 using "D:\Project C\HS Conversion\HS2007to1996.dta",nogen update replace
 gen HS2002=substr(HS8,1,6) if year<2007 & year>=2002
@@ -183,8 +182,6 @@ foreach key in 贸易 外贸 经贸 工贸 科贸 商贸 边贸 技贸 进出口
 }
 merge n:1 coun_aim using "D:\Project C\sample_all\customs_all_top_partners",nogen keep(matched)
 sort party_id HS6 coun_aim year
-by party_id HS6 coun_aim: egen year_count=count(year)
-drop if year_count<=1
 gen HS2=substr(HS6,1,2)
 drop if HS2=="93"|HS2=="97"|HS2=="98"|HS2=="99"
 merge n:1 year using "D:\Project C\PWT10.0\US_NER_99_11",nogen keep(matched)
@@ -230,8 +227,6 @@ foreach key in 贸易 外贸 经贸 工贸 科贸 商贸 边贸 技贸 进出口
 }
 merge n:1 coun_aim using "D:\Project C\sample_all\customs_all_top_partners",nogen keep(matched)
 sort party_id HS6 coun_aim year
-by party_id HS6 coun_aim: egen year_count=count(year)
-drop if year_count<=1
 gen HS2=substr(HS6,1,2)
 drop if HS2=="93"|HS2=="97"|HS2=="98"|HS2=="99"
 merge n:1 year using "D:\Project C\PWT10.0\US_NER_99_11",nogen keep(matched)
