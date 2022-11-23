@@ -1,46 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2022)
+This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Lingfei Thesis.aux
 The style file: apalike.bst
 Database file #1: ref.bib
-You've used 28 entries,
+You've used 19 entries,
             1935 wiz_defined-function locations,
-            634 strings with 7354 characters,
-and the built_in function-call counts, 11187 in all, are:
-= -- 1091
-> -- 404
-< -- 15
-+ -- 135
-- -- 130
-* -- 1015
-:= -- 1939
-add.period$ -- 84
-call.type$ -- 28
-change.case$ -- 205
-chr.to.int$ -- 27
-cite$ -- 28
-duplicate$ -- 392
-empty$ -- 834
-format.name$ -- 178
-if$ -- 2206
+            586 strings with 6304 characters,
+and the built_in function-call counts, 7624 in all, are:
+= -- 741
+> -- 283
+< -- 8
++ -- 95
+- -- 92
+* -- 691
+:= -- 1329
+add.period$ -- 57
+call.type$ -- 19
+change.case$ -- 141
+chr.to.int$ -- 18
+cite$ -- 19
+duplicate$ -- 266
+empty$ -- 564
+format.name$ -- 119
+if$ -- 1496
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 28
-newline$ -- 143
-num.names$ -- 84
-pop$ -- 134
+missing$ -- 19
+newline$ -- 98
+num.names$ -- 57
+pop$ -- 95
 preamble$ -- 1
-purify$ -- 205
+purify$ -- 141
 quote$ -- 0
-skip$ -- 295
+skip$ -- 198
 stack$ -- 0
-substring$ -- 936
-swap$ -- 28
+substring$ -- 634
+swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 168
+type$ -- 114
 warning$ -- 0
-while$ -- 86
+while$ -- 59
 width$ -- 0
-write$ -- 366
+write$ -- 249

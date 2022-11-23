@@ -111,12 +111,8 @@
 \headcommand {\beamer@framepages {40}{42}}
 \headcommand {\slideentry {9}{0}{1}{40/43}{}{0}}
 \headcommand {\beamer@framepages {40}{43}}
-\headcommand {\slideentry {9}{0}{1}{40/44}{}{0}}
-\headcommand {\beamer@framepages {40}{44}}
-\headcommand {\slideentry {9}{0}{1}{40/45}{}{0}}
-\headcommand {\beamer@framepages {40}{45}}
-\headcommand {\beamer@partpages {1}{45}}
-\headcommand {\beamer@subsectionpages {40}{45}}
-\headcommand {\beamer@sectionpages {40}{45}}
-\headcommand {\beamer@documentpages {45}}
-\headcommand {\gdef \inserttotalframenumber {45}}
+\headcommand {\beamer@partpages {1}{43}}
+\headcommand {\beamer@subsectionpages {40}{43}}
+\headcommand {\beamer@sectionpages {40}{43}}
+\headcommand {\beamer@documentpages {43}}
+\headcommand {\gdef \inserttotalframenumber {43}}
